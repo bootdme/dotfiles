@@ -87,6 +87,8 @@ function load_core()
 	leader_map()
 
 	clipboard_config()
+
+	require("core.opts")
 end
 
 load_core()
