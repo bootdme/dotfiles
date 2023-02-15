@@ -1,48 +1,55 @@
 # ~/.config/git/config
 
 # [user]
-    # name = 
-    # email = 
-    # username = 
-    # signingkey = 
+    # name = Enter Github name
+    # email = Enter Github email
+    # username = Enter GitHub username
+    # signingkey = Enter GitHub email
 [core]
+    # Neovim as editor
     editor = nvim
+    # Use less for git diff
     pager = less -FRX
 [color]
+    # Enable colors in color-supporting terminals
     diff = auto
     status = auto
     branch = auto
     ui = auto
 [push]
+    # Push current branch to a remote branch with the same name
     default = current
+    # Always send local tags instead of using --follow-tags
     followTags = true
-[gpg]
-    program = gpg
 [fetch]
+    # Delete outdated remote references in .git directory
     prune = true
 [merge]
+    # Ensures that you get an error unless every merge is ff
     ff = only
+    # Gives more information when a merge conflict occurs
     conflictstyle = diff3
 [commit]
+    # Ensures all commits are signed by your GPG key
     gpgSign = true
 [tag]
+    # Make a GPG signed tag
     gpgSign = true
-[status]
-    showUntrackedFiles = all
 [rerere]
+    # Save the resolution of a conflict so it can be re-applied if same conflict occurs
     enabled = true
 [transfer]
+    # Do some extra checks when receiving or sending changes
     fsckobjects = true
-[branch "main"]
-    remote = origin
-    merge = refs/heads/main
 [alias]
+    # Show all aliases created
     alias = !git config -l | grep alias | cut -c 7-
 
+    # Abbreviations
     cm = commit
     co = checkout
     st = status
-
     lg = log --graph --date=relative --pretty=tformat:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%an %ad)%Creset'
 
+    # Remove most recent local commit
     uncommit = reset --soft HEAD~1
