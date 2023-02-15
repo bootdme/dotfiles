@@ -1,0 +1,48 @@
+# ~/.config/git/config
+
+# [user]
+    # name = 
+    # email = 
+    # username = 
+    # signingkey = 
+[core]
+    editor = nvim
+    pager = less -FRX
+[color]
+    diff = auto
+    status = auto
+    branch = auto
+    ui = auto
+[push]
+    default = current
+    followTags = true
+[gpg]
+    program = gpg
+[fetch]
+    prune = true
+[merge]
+    ff = only
+    conflictstyle = diff3
+[commit]
+    gpgSign = true
+[tag]
+    gpgSign = true
+[status]
+    showUntrackedFiles = all
+[rerere]
+    enabled = true
+[transfer]
+    fsckobjects = true
+[branch "main"]
+    remote = origin
+    merge = refs/heads/main
+[alias]
+    alias = !git config -l | grep alias | cut -c 7-
+
+    cm = commit
+    co = checkout
+    st = status
+
+    lg = log --graph --date=relative --pretty=tformat:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%an %ad)%Creset'
+
+    uncommit = reset --soft HEAD~1
