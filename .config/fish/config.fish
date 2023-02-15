@@ -48,6 +48,9 @@ alias ll='exa -l --color=always --group-directories-first'
 alias lt='exa -aT --color=always --group-directories-first'
 alias l.='exa -a | egrep "^\."'
 
+# Clear quicker
+alias c='clear'
+
 # Git bare repository for dotfiles
 alias config='git --git-dir=$HOME/.dot/ --work-tree=$HOME'
 
