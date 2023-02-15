@@ -89,6 +89,7 @@ function load_core()
 	clipboard_config()
 
 	require("core.opts")
+    require("core.sets")
 end
 
 load_core()
