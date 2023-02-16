@@ -1,10 +1,6 @@
 {
-  "lazy.nvim": { "branch": "main", "commit": "e916f41df26e33b01f1b3ebe28881090da3a7281" },
-  "nvim-colorizer.lua": { "branch": "master", "commit": "760e27df4dd966607e8fb7fd8b6b93e3c7d2e193" },
+  "lazy.nvim": { "branch": "main", "commit": "8186cc5db31bd5968b5be838a30c4cf1465cb3f9" },
   "nvim-treesitter": { "branch": "master", "commit": "b23856a88e04e1468e1603d6e0900f2372709e22" },
-  "nvim-treesitter-textobjects": { "branch": "master", "commit": "15d9c62cb04079cf440ceb6882f2cbfaed66eda1" },
-  "nvim-ts-rainbow": { "branch": "master", "commit": "496ff7ea19cdd4e4b7cf2aeeb6780d015f3f9fa5" },
-  "paint.nvim": { "branch": "main", "commit": "cb91a79083c6eb7bb3b590d8723a0fe44a000a6d" },
   "tokyonight": { "branch": "main", "commit": "a0abe53df53616d13da327636cb0bcac3ea7f5af" },
   "vim-matchup": { "branch": "master", "commit": "945e01e39fc137bd74bb3aa8c4f40e6ffb5be2dd" }
 }

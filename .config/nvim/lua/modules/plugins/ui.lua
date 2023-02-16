@@ -17,14 +17,6 @@ ui["nvim-treesitter/nvim-treesitter"] = {
 	config = require("ui.treesitter"),
 	dependencies = {
 		{ "andymass/vim-matchup" },
-		{
-			"folke/paint.nvim",
-			config = require("ui.paint"),
-		},
-		{
-			"NvChad/nvim-colorizer.lua",
-			config = require("ui.colorizer"),
-		},
 	},
 }
 
