@@ -25,7 +25,7 @@ function load_options()
 		signcolumn = "yes",
 		colorcolumn = "80",
 
-		updatetime = 50,
+		updatetime = 100,
 		redrawtime = 1500,
 		
 		wildignore = ".git,.hg,.svn,*.pyc,*.o,*.out,*.jpg,*.jpeg,*.png,*.gif,*.zip,**/tmp/**,*.DS_Store,**/node_modules/**,**/bower_modules/**",

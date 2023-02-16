@@ -34,8 +34,8 @@ return function()
             end,
         },
 
-        -- Dependencies
-        matchup = { enable = true },
+        -- Disable tressitter indentation
+        indent = { enable = false },
     })
 
     require("nvim-treesitter.install").prefer_git = true

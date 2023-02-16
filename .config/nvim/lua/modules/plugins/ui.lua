@@ -16,7 +16,7 @@ ui["nvim-treesitter/nvim-treesitter"] = {
 	event = { "CursorHold", "CursorHoldI" },
 	config = require("ui.treesitter"),
 	dependencies = {
-		{ "andymass/vim-matchup" },
+
 	},
 }
 
