@@ -91,6 +91,10 @@ function load_core()
 	require("core.opts")
     require("core.sets")
     require("core.auto")
+
+    require("core.lazy")
+
+    vim.api.nvim_command("colorscheme tokyonight-night")
 end
 
 load_core()
