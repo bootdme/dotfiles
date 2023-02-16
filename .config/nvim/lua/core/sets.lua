@@ -23,10 +23,6 @@ set("n", "<C-a>", "gg<S-v>G", opts)
 -- Keep cursor in-place if below line append to current line when moving
 set("n", "J", "mzJ`z")
 
--- Better Ctrl+D/U
-set("n", "<C-d>", "<C-d>zz")
-set("n", "<C-u>", "<C-u>zz")
-
 -- Search and highlight
 set("n", "n", "nzzzv", opts)
 set("n", "N", "Nzzzv", opts)
