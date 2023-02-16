@@ -90,6 +90,7 @@ function load_core()
 
 	require("core.opts")
     require("core.sets")
+    require("core.auto")
 end
 
 load_core()
