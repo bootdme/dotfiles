@@ -13,6 +13,10 @@ set("v", "K", ":m '<-2<CR>gv=gv")
 -- Enable folding
 set("n", "F", "za", opts)
 
+-- Smarter indenting
+set("v", ">", ">gv|", opts)
+set("v", "<", "<gv", opts)
+
 -- Select all
 set("n", "<C-a>", "gg<S-v>G", opts)
 
