@@ -44,29 +44,29 @@ autocmd("BufReadPost", {
 })
 
 -- Highlight on yank
-augroup('YankHighlight', { clear = true })
-autocmd('TextYankPost', {
-   group = 'YankHighlight',
-   callback = function()
-      vim.highlight.on_yank({ higroup = 'IncSearch', timeout = '1000' })
-   end
+augroup("YankHighlight", { clear = true })
+autocmd("TextYankPost", {
+	group = "YankHighlight",
+	callback = function()
+		vim.highlight.on_yank({ higroup = "IncSearch", timeout = "1000" })
+	end,
 })
 
 -- Reload vim config automatically
-vim.cmd [[
+vim.cmd([[
     augroup Bufs
         autocmd!
         autocmd BufWritePost $VIM_PATH/{*.vim,*.yaml,vimrc} nested source $MYVIMRC | redraw
         autocmd BufWritePre /tmp/*,COMMIT_EDITMSG,MERGE_MSG,*.tmp,*.bak | setlocal noundofile
     augroup END
-]]
+]])
 
 -- Check if file changed
 -- Equalize window size
-vim.cmd [[
+vim.cmd([[
     augroup Wins
         autocmd!
         autocmd FocusGained * checktime
         autocmd VimResized * tabdo wincmd =
     augroup END
-]]
+]])

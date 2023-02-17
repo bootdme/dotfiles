@@ -89,12 +89,12 @@ function load_core()
 	clipboard_config()
 
 	require("core.opts")
-    require("core.sets")
-    require("core.auto")
+	require("core.sets")
+	require("core.auto")
 
-    require("core.lazy")
+	require("core.lazy")
 
-    vim.api.nvim_command("colorscheme tokyonight-night")
+	vim.api.nvim_command("colorscheme tokyonight-night")
 end
 
 load_core()
