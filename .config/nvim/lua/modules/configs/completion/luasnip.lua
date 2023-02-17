@@ -1,4 +1,4 @@
--- https://github.com/L3MON4D3/LuaSnip 
+-- https://github.com/L3MON4D3/LuaSnip
 return function()
 	require("luasnip").config.set_config({
 		history = true,

@@ -2,9 +2,9 @@
 return function()
 	local compare = require("cmp.config.compare")
 
-    local t = function(str)
-        return vim.api.nvim_replace_termcodes(str, true, true, true)
-    end
+	local t = function(str)
+		return vim.api.nvim_replace_termcodes(str, true, true, true)
+	end
 
 	compare.lsp_scores = function(entry1, entry2)
 		local diff
@@ -18,20 +18,20 @@ return function()
 
 	local cmp = require("cmp")
 
-    cmp.setup({
-        sorting = {
-            priority_weight = 2,
-            comparators = {
-                compare.locality,
-                compare.lsp_scores,
-                compare.offset,
-                compare.order,
-                compare.sort_text,
-                compare.exact,
-                compare.kind,
-                compare.length,
-            },
-        },
+	cmp.setup({
+		sorting = {
+			priority_weight = 2,
+			comparators = {
+				compare.locality,
+				compare.lsp_scores,
+				compare.offset,
+				compare.order,
+				compare.sort_text,
+				compare.exact,
+				compare.kind,
+				compare.length,
+			},
+		},
 		mapping = cmp.mapping.preset.insert({
 			["<CR>"] = cmp.mapping.confirm({ select = true }),
 			["<C-k>"] = cmp.mapping.select_prev_item(),
@@ -64,7 +64,7 @@ return function()
 		}),
 		snippet = {
 			expand = function(args)
-                -- https://github.com/L3MON4D3/LuaSnip
+				-- https://github.com/L3MON4D3/LuaSnip
 				require("luasnip").lsp_expand(args.body)
 			end,
 		},
@@ -77,6 +77,5 @@ return function()
 			{ name = "buffer" },
 			{ name = "treesitter" },
 		},
-    })
-
+	})
 end

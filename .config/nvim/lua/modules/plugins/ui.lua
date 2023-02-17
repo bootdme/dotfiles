@@ -1,7 +1,7 @@
 local ui = {}
 
 ui["folke/tokyonight.nvim"] = {
-    lazy = false,
+	lazy = false,
 	name = "tokyonight",
 	config = require("ui.tokyonight"),
 }
@@ -15,9 +15,7 @@ ui["nvim-treesitter/nvim-treesitter"] = {
 	end,
 	event = { "CursorHold", "CursorHoldI" },
 	config = require("ui.treesitter"),
-	dependencies = {
-
-	},
+	dependencies = {},
 }
 
 return ui
