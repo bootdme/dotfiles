@@ -2,6 +2,7 @@ local tool = {}
 
 tool["nvim-telescope/telescope.nvim"] = {
 	lazy = true,
+	version = false,
 	cmd = "Telescope",
 	config = require("tool.telescope"),
 	dependencies = {

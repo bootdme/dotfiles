@@ -36,17 +36,6 @@ return function()
 	capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
 	local opts = {
-		on_attach = function()
-			-- https://github.com/ray-x/lsp_signature.nvim
-			require("lsp_signature").on_attach({
-				bind = true,
-				use_lspsaga = false,
-				floating_window = true,
-				fix_pos = true,
-				hint_enable = true,
-				hi_parameter = "Search",
-			})
-		end,
 		capabilities = capabilities,
 	}
 

@@ -2,10 +2,9 @@ local completion = {}
 
 completion["neovim/nvim-lspconfig"] = {
 	lazy = true,
-	event = { "BufReadPost", "BufAdd", "BufNewFile" },
+	event = { "BufReadPre", "BufNewFile" },
 	config = require("completion.lspconfig"),
 	dependencies = {
-		{ "ray-x/lsp_signature.nvim" },
 		{ "williamboman/mason.nvim" },
 		{ "williamboman/mason-lspconfig.nvim" },
 		{
@@ -13,11 +12,8 @@ completion["neovim/nvim-lspconfig"] = {
 			config = require("completion.mason-tool-installer"),
 		},
 		{
-			"glepnir/lspsaga.nvim",
-			config = require("completion.lspsaga"),
-		},
-		{
 			"jose-elias-alvarez/null-ls.nvim",
+			event = { "BufReadPre", "BufNewFile" },
 			dependencies = { "nvim-lua/plenary.nvim" },
 			config = require("completion.null-ls"),
 		},
