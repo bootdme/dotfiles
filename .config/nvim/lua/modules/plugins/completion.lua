@@ -11,13 +11,17 @@ completion["neovim/nvim-lspconfig"] = {
 			"WhoIsSethDaniel/mason-tool-installer.nvim",
 			config = require("completion.mason-tool-installer"),
 		},
-		{
-			"jose-elias-alvarez/null-ls.nvim",
-			event = { "BufReadPre", "BufNewFile" },
-			dependencies = { "nvim-lua/plenary.nvim" },
-			config = require("completion.null-ls"),
-		},
 	},
+}
+
+completion["jose-elias-alvarez/null-ls.nvim"] = {
+	lazy = true,
+	event = { "BufReadPre", "BufNewFile" },
+	dependencies = {
+		{ "williamboman/mason.nvim" },
+		{ "nvim-lua/plenary.nvim" },
+	},
+	config = require("completion.null-ls"),
 }
 
 completion["hrsh7th/nvim-cmp"] = {
