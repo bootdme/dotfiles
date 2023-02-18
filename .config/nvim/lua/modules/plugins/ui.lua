@@ -12,6 +12,12 @@ ui["lukas-reineke/indent-blankline.nvim"] = {
 	config = require("ui.indent-blankline"),
 }
 
+ui["nvim-lualine/lualine.nvim"] = {
+	lazy = true,
+	event = { "BufReadPost", "BufAdd", "BufNewFile" },
+	config = require("ui.lualine"),
+}
+
 ui["nvim-treesitter/nvim-treesitter"] = {
 	lazy = true,
 	build = function()
