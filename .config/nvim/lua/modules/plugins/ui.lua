@@ -6,6 +6,12 @@ ui["folke/tokyonight.nvim"] = {
 	config = require("ui.tokyonight"),
 }
 
+ui["lukas-reineke/indent-blankline.nvim"] = {
+	lazy = true,
+	event = "BufReadPost",
+	config = require("ui.indent-blankline"),
+}
+
 ui["nvim-treesitter/nvim-treesitter"] = {
 	lazy = true,
 	build = function()
