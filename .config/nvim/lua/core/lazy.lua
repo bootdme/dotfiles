@@ -45,7 +45,7 @@ end
 function lazy:load_lazy()
 	if not vim.loop.fs_stat(lazy_path) then
 		api.nvim_command(
-			"!git clone --filter=blob:none --branch=stable https://github.com/folke/lazy.nvim.git" .. lazy_path
+			"!git clone --filter=blob:none --branch=stable https://github.com/folke/lazy.nvim.git " .. lazy_path
 		)
 	end
 

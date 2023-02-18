@@ -70,13 +70,6 @@ autocmd("TextYankPost", {
 -- Reload vim config when necessary
 autocmd({ "FocusGained", "TermClose", "TermLeave" }, { command = "checktime" })
 
--- Remove whitespace
-local whitespace_group = vim.api.nvim_create_augroup("WhiteSpace", { clear = true })
-autocmd("BufWritePre", {
-	command = [[%s/\s\+$//e]],
-	group = whitespace_group,
-})
-
 -- Check if file changed
 -- Equalize window size
 vim.cmd([[
