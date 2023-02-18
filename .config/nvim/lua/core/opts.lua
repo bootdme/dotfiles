@@ -25,8 +25,12 @@ function load_options()
 		signcolumn = "yes",
 		colorcolumn = "80",
 
+		shadafile = "",
+
 		updatetime = 100,
 		redrawtime = 1500,
+
+		shell = "/bin/bash",
 
 		wildignore = ".git,.hg,.svn,*.pyc,*.o,*.out,*.jpg,*.jpeg,*.png,*.gif,*.zip,**/tmp/**,*.DS_Store,**/node_modules/**,**/bower_modules/**",
 		wildignorecase = true,

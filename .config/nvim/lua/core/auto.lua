@@ -32,6 +32,21 @@ autocmd("BufRead", {
 	end,
 })
 
+-- Formatting options
+autocmd("BufEnter", {
+	callback = function()
+		vim.cmd([[ setlocal formatoptions+=c ]])
+		vim.cmd([[ setlocal formatoptions+=j ]])
+		vim.cmd([[ setlocal formatoptions+=n ]])
+		vim.cmd([[ setlocal formatoptions+=q ]])
+		vim.cmd([[ setlocal formatoptions+=r ]])
+		vim.cmd([[ setlocal formatoptions-=2 ]])
+		vim.cmd([[ setlocal formatoptions-=a ]])
+		vim.cmd([[ setlocal formatoptions-=o ]])
+		vim.cmd([[ setlocal formatoptions-=t ]])
+	end,
+})
+
 -- Auto jump to last place
 autocmd("BufReadPost", {
 	callback = function()
@@ -52,14 +67,15 @@ autocmd("TextYankPost", {
 	end,
 })
 
--- Reload vim config automatically
-vim.cmd([[
-    augroup Bufs
-        autocmd!
-        autocmd BufWritePost $VIM_PATH/{*.vim,*.yaml,vimrc} nested source $MYVIMRC | redraw
-        autocmd BufWritePre /tmp/*,COMMIT_EDITMSG,MERGE_MSG,*.tmp,*.bak | setlocal noundofile
-    augroup END
-]])
+-- Reload vim config when necessary
+autocmd({ "FocusGained", "TermClose", "TermLeave" }, { command = "checktime" })
+
+-- Remove whitespace
+local whitespace_group = vim.api.nvim_create_augroup("WhiteSpace", { clear = true })
+autocmd("BufWritePre", {
+	command = [[%s/\s\+$//e]],
+	group = whitespace_group,
+})
 
 -- Check if file changed
 -- Equalize window size
