@@ -38,7 +38,7 @@ set("n", "<leader>ab", "<cmd>.!toilet -f term -F border<cr>")
 -- │test│
 -- └────┘
 
--- Telescope
+-- f - find
 set("n", "<leader>fb", "<cmd>Telescope buffers<cr>")
 set("n", "<leader>fc", "<cmd>Telescope commands<cr>")
 set("n", "<leader>fd", "<cmd>Telescope diagnostics<cr>")
@@ -52,3 +52,16 @@ set("n", "<leader>fo", "<cmd>Telescope oldfiles<cr>")
 set("n", "<leader>fr", "<cmd>Telescope registers<cr>")
 set("n", "<leader>fs", "<cmd>Telescope colorscheme<cr>")
 set("n", "<leader>fw", "<cmd>Telescope grep_string<cr>")
+
+-- g - git
+set("n", "<leader>gc", "<cmd>Telescope git_commits<cr>")
+set("n", "<leader>gb", "<cmd>Telescope git_branches<cr>")
+set("n", "<leader>go", "<cmd>Telescope git_status<cr>")
+
+-- l - lazy
+set("n", "<leader>lc", "<cmd>Lazy check<cr>")
+set("n", "<leader>lh", "<cmd>Lazy home<cr>")
+set("n", "<leader>ls", "<cmd>Lazy sync<cr>")
+set("n", "<leader>ll", "<cmd>Lazy log<cr>")
+set("n", "<leader>lp", "<cmd>Lazy profile<cr>")
+set("n", "<leader>lu", "<cmd>Lazy update<cr>")
