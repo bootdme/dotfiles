@@ -37,3 +37,18 @@ set("n", "<leader>ab", "<cmd>.!toilet -f term -F border<cr>")
 -- ┌────┐
 -- │test│
 -- └────┘
+
+-- Telescope
+set("n", "<leader>fb", "<cmd>Telescope buffers<cr>")
+set("n", "<leader>fc", "<cmd>Telescope commands<cr>")
+set("n", "<leader>fd", "<cmd>Telescope diagnostics<cr>")
+set("n", "<leader>ff", "<cmd>Telescope find_files<cr>")
+set("n", "<leader>fg", "<cmd>Telescope live_grep_args<cr>")
+set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>")
+set("n", "<leader>fk", "<cmd>Telescope keymaps<cr>")
+set("n", "<leader>fl", "<cmd>Telescope resume<cr>")
+set("n", "<leader>fm", "<cmd>Telescope man_pages<cr>")
+set("n", "<leader>fo", "<cmd>Telescope oldfiles<cr>")
+set("n", "<leader>fr", "<cmd>Telescope registers<cr>")
+set("n", "<leader>fs", "<cmd>Telescope colorscheme<cr>")
+set("n", "<leader>fw", "<cmd>Telescope grep_string<cr>")
