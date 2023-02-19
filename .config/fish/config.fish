@@ -1,15 +1,15 @@
 # Add homebrew & kitty completions (macOS) to fish
 switch (uname)
-	case Darwin
-		fish_add_path /opt/homebrew/bin
-		/Applications/kitty.app/Contents/MacOS/kitty + complete setup fish | source
+    case Darwin
+        fish_add_path /opt/homebrew/bin
+        /Applications/kitty.app/Contents/MacOS/kitty + complete setup fish | source
 end
 
 # Disable fish greeting
 set fish_greeting ""
 
 # Support colors for other programs
-set TERM "xterm-256color"
+set TERM xterm-256color
 
 # Locales
 set -gx LC_ALL "en_US.UTF-8"
