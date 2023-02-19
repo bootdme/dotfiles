@@ -43,12 +43,6 @@ function lazy:load_plugins()
 end
 
 function lazy:load_lazy()
-	if not vim.loop.fs_stat(lazy_path) then
-		api.nvim_command(
-			"!git clone --filter=blob:none --branch=stable https://github.com/folke/lazy.nvim.git " .. lazy_path
-		)
-	end
-
 	self:load_plugins()
 
 	local lazy_settings = {
@@ -72,6 +66,14 @@ function lazy:load_lazy()
 			},
 			reset_packpath = true,
 			rtp = {
+				disabled_plugins = {
+					"gzip",
+					"netrwPlugin",
+					"tarPlugin",
+					"tohtml",
+					"tutor",
+					"zipPlugin",
+				},
 				reset = true,
 				paths = {},
 			},
