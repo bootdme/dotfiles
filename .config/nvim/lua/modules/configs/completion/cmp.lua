@@ -17,6 +17,7 @@ return function()
 	end
 
 	local cmp = require("cmp")
+	local lspkind = require("lspkind")
 
 	cmp.setup({
 		sorting = {
@@ -32,14 +33,31 @@ return function()
 				compare.length,
 			},
 		},
+		confirm_opts = {
+			behavior = cmp.ConfirmBehavior.Replace,
+			select = false,
+		},
+		formatting = {
+			fields = { "kind", "abbr", "menu" },
+			format = function(entry, vim_item)
+				local kind = lspkind.cmp_format({
+					mode = "symbol_text",
+					maxwidth = 50,
+				})(entry, vim_item)
+				local strings = vim.split(kind.kind, "%s", { trimempty = true })
+				kind.kind = " " .. strings[1] .. " "
+				kind.menu = "    (" .. strings[2] .. ")"
+				return kind
+			end,
+		},
 		mapping = cmp.mapping.preset.insert({
-			["<CR>"] = cmp.mapping.confirm({ select = true }),
 			["<C-k>"] = cmp.mapping.select_prev_item(),
 			["<C-j>"] = cmp.mapping.select_next_item(),
 			["<C-d>"] = cmp.mapping.scroll_docs(-4),
 			["<C-f>"] = cmp.mapping.scroll_docs(4),
-			["<C-e>"] = cmp.mapping.close(),
-			["<C-c>"] = cmp.mapping({
+			["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
+			["<CR>"] = cmp.mapping.confirm({ select = true }),
+			["<C-e>"] = cmp.mapping({
 				i = cmp.mapping.abort(),
 				c = cmp.mapping.close(),
 			}),
@@ -67,6 +85,10 @@ return function()
 				-- https://github.com/L3MON4D3/LuaSnip
 				require("luasnip").lsp_expand(args.body)
 			end,
+		},
+		window = {
+			completion = cmp.config.window.bordered(),
+			documentation = cmp.config.window.bordered(),
 		},
 		sources = {
 			{ name = "nvim_lsp" },
