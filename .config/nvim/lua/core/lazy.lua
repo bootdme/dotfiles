@@ -69,6 +69,8 @@ function lazy:load_lazy()
 				disabled_plugins = {
 					"gzip",
 					"netrwPlugin",
+					"matchit",
+					"spellfile_plugin",
 					"tarPlugin",
 					"tohtml",
 					"tutor",
