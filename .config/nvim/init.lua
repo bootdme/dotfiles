@@ -5,7 +5,6 @@ vim.api.nvim_set_keymap("x", " ", "", { noremap = true })
 
 require("core.boot")
 require("core.clip")
-require("core.load")
 require("core.dirs")
 require("core.opts")
 require("core.lazy")
