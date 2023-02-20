@@ -18,6 +18,11 @@ ui["nvim-lualine/lualine.nvim"] = {
 	config = require("ui.lualine"),
 }
 
+ui["mtdl9/vim-log-highlighting"] = {
+	lazy = true,
+	ft = { "text", "txt", "log" },
+}
+
 ui["nvim-treesitter/nvim-treesitter"] = {
 	lazy = true,
 	version = false,
