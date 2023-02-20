@@ -31,6 +31,12 @@ ui["nvim-treesitter/nvim-treesitter"] = {
 	config = require("ui.treesitter"),
 }
 
+ui["lewis6991/gitsigns.nvim"] = {
+	lazy = true,
+	event = { "CursorHold", "CursorHoldI" },
+	config = require("ui.gitsigns"),
+}
+
 ui["folke/which-key.nvim"] = {
 	lazy = true,
 	event = "VeryLazy",
