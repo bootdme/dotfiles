@@ -26,4 +26,10 @@ ui["nvim-treesitter/nvim-treesitter"] = {
 	config = require("ui.treesitter"),
 }
 
+ui["folke/which-key.nvim"] = {
+	lazy = true,
+	event = "VimEnter",
+	config = require("ui.which-key"),
+}
+
 return ui
