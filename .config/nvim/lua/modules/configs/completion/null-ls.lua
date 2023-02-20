@@ -18,7 +18,6 @@ return function()
 			extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" },
 		}),
 		b.formatting.beautysh,
-		b.formatting.fish_indent,
 		b.formatting.shfmt,
 		b.formatting.sql_formatter,
 		b.formatting.stylua,
@@ -41,6 +40,7 @@ return function()
 					group = augroup,
 					buffer = bufnr,
 					callback = function()
+						-- on 0.8, you should use vim.lsp.buf.format({ bufnr = bufnr }) instead
 						vim.lsp.buf.format({ bufnr = bufnr })
 					end,
 				})

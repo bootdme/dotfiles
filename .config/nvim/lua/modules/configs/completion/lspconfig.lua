@@ -20,15 +20,7 @@ return function()
 
 	-- https://github.com/williamboman/mason-lspconfig.nvim
 	mason_lspconfig.setup({
-		ensure_installed = {
-			"bashls",
-			"emmet_ls",
-			"jsonls",
-			"lua_ls",
-			"marksman",
-			"sqlls",
-			"vimls",
-		},
+		ensure_installed = require("core.global").lsp,
 		automatic_installation = true,
 	})
 

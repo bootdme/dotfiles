@@ -13,6 +13,32 @@ function global:load_variables()
 	self.data_dir = string.format("%s/site/", vim.fn.stdpath("data"))
 end
 
+global["lsp"] = {
+	"bashls",
+	"emmet_ls",
+	"jsonls",
+	"lua_ls",
+	"marksman",
+	"sqlls",
+	"vimls",
+}
+
+global["null_ls"] = {
+	-- Formatters
+	"cbfmt",
+	"markdownlint",
+	"prettierd",
+	"beautysh",
+	"shfmt",
+	"sql-formatter",
+	"stylua",
+
+	-- Linters
+	"eslint_d",
+	"shellcheck",
+	"sqlfluff",
+}
+
 global:load_variables()
 
 return global

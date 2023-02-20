@@ -21,16 +21,15 @@ return function()
 
 	cmp.setup({
 		sorting = {
-			priority_weight = 2,
 			comparators = {
-				compare.locality,
-				compare.lsp_scores,
 				compare.offset,
-				compare.order,
-				compare.sort_text,
 				compare.exact,
+				compare.lsp_scores,
+				compare.under,
 				compare.kind,
+				compare.sort_text,
 				compare.length,
+				compare.order,
 			},
 		},
 		confirm_opts = {
