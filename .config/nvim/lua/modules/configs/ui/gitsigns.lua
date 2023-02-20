@@ -1,3 +1,4 @@
+-- https://github.com/lewis6991/gitsigns.nvim
 return function()
 	require("gitsigns").setup({
 		signs = {

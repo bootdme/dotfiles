@@ -1,6 +1,6 @@
--- https://github.com/CharlesChiuGit/nvimdots.lua/blob/main/lua/core/global.lua
 local global = {}
 
+-- https://github.com/CharlesChiuGit/nvimdots.lua/blob/main/lua/core/global.lua
 function global:load_variables()
 	local home = os.getenv("HOME")
 	local path_sep = "/"
@@ -13,6 +13,8 @@ function global:load_variables()
 	self.data_dir = string.format("%s/site/", vim.fn.stdpath("data"))
 end
 
+-- Treesitter variables
+-- https://github.com/nvim-treesitter/nvim-treesitter#supported-languages
 global["ts"] = {
 	"bash",
 	"css",
@@ -31,6 +33,8 @@ global["ts"] = {
 	"vim",
 }
 
+-- LSP variables
+-- https://github.com/williamboman/mason-lspconfig.nvim#available-lsp-servers
 global["lsp"] = {
 	"bashls",
 	"emmet_ls",
@@ -42,6 +46,8 @@ global["lsp"] = {
 	"vimls",
 }
 
+-- Formatter & Linter variables
+-- https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md
 global["null_ls"] = {
 	-- Formatters
 	"cbfmt",

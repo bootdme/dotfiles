@@ -1,3 +1,4 @@
+-- https://github.com/folke/which-key.nvim
 return function()
 	require("which-key").setup({
 		plugins = {
