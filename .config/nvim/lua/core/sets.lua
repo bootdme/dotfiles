@@ -19,6 +19,14 @@ set("n", "<C-a>", "gg<S-v>G")
 -- Keep cursor in-place if below line append to current line when moving
 set("n", "J", "mzJ`z")
 
+-- Keep in paste register
+set("x", "<leader>p", '"_dP')
+
+-- Better yank
+set("n", "<leader>y", '"+y')
+set("v", "<leader>y", '"+y')
+set("n", "<leader>Y", '"+Y')
+
 -- Search and highlight
 set("n", "n", "nzzzv")
 set("n", "N", "Nzzzv")
