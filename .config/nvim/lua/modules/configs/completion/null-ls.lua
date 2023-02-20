@@ -18,6 +18,7 @@ return function()
 			extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" },
 		}),
 		b.formatting.beautysh,
+		b.formatting.rustfmt,
 		b.formatting.shfmt,
 		b.formatting.sql_formatter,
 		b.formatting.stylua,

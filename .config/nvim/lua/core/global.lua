@@ -13,12 +13,31 @@ function global:load_variables()
 	self.data_dir = string.format("%s/site/", vim.fn.stdpath("data"))
 end
 
+global["ts"] = {
+	"bash",
+	"css",
+	"fish",
+	"gitignore",
+	"help",
+	"html",
+	"javascript",
+	"jsonc",
+	"lua",
+	"markdown",
+	"markdown_inline",
+	"regex",
+	"rust",
+	"sql",
+	"vim",
+}
+
 global["lsp"] = {
 	"bashls",
 	"emmet_ls",
 	"jsonls",
 	"lua_ls",
 	"marksman",
+	"rust_analyzer",
 	"sqlls",
 	"vimls",
 }
@@ -28,6 +47,7 @@ global["null_ls"] = {
 	"cbfmt",
 	"markdownlint",
 	"prettierd",
+	"rustfmt",
 	"beautysh",
 	"shfmt",
 	"sql-formatter",

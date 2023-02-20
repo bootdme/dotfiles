@@ -1,22 +1,7 @@
 -- https://github.com/nvim-treesitter/nvim-treesitter
 return function()
 	require("nvim-treesitter.configs").setup({
-		ensure_installed = {
-			"bash",
-			"css",
-			"fish",
-			"gitignore",
-			"help",
-			"html",
-			"javascript",
-			"jsonc",
-			"lua",
-			"markdown",
-			"markdown_inline",
-			"regex",
-			"sql",
-			"vim",
-		},
+		ensure_installed = require("core.global").ts,
 
 		-- Install parsers asynchronously
 		sync_install = true,
