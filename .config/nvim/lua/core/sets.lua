@@ -57,7 +57,7 @@ set("n", "<leader>fk", "<cmd>Telescope keymaps<cr>")
 set("n", "<leader>fl", "<cmd>Telescope resume<cr>")
 set("n", "<leader>fm", "<cmd>Telescope man_pages<cr>")
 set("n", "<leader>fo", "<cmd>Telescope oldfiles<cr>")
-set("n", "<leader>fr", "<cmd>Telescope registers<cr>")
+set("n", "<leader>fr", "<cmd>Telescope frecency<cr>")
 set("n", "<leader>fs", "<cmd>Telescope colorscheme<cr>")
 set("n", "<leader>fw", "<cmd>Telescope grep_string<cr>")
 

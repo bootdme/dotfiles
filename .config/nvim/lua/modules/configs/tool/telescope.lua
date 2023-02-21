@@ -19,6 +19,9 @@ return function()
 		file_previewer = require("telescope.previewers").vim_buffer_cat.new,
 		grep_previewer = require("telescope.previewers").vim_buffer_vimgrep.new,
 		qflist_previewer = require("telescope.previewers").vim_buffer_qflist.new,
+		file_sorter = require("telescope.sorters").get_fuzzy_file,
+		generic_sorter = require("telescope.sorters").get_generic_fuzzy_sorter,
+		buffer_previewer_maker = require("telescope.previewers").buffer_previewer_maker,
 		extensions = {
 			-- https://github.com/nvim-telescope/telescope-fzf-native.nvim
 			fzf = {
@@ -30,6 +33,8 @@ return function()
 			-- https://github.com/nvim-telescope/telescope-frecency.nvim
 			frecency = {
 				show_scores = true,
+				show_unindexed = true,
+				ignore_patterns = { "*.git/*", "*/tmp/*" },
 			},
 			-- https://github.com/nvim-telescope/telescope-live-grep-args.nvim
 			live_grep_args = {

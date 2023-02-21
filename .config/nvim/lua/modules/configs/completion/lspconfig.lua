@@ -73,12 +73,6 @@ return function()
 			lspconfig.marksman.setup(final_opts)
 		end,
 
-		rust_analyzer = function()
-			local _opts = require("completion.servers.rust_analyzer")
-			local final_opts = vim.tbl_deep_extend("keep", _opts, opts)
-			lspconfig.rust_analyzer.setup(final_opts)
-		end,
-
 		sqlls = function()
 			local _opts = require("completion.servers.sqlls")
 			local final_opts = vim.tbl_deep_extend("keep", _opts, opts)
