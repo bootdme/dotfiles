@@ -16,6 +16,7 @@
 My neovim configuration for macOS & Linux.
 
 ### Credits
+
 * [Traap](https://github.com/Traap/nvim)
 * [CharlesChiuGit](https://github.com/CharlesChiuGit/nvimdots.lua)
 * [ThePrimeagen](https://github.com/ThePrimeagen/init.lua/tree/bc8324fa1c31bd1bc81fb8a5dde684dffd324f84)

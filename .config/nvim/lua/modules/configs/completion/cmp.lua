@@ -39,17 +39,23 @@ return function()
 			select = false,
 		},
 		formatting = {
-			fields = { "kind", "abbr", "menu" },
-			format = function(entry, vim_item)
-				local kind = lspkind.cmp_format({
-					mode = "symbol_text",
-					maxwidth = 50,
-				})(entry, vim_item)
-				local strings = vim.split(kind.kind, "%s", { trimempty = true })
-				kind.kind = " " .. strings[1] .. " "
-				kind.menu = "    (" .. strings[2] .. ")"
-				return kind
-			end,
+			format = lspkind.cmp_format({
+				mode = "symbol_text",
+				maxwidth = 60,
+				ellipsis_char = "...",
+				before = function(entry, vim_item)
+					vim_item.menu = ({
+						cmp_tabnine = "[TN]",
+						buffer = "[BUF]",
+						nvim_lsp = "[LSP]",
+						nvim_lua = "[LUA]",
+						path = "[PATH]",
+						luasnip = "[SNIP]",
+						treesitter = "[TS]",
+					})[entry.source.name]
+					return vim_item
+				end,
+			}),
 		},
 		mapping = cmp.mapping.preset.insert({
 			["<CR>"] = cmp.mapping.confirm({ select = true }),

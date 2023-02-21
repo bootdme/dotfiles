@@ -44,6 +44,7 @@ completion["hrsh7th/nvim-cmp"] = {
 			"windwp/nvim-autopairs",
 			config = require("completion.autopairs"),
 		},
+		{ "tzachar/cmp-tabnine", build = "./install.sh", config = require("completion.tabnine") },
 	},
 }
 
