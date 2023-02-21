@@ -26,4 +26,11 @@ tool["nvim-telescope/telescope.nvim"] = {
 	},
 }
 
+tool["simrat39/rust-tools.nvim"] = {
+	lazy = true,
+	ft = "rust",
+	config = require("tool.rust-tools"),
+	dependencies = { "nvim-lua/plenary.nvim" },
+}
+
 return tool
