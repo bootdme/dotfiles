@@ -1,5 +1,11 @@
 local tool = {}
 
+tool["folke/trouble.nvim"] = {
+	lazy = true,
+	cmd = { "Trouble", "TroubleToggle", "TroubleRefresh" },
+	config = require("tool.trouble"),
+}
+
 tool["nvim-telescope/telescope.nvim"] = {
 	lazy = true,
 	version = false,

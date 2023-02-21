@@ -26,6 +26,7 @@ return function()
 			f = { "Find" },
 			g = { "Git" },
 			l = { "Lazy" },
+			t = { "Trouble" },
 		},
 	})
 end

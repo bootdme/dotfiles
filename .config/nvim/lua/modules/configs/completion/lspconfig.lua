@@ -3,9 +3,13 @@ return function()
 	local lspconfig = require("lspconfig")
 	local mason = require("mason")
 	local mason_lspconfig = require("mason-lspconfig")
+	require("lspconfig.ui.windows").default_options.border = "single"
 
 	-- https://github.com/williamboman/mason.nvim
 	mason.setup({
+		ui = {
+			border = "single",
+		},
 		keymaps = {
 			toggle_server_expand = "<CR>",
 			install_server = "i",
@@ -33,6 +37,12 @@ return function()
 
 	-- Setup servers
 	mason_lspconfig.setup_handlers({
+		function(server)
+			require("lspconfig")[server].setup({
+				capabilities = capabilities,
+			})
+		end,
+
 		bashls = function()
 			local _opts = require("completion.servers.bashls")
 			local final_opts = vim.tbl_deep_extend("keep", _opts, opts)

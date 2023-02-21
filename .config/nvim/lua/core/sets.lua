@@ -74,3 +74,10 @@ set("n", "<leader>ll", "<cmd>Lazy log<cr>")
 set("n", "<leader>lp", "<cmd>Lazy profile<cr>")
 set("n", "<leader>lu", "<cmd>Lazy update<cr>")
 set("n", "<leader>lx", "<cmd>Lazy clean<cr>")
+
+-- t - trouble
+set("n", "<leader>tt", "<cmd>TroubleToggle<cr>")
+set("n", "<leader>tr", "<cmd>TroubleToggle lsp_references<cr>")
+set("n", "<leader>td", "<cmd>TroubleToggle document_diagnostics<cr>")
+set("n", "<leader>tq", "<cmd>TroubleToggle quickfix<cr>")
+set("n", "<leader>tl", "<cmd>TroubleToggle loclist<cr>")

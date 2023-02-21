@@ -21,11 +21,13 @@ return function()
 
 	cmp.setup({
 		sorting = {
+			priority_weight = 2,
 			comparators = {
 				compare.offset,
 				compare.exact,
 				compare.lsp_scores,
-				compare.under,
+				compare.score,
+				require("cmp-under-comparator").under,
 				compare.kind,
 				compare.sort_text,
 				compare.length,
@@ -50,12 +52,12 @@ return function()
 			end,
 		},
 		mapping = cmp.mapping.preset.insert({
+			["<CR>"] = cmp.mapping.confirm({ select = true }),
 			["<C-k>"] = cmp.mapping.select_prev_item(),
 			["<C-j>"] = cmp.mapping.select_next_item(),
 			["<C-d>"] = cmp.mapping.scroll_docs(-4),
 			["<C-f>"] = cmp.mapping.scroll_docs(4),
 			["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
-			["<CR>"] = cmp.mapping.confirm({ select = true }),
 			["<C-e>"] = cmp.mapping({
 				i = cmp.mapping.abort(),
 				c = cmp.mapping.close(),
