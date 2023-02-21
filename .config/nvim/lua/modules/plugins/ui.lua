@@ -23,6 +23,11 @@ ui["mtdl9/vim-log-highlighting"] = {
 	ft = { "text", "txt", "log" },
 }
 
+ui["chrisbra/csv.vim"] = {
+	lazy = true,
+	ft = "csv",
+}
+
 ui["nvim-treesitter/nvim-treesitter"] = {
 	lazy = true,
 	version = false,
