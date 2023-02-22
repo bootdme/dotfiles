@@ -26,6 +26,7 @@ tool["nvim-telescope/telescope.nvim"] = {
 	},
 }
 
+-- Rust
 tool["simrat39/rust-tools.nvim"] = {
 	lazy = true,
 	ft = "rust",
