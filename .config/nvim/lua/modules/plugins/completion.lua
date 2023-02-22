@@ -7,16 +7,10 @@ completion["neovim/nvim-lspconfig"] = {
 	dependencies = {
 		{ "williamboman/mason.nvim" },
 		{ "williamboman/mason-lspconfig.nvim" },
+		{ "creativenull/efmls-configs-nvim" },
 		{
 			"WhoIsSethDaniel/mason-tool-installer.nvim",
 			config = require("completion.mason-tool-installer"),
-		},
-		{
-			"jose-elias-alvarez/null-ls.nvim",
-			dependencies = {
-				"nvim-lua/plenary.nvim",
-			},
-			config = require("completion.null-ls"),
 		},
 	},
 }

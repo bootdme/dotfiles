@@ -38,6 +38,7 @@ global["ts"] = {
 global["lsp"] = {
 	"bashls",
 	"emmet_ls",
+	"efm",
 	"jsonls",
 	"lua_ls",
 	"marksman",
