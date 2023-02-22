@@ -19,6 +19,27 @@ tool["nvim-telescope/telescope.nvim"] = {
 	},
 }
 
+tool["mfussenegger/nvim-dap"] = {
+	lazy = true,
+	cmd = {
+		"DapSetLogLevel",
+		"DapShowLog",
+		"DapContinue",
+		"DapToggleBreakpoint",
+		"DapToggleRepl",
+		"DapStepOver",
+		"DapStepInto",
+		"DapStepOut",
+		"DapTerminate",
+	},
+	config = require("tool.dap"),
+	dependencies = {
+		{ "rcarriga/nvim-dap-ui" },
+		{ "theHamsta/nvim-dap-virtual-text" },
+		{ "mxsdev/nvim-dap-vscode-js" },
+	},
+}
+
 -- Rust
 tool["simrat39/rust-tools.nvim"] = {
 	lazy = true,
