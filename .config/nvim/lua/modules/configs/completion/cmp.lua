@@ -45,7 +45,6 @@ return function()
 				ellipsis_char = "...",
 				before = function(entry, vim_item)
 					vim_item.menu = ({
-						cmp_tabnine = "[TN]",
 						buffer = "[BUF]",
 						nvim_lsp = "[LSP]",
 						nvim_lua = "[LUA]",
@@ -61,8 +60,8 @@ return function()
 			["<CR>"] = cmp.mapping.confirm({ select = true }),
 			["<C-k>"] = cmp.mapping.select_prev_item(),
 			["<C-j>"] = cmp.mapping.select_next_item(),
-			["<C-d>"] = cmp.mapping.scroll_docs(-4),
-			["<C-f>"] = cmp.mapping.scroll_docs(4),
+			["<C-d>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
+			["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }),
 			["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
 			["<C-e>"] = cmp.mapping({
 				i = cmp.mapping.abort(),
