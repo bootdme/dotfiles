@@ -3,6 +3,7 @@ return function()
 	local lspconfig = require("lspconfig")
 	local mason = require("mason")
 	local mason_lspconfig = require("mason-lspconfig")
+	local formatting = require("completion.formatting")
 	require("lspconfig.ui.windows").default_options.border = "single"
 
 	-- https://github.com/williamboman/mason.nvim
@@ -117,4 +118,6 @@ return function()
 		sh = { formatter = shfmt, linter = shellcheck },
 		markdown = { formatter = prettier_d },
 	})
+
+	formatting.configure_format_on_save()
 end
