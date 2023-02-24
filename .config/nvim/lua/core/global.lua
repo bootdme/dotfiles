@@ -38,7 +38,6 @@ global["ts"] = {
 global["lsp"] = {
 	"bashls",
 	"emmet_ls",
-	"efm",
 	"jsonls",
 	"lua_ls",
 	"marksman",
@@ -55,12 +54,12 @@ global["null_ls"] = {
 	"prettierd",
 	"rustfmt",
 	"beautysh",
-	"shfmt",
 	"sql-formatter",
 	"stylua",
 
 	-- Linters
 	"eslint_d",
+	"selene",
 	"shellcheck",
 	"sqlfluff",
 }

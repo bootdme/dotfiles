@@ -3,7 +3,7 @@ return function()
 	local lspconfig = require("lspconfig")
 	local mason = require("mason")
 	local mason_lspconfig = require("mason-lspconfig")
-	local formatting = require("completion.formatting")
+
 	require("lspconfig.ui.windows").default_options.border = "single"
 
 	-- https://github.com/williamboman/mason.nvim
@@ -50,8 +50,6 @@ return function()
 			lspconfig.bashls.setup(final_opts)
 		end,
 
-		efm = function() end,
-
 		emmet_ls = function()
 			local _opts = require("completion.servers.emmet_ls")
 			local final_opts = vim.tbl_deep_extend("keep", _opts, opts)
@@ -88,36 +86,4 @@ return function()
 			lspconfig.vimls.setup(final_opts)
 		end,
 	})
-
-	local efmls = require("efmls-configs")
-
-	efmls.init({
-		capabilities = capabilities,
-		init_options = { documentFormatting = true, codeAction = true },
-	})
-
-	-- Formatters
-	local prettier_d = require("efmls-configs.formatters.prettier_d")
-	local shfmt = require("efmls-configs.formatters.shfmt")
-	local stylua = require("efmls-configs.formatters.stylua")
-	-- TODO: SQL
-
-	-- Linters
-	local eslint = require("efmls-configs.linters.eslint")
-	local shellcheck = require("efmls-configs.linters.shellcheck")
-	local vint = require("efmls-configs.linters.vint")
-
-	efmls.setup({
-		vim = { formatter = vint },
-		lua = { formatter = stylua },
-		javascript = { formatter = prettier_d, linter = eslint },
-		json = { formatter = prettier_d, linter = eslint },
-		javascriptreact = { formatter = prettier_d, linter = eslint },
-		html = { formatter = prettier_d },
-		css = { formatter = prettier_d },
-		sh = { formatter = shfmt, linter = shellcheck },
-		markdown = { formatter = prettier_d },
-	})
-
-	formatting.configure_format_on_save()
 end
