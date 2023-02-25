@@ -60,7 +60,6 @@ global["null_ls"] = {
 	-- Linters
 	"eslint_d",
 	"selene",
-	"shellcheck",
 	"sqlfluff",
 }
 

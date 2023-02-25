@@ -29,11 +29,6 @@ return function()
 		b.diagnostics.sqlfluff.with({
 			extra_args = { "--dialect", "tsql" },
 		}),
-		b.diagnostics.selene,
-		b.diagnostics.shellcheck.with({
-			diagnostics_format = "[#{c}] #{m} (#{s})",
-			extra_args = { "-o", "all" },
-		}),
 	}
 
 	null_ls.setup({
