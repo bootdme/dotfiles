@@ -1,5 +1,9 @@
 -- Variables
-local set = require("core.func").set
+local set = function(mode, lhs, rhs, opts)
+	local options = { noremap = true, silent = true }
+	options = vim.tbl_deep_extend("force", options, opts or {})
+	vim.api.nvim_set_keymap(mode, lhs, rhs, options)
+end
 
 -- Move to beginning/end of line
 set("n", "H", "^")

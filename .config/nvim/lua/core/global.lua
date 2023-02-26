@@ -38,6 +38,7 @@ global["ts"] = {
 global["lsp"] = {
 	"bashls",
 	"emmet_ls",
+	"eslint",
 	"jsonls",
 	"lua_ls",
 	"marksman",
@@ -58,7 +59,6 @@ global["null_ls"] = {
 	"stylua",
 
 	-- Linters
-	"eslint_d",
 	"selene",
 	"sqlfluff",
 }

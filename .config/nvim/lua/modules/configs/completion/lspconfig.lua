@@ -37,6 +37,7 @@ return function()
 	}
 
 	-- Setup servers
+	-- https://github.com/neovim/nvim-lspconfig/tree/master/lua/lspconfig/server_configurations
 	mason_lspconfig.setup_handlers({
 		function(server)
 			require("lspconfig")[server].setup({
@@ -54,6 +55,12 @@ return function()
 			local _opts = require("completion.servers.emmet_ls")
 			local final_opts = vim.tbl_deep_extend("keep", _opts, opts)
 			lspconfig.emmet_ls.setup(final_opts)
+		end,
+
+		eslint = function()
+			local _opts = require("completion.servers.eslint")
+			local final_opts = vim.tbl_deep_extend("keep", _opts, opts)
+			lspconfig.eslint.setup(final_opts)
 		end,
 
 		jsonls = function()

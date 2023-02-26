@@ -1,5 +1,5 @@
 -- https://github.com/CharlesChiuGit/nvimdots.lua/blob/main/lua/core/pack.lua
-local fn, api = vim.fn, vim.api
+local fn = vim.fn
 local global = require("core.global")
 
 local vim_path = global.vim_path
@@ -13,7 +13,7 @@ local lazy = {}
 function lazy:load_plugins()
 	self.modules = {}
 
-	function get_plugins()
+	local get_plugins = function()
 		local list = {}
 		local plugins_list = vim.split(fn.glob(modules_dir .. "/plugins/*.lua"), "\n")
 
