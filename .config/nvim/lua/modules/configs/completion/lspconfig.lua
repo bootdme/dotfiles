@@ -1,169 +1,144 @@
--- https://github.com/neovim/nvim-lspconfig
 return function()
-	local u = require("core.func")
+    local u = require('core.func')
 
-	local lspconfig = require("lspconfig")
-	local lsp = vim.lsp
+    local lsp = vim.lsp
 
-	local mason = require("mason")
-	local mason_lspconfig = require("mason-lspconfig")
+    lsp.set_log_level(vim.log.levels.ERROR)
 
-	local eslint_disabled_buffers = {}
+    local eslint_disabled_buffers = {}
 
-	local border_opts = { border = "single", focusable = false, scope = "line" }
-	vim.diagnostic.config({ virtual_text = false, float = border_opts })
+    -- Manage LSP diagnostics
+    vim.diagnostic.config({
+        underline = false,
+        virtual_text = false,
+        virtual_lines = false,
+        signs = true,
+        severity_sort = true,
+        update_in_insert = true,
+        float = {
+            header = 'Diagnostics',
+            source = 'always',
+            format = function(diagnostic)
+                if diagnostic.code then
+                    return string.format('[%s]\n%s', diagnostic.code, diagnostic.message)
+                else
+                    return diagnostic.message
+                end
+            end,
+        },
+    })
 
-	lsp.handlers["textDocument/signatureHelp"] = lsp.with(lsp.handlers.signature_help, border_opts)
-	lsp.handlers["textDocument/hover"] = lsp.with(lsp.handlers.hover, border_opts)
+    -- Close signature help
+    lsp.handlers['textDocument/signatureHelp'] = lsp.with(lsp.handlers.signature_help, {
+        border = 'shadow',
+        close_events = { 'CursorMoved', 'BufHidden', 'InsertCharPre' },
+    })
 
-	-- track buffers that eslint can't format to use prettier instead
-	lsp.handlers["textDocument/publishDiagnostics"] = function(_, result, ctx, config)
-		local client = lsp.get_client_by_id(ctx.client_id)
-		if not (client and client.name == "eslint") then
-			goto done
-		end
+    -- Handle hover
+    lsp.handlers['textDocument/hover'] = lsp.with(lsp.handlers.hover, {
+        border = 'shadow',
+    })
 
-		for _, diagnostic in ipairs(result.diagnostics) do
-			if diagnostic.message:find("The file does not match your project config") then
-				local bufnr = vim.uri_to_bufnr(result.uri)
-				eslint_disabled_buffers[bufnr] = true
-			end
-		end
+    -- Track buffers that eslint can't format to use prettier instead
+    lsp.handlers['textDocument/publishDiagnostics'] = function(_, result, ctx, config)
+        local client = lsp.get_client_by_id(ctx.client_id)
+        if not (client and client.name == 'eslint') then
+            goto done
+        end
 
-		::done::
-		return lsp.diagnostic.on_publish_diagnostics(nil, result, ctx, config)
-	end
+        for _, diagnostic in ipairs(result.diagnostics) do
+            if diagnostic.message:find('The file does not match your project config') then
+                local bufnr = vim.uri_to_bufnr(result.uri)
+                eslint_disabled_buffers[bufnr] = true
+            end
+        end
 
-	local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
+        ::done::
+        return lsp.diagnostic.on_publish_diagnostics(nil, result, ctx, config)
+    end
 
-	local lsp_formatting = function(bufnr)
-		local clients = vim.lsp.get_active_clients({ bufnr = bufnr })
-		lsp.buf.format({
-			bufnr = bufnr,
-			filter = function(client)
-				if client.name == "solargraph" then
-					return true
-				end
+    local augroup = vim.api.nvim_create_augroup('LspFormatting', {})
 
-				if client.name == "eslint" then
-					return not eslint_disabled_buffers[bufnr]
-				end
+    local lsp_formatting = function(bufnr)
+        local clients = vim.lsp.get_active_clients({ bufnr = bufnr })
+        lsp.buf.format({
+            bufnr = bufnr,
+            filter = function(client)
+                if client.name == 'eslint' then
+                    return not eslint_disabled_buffers[bufnr]
+                end
 
-				if client.name == "null-ls" then
-					return not u.table.some(clients, function(_, other_client)
-						return other_client.name == "eslint" and not eslint_disabled_buffers[bufnr]
-					end)
-				end
-			end,
-		})
-	end
+                if client.name == 'null-ls' then
+                    return not u.table.some(clients, function(_, other_client)
+                        return other_client.name == 'eslint' and not eslint_disabled_buffers[bufnr]
+                    end)
+                end
+            end,
+        })
+    end
 
-	local on_attach =
-		function(client, bufnr)
-			if client.supports_method("textDocument/formatting") then
-				local formatting_cb = function()
-					lsp_formatting(bufnr)
-				end
+    local on_attach = function(client, bufnr)
+        -- Commands
+        u.buf_command(bufnr, 'LspHover', vim.lsp.buf.hover)
+        u.buf_command(bufnr, 'LspDiagPrev', vim.diagnostic.goto_prev)
+        u.buf_command(bufnr, 'LspDiagNext', vim.diagnostic.goto_next)
+        u.buf_command(bufnr, 'LspDiagLine', vim.diagnostic.open_float)
+        u.buf_command(bufnr, 'LspDiagQuickfix', vim.diagnostic.setqflist)
+        u.buf_command(bufnr, 'LspSignatureHelp', vim.lsp.buf.signature_help)
+        u.buf_command(bufnr, 'LspTypeDef', vim.lsp.buf.type_definition)
+        u.buf_command(bufnr, 'LspAct', function()
+            vim.lsp.buf.code_action()
+        end)
+        u.buf_command(bufnr, 'LspRename', function()
+            vim.lsp.buf.rename()
+        end)
 
-				u.buf_command(bufnr, "LspFormatting", formatting_cb)
-				u.buf_map(bufnr, "x", "<CR>", formatting_cb)
+        -- Telescope
+        u.buf_command(bufnr, 'LspRef', 'Telescope lsp_references')
+        u.buf_command(bufnr, 'LspSym', 'Telescope lsp_workspace_symbols')
+        u.buf_command(bufnr, 'LspDef', 'Telescope lsp_definitions')
 
-				vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
-				vim.api.nvim_create_autocmd("BufWritePre", {
-					group = augroup,
-					buffer = bufnr,
-					command = "LspFormatting",
-				})
-			end
-		end,
-		-- Mason Config
-		-- https://github.com/williamboman/mason.nvim
-		mason.setup({
-			ui = {
-				border = "single",
-			},
-			keymaps = {
-				toggle_server_expand = "<CR>",
-				install_server = "i",
-				update_server = "u",
-				check_server_version = "c",
-				update_all_servers = "U",
-				check_outdated_servers = "C",
-				uninstall_server = "X",
-				cancel_installation = "<C-c>",
-			},
-		})
+        -- Bindings
+        u.buf_set(bufnr, 'n', 'gi', ':LspRename<CR>')
+        u.buf_set(bufnr, 'n', 'K', ':LspHover<CR>')
+        u.buf_set(bufnr, 'n', '[a', ':LspDiagPrev<CR>')
+        u.buf_set(bufnr, 'n', ']a', ':LspDiagNext<CR>')
+        u.buf_set(bufnr, 'n', '<Leader>a', ':LspDiagLine<CR>')
+        u.buf_set(bufnr, 'i', '<C-x><C-x>', '<cmd> LspSignatureHelp<CR>')
 
-	-- Install LSP's via Mason
-	-- https://github.com/williamboman/mason-lspconfig.nvim
-	mason_lspconfig.setup({
-		ensure_installed = require("core.global").lsp,
-		automatic_installation = true,
-	})
+        u.buf_set(bufnr, 'n', 'gy', ':LspRef<CR>')
+        u.buf_set(bufnr, 'n', 'gh', ':LspTypeDef<CR>')
+        u.buf_set(bufnr, 'n', 'gd', ':LspDef<CR>')
+        u.buf_set(bufnr, 'n', 'ga', ':LspAct<CR>')
+        u.buf_set(bufnr, 'x', 'ga', function()
+            vim.lsp.buf.code_action() -- range
+        end)
 
-	local capabilities = lsp.protocol.make_client_capabilities()
-	capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
+        if client.supports_method('textDocument/formatting') then
+            local formatting_cb = function()
+                lsp_formatting(bufnr)
+            end
 
-	local opts = {
-		capabilities = capabilities,
-	}
+            u.buf_command(bufnr, 'LspFormatting', formatting_cb)
+            u.buf_set(bufnr, 'n', '<CR>', formatting_cb)
 
-	-- Setup servers
-	-- https://github.com/neovim/nvim-lspconfig/tree/master/lua/lspconfig/server_configurations
-	mason_lspconfig.setup_handlers({
-		function(server)
-			require("lspconfig")[server].setup({
-				on_attach = on_attach,
-                capabilities = capabilities,
-			})
-		end,
+            vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+            vim.api.nvim_create_autocmd('BufWritePre', {
+                group = augroup,
+                buffer = bufnr,
+                command = 'LspFormatting',
+            })
+        end
+    end
 
-		bashls = function()
-			local _opts = require("completion.servers.bashls")
-			local final_opts = vim.tbl_deep_extend("keep", _opts, opts)
-			lspconfig.bashls.setup(final_opts)
-		end,
+    -- Advertise to LSP servers that nvim-cmp supports LSP
+    local capabilities = lsp.protocol.make_client_capabilities()
+    capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
-		emmet_ls = function()
-			local _opts = require("completion.servers.emmet_ls")
-			local final_opts = vim.tbl_deep_extend("keep", _opts, opts)
-			lspconfig.emmet_ls.setup(final_opts)
-		end,
+    local mason = require('mason')
+    mason.setup()
 
-		eslint = function()
-			local _opts = require("completion.servers.eslint")
-			local final_opts = vim.tbl_deep_extend("keep", _opts, opts)
-			lspconfig.eslint.setup(final_opts)
-		end,
-
-		jsonls = function()
-			local _opts = require("completion.servers.jsonls")
-			local final_opts = vim.tbl_deep_extend("keep", _opts, opts)
-			lspconfig.jsonls.setup(final_opts)
-		end,
-
-		lua_ls = function()
-			local _opts = require("completion.servers.lua_ls")
-			local final_opts = vim.tbl_deep_extend("keep", _opts, opts)
-			lspconfig.lua_ls.setup(final_opts)
-		end,
-
-		marksman = function()
-			local _opts = require("completion.servers.marksman")
-			local final_opts = vim.tbl_deep_extend("keep", _opts, opts)
-			lspconfig.marksman.setup(final_opts)
-		end,
-
-		sqlls = function()
-			local _opts = require("completion.servers.sqlls")
-			local final_opts = vim.tbl_deep_extend("keep", _opts, opts)
-			lspconfig.sqlls.setup(final_opts)
-		end,
-
-		vimls = function()
-			local _opts = require("completion.servers.vimls")
-			local final_opts = vim.tbl_deep_extend("keep", _opts, opts)
-			lspconfig.vimls.setup(final_opts)
-		end,
-	})
+    for _, server in ipairs(require('core.global').lsp) do
+        require('completion.lsp.' .. server).setup(on_attach, capabilities)
+    end
 end

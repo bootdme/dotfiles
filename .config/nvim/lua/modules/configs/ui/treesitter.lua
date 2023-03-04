@@ -1,18 +1,35 @@
 -- https://github.com/nvim-treesitter/nvim-treesitter
 return function()
-	require("nvim-treesitter.configs").setup({
-		ensure_installed = require("core.global").ts,
+    require('nvim-treesitter.configs').setup({
+        -- A list of parser names that should be installed
+        ensure_installed = require('core.global').ts,
 
-		-- Install parsers asynchronously
-		sync_install = true,
+        -- Install parsers asynchronously
+        sync_install = true,
 
-		highlight = {
-			enable = true,
-		},
+        -- Automaticaly install missing parsers when entering buffer
+        -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
+        auto_install = false,
 
-		-- Disable tressitter indentation
-		indent = { enable = false },
-	})
+        highlight = {
+            enable = true,
+            disable = function(_, bufnr)
+                -- Disable on large files
+                return vim.api.nvim_buf_line_count(bufnr) > 5000
+                    -- Disable on files with long lines
+                    or vim.api.nvim_buf_get_lines(bufnr, 0, 1, false)[1]:len() > 500
+            end,
+        },
 
-	require("nvim-treesitter.install").prefer_git = true
+        -- Disable tressitter indentation
+        indent = { enable = false },
+
+        -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
+        -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
+        -- Using this option may slow down your editor, and you may see some duplicate highlights.
+        -- Instead of true it can also be a list of languages
+        additional_vim_regex_highlighting = false,
+    })
+
+    require('nvim-treesitter.install').prefer_git = true
 end
