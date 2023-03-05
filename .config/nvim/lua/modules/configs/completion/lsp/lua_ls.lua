@@ -10,24 +10,33 @@ local library_files = vim.api.nvim_get_runtime_file('', true)
 -- Add local nvim config to enable goto definitions, etc
 table.insert(library_files, global.vim_path .. '/lua')
 
-local root_files = {
-    '.luarc.json',
-    '.luacheckrc',
-    '.stylua.toml',
-    'stylua.toml',
-    'selene.toml',
-}
+local function find_up(start, names)
+    return vim.fs.find(names, { path = vim.fs.dirname(start), upward = true })[1]
+end
+
+local root_dir = function(fname)
+    return vim.fs.dirname(find_up(fname, {
+        '.luarc.json',
+        '.luarc.jsonc',
+        '.luacheckrc',
+        '.stylua.toml',
+        'stylua.toml',
+        'selene.toml',
+        'selene.yml',
+    })) or find_up(fname, {
+        'lua', -- A lua dir.
+    }) or vim.fs.dirname(find_up(fname, {
+        '.git',
+    })) or os.getenv('HOME')
+end
 
 local settings = {
     Lua = {
         runtime = {
             version = 'LuaJIT',
-            path = runtime_path,
         },
         completion = {
             enable = true,
-            callSnippet = 'Both',
-            keywordSnippet = 'Both',
         },
         diagnostics = {
             enable = true,
@@ -41,13 +50,10 @@ local settings = {
                 'after_each',
             },
             disable = { 'different-requires', 'lowercase-global' },
-            -- neededFileStatus = { ["codestyle-check"] = "Any" },
         },
         workspace = {
-            library = {
-                library = library_files,
-                checkThirdParty = false,
-            },
+            library = library_files,
+            checkThirdParty = false,
         },
 
         format = { enable = false },
@@ -65,6 +71,7 @@ M.setup = function(on_attach, capabilities)
         on_attach = on_attach,
         capabilities = capabilities,
         settings = settings,
+        root_dir = root_dir,
         flags = {
             debounce_text_changes = 150,
         },
