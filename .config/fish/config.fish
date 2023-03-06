@@ -2,6 +2,7 @@
 switch (uname)
     case Darwin
         fish_add_path /opt/homebrew/bin
+        fish_add_path /opts/homebrew/sbin
         /Applications/kitty.app/Contents/MacOS/kitty + complete setup fish | source
 end
 
