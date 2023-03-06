@@ -27,7 +27,7 @@ local sources = {
 		extra_args = { "--dialect", "tsql" },
 	}),
 	diagnostics.shellcheck,
-	-- diagnostics.selene,
+	diagnostics.selene,
 }
 
 local M = {}
