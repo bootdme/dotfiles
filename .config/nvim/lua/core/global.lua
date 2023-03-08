@@ -67,6 +67,8 @@ global['lsp_format_lint'] = {
     'stylua',
 
     -- Linters
+    'selene',
+    'shellcheck',
     'sqlfluff',
 }
 
