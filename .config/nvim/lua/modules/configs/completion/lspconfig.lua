@@ -15,7 +15,8 @@ return function()
         signs = true,
         severity_sort = true,
         float = {
-            header = 'Diagnostics',
+            focusable = false,
+            style = 'minimal',
             source = 'always',
             format = function(diagnostic)
                 if diagnostic.code then

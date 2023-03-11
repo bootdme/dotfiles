@@ -28,7 +28,9 @@ local sources = {
         extra_args = { '--dialect', 'tsql' },
     }),
     diagnostics.shellcheck,
-    diagnostics.selene,
+    diagnostics.selene.with({
+        extra_args = { '--config', vim.fn.expand('~/.config/nvim/selene.toml') },
+    }),
 }
 
 local M = {}

@@ -8,12 +8,13 @@ table.insert(runtime_path, 'lua/?/init.lua')
 local settings = {
     Lua = {
         runtime = {
-            diagnostics = {
-                enable = true,
-                globals = { 'vim' },
-            },
             version = 'LuaJIT',
             path = runtime_path,
+        },
+        diagnostics = {
+            enable = true,
+            globals = { 'vim' },
+            disable = { 'different-requires' },
         },
         completion = {
             enable = true,
