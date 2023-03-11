@@ -9,7 +9,7 @@ return function()
         -- Automatically install / update on startup
         run_on_start = true,
 
-        -- Set a delay before the installation starts
-        start_delay = 1000,
+        -- Set a delay before the installation starts (fixes treesitter load)
+        start_delay = 2000,
     })
 end

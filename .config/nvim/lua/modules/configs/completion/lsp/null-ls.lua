@@ -29,7 +29,11 @@ local sources = {
     }),
     diagnostics.shellcheck,
     diagnostics.selene.with({
-        extra_args = { '--config', vim.fn.expand('~/.config/nvim/selene.toml') },
+        cwd = function()
+            return vim.fs.dirname(
+                vim.fs.find({ 'selene.toml' }, { upward = true, path = vim.api.nvim_buf_get_name(0) })[1]
+            ) or vim.fs.normalize('~/.config/nvim/selene.toml')
+        end,
     }),
 }
 
