@@ -9,6 +9,7 @@ completion['neovim/nvim-lspconfig'] = {
             'jose-elias-alvarez/null-ls.nvim',
             dependencies = { 'nvim-lua/plenary.nvim' },
         },
+        { 'b0o/schemastore.nvim' },
         { 'williamboman/mason.nvim' },
         { 'williamboman/mason-lspconfig.nvim' },
         {

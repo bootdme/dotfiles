@@ -29,10 +29,9 @@ local sources = {
     }),
     diagnostics.shellcheck,
     diagnostics.selene.with({
-        cwd = function()
-            return vim.fs.dirname(
-                vim.fs.find({ 'selene.toml' }, { upward = true, path = vim.api.nvim_buf_get_name(0) })[1]
-            ) or vim.fs.normalize('~/.config/nvim/selene.toml')
+        cwd = function(_params)
+            return vim.fs.dirname(vim.fs.find({ 'selene.toml' }, { upward = true })[1])
+                or vim.fs.normalize('~/.config/nvim/selene.toml')
         end,
     }),
 }
@@ -41,7 +40,7 @@ local M = {}
 
 M.setup = function(on_attach)
     null_ls.setup({
-        -- debug = true,
+        debug = true,
         sources = sources,
         on_attach = on_attach,
     })
