@@ -15,14 +15,14 @@ local sources = {
     }),
     formatting.rustfmt,
     formatting.sql_formatter.with({
-        extra_args = { '--language' },
+        extra_args = { '--language', 'tsql' },
     }),
     formatting.stylua,
     formatting.fish_indent,
 
     -- Diagnostics
     diagnostics.markdownlint.with({
-        extra_args = { '--disable MD033' },
+        extra_args = { '-r', '~MD013,~MD036,~MD025' },
     }),
     diagnostics.sqlfluff.with({
         extra_args = { '--dialect', 'tsql' },
@@ -41,7 +41,7 @@ local M = {}
 
 M.setup = function(on_attach)
     null_ls.setup({
-        debug = true,
+        -- debug = true,
         sources = sources,
         on_attach = on_attach,
     })

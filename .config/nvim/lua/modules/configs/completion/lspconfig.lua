@@ -3,7 +3,8 @@ return function()
 
     local lsp = vim.lsp
 
-    lsp.set_log_level(vim.log.levels.ERROR)
+    -- For LSP debugging
+    lsp.set_log_level(vim.log.levels.DEBUG)
 
     local eslint_disabled_buffers = {}
 
@@ -13,7 +14,6 @@ return function()
         virtual_text = false,
         virtual_lines = false,
         signs = true,
-        severity_sort = true,
         float = {
             focusable = false,
             style = 'minimal',

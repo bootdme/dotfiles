@@ -11,19 +11,19 @@ local get_map_options = function(custom_options)
     return options
 end
 
-M.buf_set = function(bufnr, mode, target, source, opts)
-    opts = opts or {}
-    opts.buffer = bufnr
-
-    M.set(mode, target, source, get_map_options(opts))
-end
-
 M.set = function(mode, target, source, opts)
     vim.keymap.set(mode, target, source, get_map_options(opts))
 end
 
 M.command = function(name, fn, opts)
     api.nvim_create_user_command(name, fn, opts or {})
+end
+
+M.buf_set = function(bufnr, mode, target, source, opts)
+    opts = opts or {}
+    opts.buffer = bufnr
+
+    M.set(mode, target, source, get_map_options(opts))
 end
 
 M.buf_command = function(bufnr, name, fn, opts)
