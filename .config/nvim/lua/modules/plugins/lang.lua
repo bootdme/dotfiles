@@ -1,5 +1,10 @@
 local lang = {}
 
+lang['chrisbra/csv.vim'] = {
+    lazy = true,
+    ft = 'csv',
+}
+
 lang['simrat39/rust-tools.nvim'] = {
     lazy = true,
     ft = 'rust',
