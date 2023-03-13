@@ -26,3 +26,7 @@ set('n', '<leader>ll', '<cmd>Lazy log<cr>')
 set('n', '<leader>lp', '<cmd>Lazy profile<cr>')
 set('n', '<leader>lu', '<cmd>Lazy update<cr>')
 set('n', '<leader>lx', '<cmd>Lazy clean<cr>')
+
+-- d - debug
+set('n', '<leader>db', '<cmd>debug: Toggle breakpoint<cr>')
+set('n', '<leader>dbl', '<cmd>debug: List breakpoint(s)<cr>')

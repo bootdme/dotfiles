@@ -70,6 +70,14 @@ global['lsp_format_lint'] = {
     'selene',
     'shellcheck',
     'sqlfluff',
+
+    -- DAPs
+    'bash-debug-adapter',
+    'node-debug2-adapter',
+    'chrome-debug-adapter',
+    'firefox-debug-adapter',
+    'cpptools',
+    'codelldb',
 }
 
 global:load_variables()
