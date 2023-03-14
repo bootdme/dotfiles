@@ -27,8 +27,8 @@ return function()
             prompt_prefix = '   ',
             winblend = 0,
             file_ignore_patterns = {
-                '.git/',
                 '.cache',
+                '.local',
                 '%.class',
                 '%.pdf',
                 '%.mkv',
@@ -52,15 +52,8 @@ return function()
                 ignore_patterns = { '*.git/*', '*/tmp/*' },
                 disable_devicons = false,
                 workspaces = {
-                    ['conf'] = '/home/bootdme/.config',
-                    ['data'] = '/home/bootdme/.local/share',
-                },
-            },
-            repo = {
-                list = {
-                    file_ignore_patterns = {
-                        '/%.local/',
-                    },
+                    ['conf'] = '/Users/bootdme/.config' or '/home/bootdme/.config',
+                    ['data'] = '/Users/bootdme/.local/share' or '/home/bootdme/.local/share',
                 },
             },
         },
