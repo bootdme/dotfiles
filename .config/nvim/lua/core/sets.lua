@@ -26,3 +26,11 @@ set('n', '<leader>ll', '<cmd>Lazy log<cr>')
 set('n', '<leader>lp', '<cmd>Lazy profile<cr>')
 set('n', '<leader>lu', '<cmd>Lazy update<cr>')
 set('n', '<leader>lx', '<cmd>Lazy clean<cr>')
+
+-- f - find
+set('n', '<leader>fr', '<cmd>Telescope frecency<cr>')
+set('n', '<leader>fo', '<cmd>Telescope oldfiles<cr>')
+set('n', '<leader>ff', '<cmd>Telescope find_files<cr>')
+set('n', '<leader>fb', '<cmd>Telescope buffers<cr>')
+set('n', '<leader>fs', '<cmd>Telescope grep_string<cr>')
+set('n', '<leader>fp', '<cmd>Telescope repo<cr>')
