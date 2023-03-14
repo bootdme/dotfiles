@@ -134,7 +134,9 @@ return function()
     capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
     local mason = require('mason')
-    mason.setup()
+    mason.setup({
+        log_level = vim.log.levels.ERROR,
+    })
 
     for _, server in ipairs(require('core.global').lsp) do
         require('completion.lsp.' .. server).setup(on_attach, capabilities)

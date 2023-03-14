@@ -46,7 +46,7 @@ global['lsp'] = {
 }
 -- Mason tool installer
 -- https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim
-global['lsp_format_lint'] = {
+global['lsp_format_lint_dap'] = {
     -- LSPs
     'bash-language-server',
     'emmet-ls',
@@ -77,7 +77,6 @@ global['lsp_format_lint'] = {
     'chrome-debug-adapter',
     'firefox-debug-adapter',
     'cpptools',
-    'codelldb',
 }
 
 global:load_variables()
