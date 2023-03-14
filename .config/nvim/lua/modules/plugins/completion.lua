@@ -28,6 +28,7 @@ completion['hrsh7th/nvim-cmp'] = {
             'L3MON4D3/LuaSnip',
             dependencies = { 'rafamadriz/friendly-snippets' },
             config = require('completion.luasnip'),
+            build = 'make install_jsregexp',
         },
         { 'onsails/lspkind.nvim' },
         { 'lukas-reineke/cmp-under-comparator' },
