@@ -9,6 +9,7 @@ return function()
                 '--line-number',
                 '--column',
                 '--smart-case',
+                '--hidden',
             },
             layout_strategy = 'horizontal',
             layout_config = {
@@ -25,18 +26,16 @@ return function()
                 preview_cutoff = 120,
             },
             prompt_prefix = '   ',
-            winblend = 0,
+            dynamic_preview_title = true,
+            winblend = 4,
             file_ignore_patterns = {
                 '.cache',
                 '.local',
-                '%.class',
                 '%.pdf',
                 '%.mkv',
                 '%.mp4',
                 '%.zip',
                 'node_modules/',
-                'target/',
-                'docs/',
             },
         },
         extensions = {
