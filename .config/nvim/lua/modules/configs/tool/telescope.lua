@@ -1,4 +1,6 @@
 return function()
+    local lga_actions = require('telescope-live-grep-args.actions')
+
     require('telescope').setup({
         defaults = {
             vimgrep_arguments = {
@@ -47,12 +49,19 @@ return function()
             },
             frecency = {
                 show_scores = true,
-                show_unindexed = true,
-                ignore_patterns = { '*.git/*', '*/tmp/*' },
-                disable_devicons = false,
                 workspaces = {
                     ['conf'] = '/Users/bootdme/.config' or '/home/bootdme/.config',
                     ['data'] = '/Users/bootdme/.local/share' or '/home/bootdme/.local/share',
+                },
+            },
+            live_grep_args = {
+                auto_quoting = true, -- enable/disable auto-quoting
+                -- define mappings, e.g.
+                mappings = { -- extend mappings
+                    i = {
+                        ['<C-k>'] = lga_actions.quote_prompt(),
+                        ['<C-i>'] = lga_actions.quote_prompt({ postfix = ' --iglob ' }),
+                    },
                 },
             },
         },
@@ -61,5 +70,6 @@ return function()
     require('telescope').load_extension('env')
     require('telescope').load_extension('frecency')
     require('telescope').load_extension('fzf')
+    require('telescope').load_extension('live_grep_args')
     require('telescope').load_extension('repo')
 end
