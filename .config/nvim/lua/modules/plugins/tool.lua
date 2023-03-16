@@ -10,7 +10,6 @@ tool['nvim-telescope/telescope.nvim'] = {
         { 'LinArcX/telescope-env.nvim' },
         { 'cljoly/telescope-repo.nvim' },
         { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
-        { 'nvim-telescope/telescope-frecency.nvim', dependencies = { { 'kkharji/sqlite.lua' } } },
         { 'nvim-telescope/telescope-live-grep-args.nvim' },
     },
 }

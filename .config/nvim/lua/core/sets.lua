@@ -28,7 +28,6 @@ set('n', '<leader>lu', '<cmd>Lazy update<cr>')
 set('n', '<leader>lx', '<cmd>Lazy clean<cr>')
 
 -- f - find
-set('n', '<leader>fr', '<cmd>Telescope frecency<cr>')
 set('n', '<leader>fh', '<cmd>Telescope help_tags<cr>')
 set('n', '<leader>fc', '<cmd>Telescope commands<cr>')
 set('n', '<leader>fk', '<cmd>Telescope keymaps<cr>')

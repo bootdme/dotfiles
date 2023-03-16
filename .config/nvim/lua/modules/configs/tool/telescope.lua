@@ -47,13 +47,6 @@ return function()
                 override_file_sorter = true,
                 case_mode = 'smart_case',
             },
-            frecency = {
-                show_scores = true,
-                workspaces = {
-                    ['conf'] = '/Users/bootdme/.config' or '/home/bootdme/.config',
-                    ['data'] = '/Users/bootdme/.local/share' or '/home/bootdme/.local/share',
-                },
-            },
             live_grep_args = {
                 auto_quoting = true, -- enable/disable auto-quoting
                 -- define mappings, e.g.
@@ -68,7 +61,6 @@ return function()
     })
 
     require('telescope').load_extension('env')
-    require('telescope').load_extension('frecency')
     require('telescope').load_extension('fzf')
     require('telescope').load_extension('live_grep_args')
     require('telescope').load_extension('repo')
