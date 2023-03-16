@@ -17,6 +17,7 @@ tool['nvim-telescope/telescope.nvim'] = {
 tool['mfussenegger/nvim-dap'] = {
     lazy = true,
     cmd = {
+        'Dap',
         'DapSetLogLevel',
         'DapShowLog',
         'DapContinue',
