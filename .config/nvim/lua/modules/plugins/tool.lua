@@ -14,4 +14,8 @@ tool['nvim-telescope/telescope.nvim'] = {
     },
 }
 
+tool['folke/which-key.nvim'] = {
+    event = 'VeryLazy',
+}
+
 return tool
