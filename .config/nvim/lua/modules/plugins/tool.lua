@@ -14,29 +14,4 @@ tool['nvim-telescope/telescope.nvim'] = {
     },
 }
 
-tool['mfussenegger/nvim-dap'] = {
-    lazy = true,
-    cmd = {
-        'DapSetLogLevel',
-        'DapShowLog',
-        'DapContinue',
-        'DapToggleBreakpoint',
-        'DapToggleRepl',
-        'DapStepOver',
-        'DapStepInto',
-        'DapStepOut',
-        'DapTerminate',
-    },
-    config = require('tool.dap'),
-    dependencies = {
-        { 'rcarriga/nvim-dap-ui' },
-        { 'theHamsta/nvim-dap-virtual-text' },
-        { 'jbyuki/one-small-step-for-vimkind' },
-    },
-}
-
-tool['folke/which-key.nvim'] = {
-    event = 'VeryLazy',
-}
-
 return tool

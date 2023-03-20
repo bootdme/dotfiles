@@ -72,11 +72,11 @@ global['lsp_format_lint_dap'] = {
     'sqlfluff',
 
     -- DAPs
-    'bash-debug-adapter',
-    'node-debug2-adapter',
-    'chrome-debug-adapter',
-    'firefox-debug-adapter',
-    'cpptools',
+    -- 'bash-debug-adapter',
+    -- 'node-debug2-adapter',
+    -- 'chrome-debug-adapter',
+    -- 'firefox-debug-adapter',
+    -- 'cpptools',
 }
 
 global:load_variables()
