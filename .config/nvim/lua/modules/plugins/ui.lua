@@ -13,6 +13,12 @@ ui['nvim-treesitter/nvim-treesitter'] = {
     config = require('ui.treesitter'),
 }
 
+ui['lewis6991/gitsigns.nvim'] = {
+    lazy = true,
+    event = 'BufReadPost',
+    config = require('ui.gitsigns'),
+}
+
 ui['lukas-reineke/indent-blankline.nvim'] = {
     lazy = true,
     event = 'BufReadPost',

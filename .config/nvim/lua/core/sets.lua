@@ -33,8 +33,23 @@ set('n', '<leader>ff', '<cmd>Telescope find_files<cr>', { desc = 'Find files' })
 set('n', '<leader>fb', '<cmd>Telescope buffers<cr>', { desc = 'Find buffer' })
 set('n', '<leader>fp', '<cmd>Telescope repo<cr>', { desc = 'Find repo' })
 set('n', '<leader>fe', '<cmd>Telescope env<cr>', { desc = 'Find environment' })
+set('n', '<leader>fgc', '<cmd>Telescope git_commits<cr>', { desc = 'Find git commits' })
+set('n', '<leader>fgs', '<cmd>Telescope git_status<cr>', { desc = 'Find git status' })
+set('n', '<leader>fgb', '<cmd>Telescope git_branches<cr>', { desc = 'Find git branches' })
 
 -- g - git
 set('n', 'gps', '<cmd>G push<cr>', { desc = 'Git Push' })
 set('n', 'gpl', '<cmd>G pull<cr>', { desc = 'Git Pull' })
 set('n', '<leader>G', '<cmd>G<cr>', { desc = 'Git Fugitive' })
+
+-- h - hunk
+set('n', ']g', '<cmd>Gitsigns next_hunk<cr>', { desc = 'Next hunk' })
+set('n', '[g', '<cmd>Gitsigns prev_hunk<cr>', { desc = 'Previous hunk' })
+set({ 'n', 'v' }, '<leader>hs', '<cmd>Gitsigns stage_hunk<cr>', { desc = 'Hunk Stage' })
+set({ 'n', 'v' }, '<leader>hr', '<cmd>Gitsigns reset_hunk<cr>', { desc = 'Hunk Reset' })
+set('n', '<leader>hu', '<cmd>Gitsigns undo_stage_hunk<cr>', { desc = 'Hunk Undo' })
+set('n', '<leader>hR', '<cmd>Gitsigns reset_buffer<cr>', { desc = 'Reset buffer' })
+set('n', '<leader>hp', '<cmd>Gitsigns preview_hunk<cr>', { desc = 'Hunk Preview' })
+set('n', '<leader>hb', '<cmd>lua require("gitsigns.actions").blame_line({ full = true })<cr>', { desc = 'Blame line' })
+
+set('n', '<leader>td', '<cmd>Gitsigns toggle_deleted<cr>', { desc = 'Toggle Deleted' })
