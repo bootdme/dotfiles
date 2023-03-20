@@ -38,3 +38,8 @@ set('n', '<leader>fb', '<cmd>Telescope buffers<cr>')
 set('n', '<leader>fs', '<cmd>Telescope grep_string<cr>')
 set('n', '<leader>fp', '<cmd>Telescope repo<cr>')
 set('n', '<leader>fe', '<cmd>Telescope env<cr>')
+
+-- g - git
+set('n', 'gps', '<cmd>G push<cr>')
+set('n', 'gpl', '<cmd>G pull<cr>')
+set('n', '<leader>G', '<cmd>G<cr>')
