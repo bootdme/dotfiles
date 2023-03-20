@@ -3,6 +3,8 @@ return function()
     local dapui = require('dapui')
     local dapvt = require('nvim-dap-virtual-text')
 
+    dap.set_log_level('INFO')
+
     dapui.setup()
     dapvt.setup()
 
@@ -41,4 +43,5 @@ return function()
     )
 
     require('tool.dap.dap-osv')
+    require('tool.dap.dap-cpptools')
 end
