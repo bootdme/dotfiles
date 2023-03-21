@@ -22,6 +22,7 @@ tool['nvim-telescope/telescope.nvim'] = {
     dependencies = {
         { 'nvim-tree/nvim-web-devicons' },
         { 'nvim-lua/plenary.nvim' },
+        { 'nvim-lua/popup.nvim' },
         { 'LinArcX/telescope-env.nvim' },
         { 'cljoly/telescope-repo.nvim' },
         { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
