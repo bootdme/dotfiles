@@ -31,4 +31,12 @@ ui['nvim-lualine/lualine.nvim'] = {
     config = require('ui.lualine'),
 }
 
+ui['itchyny/vim-highlighturl'] = {
+    lazy = true,
+    event = 'BufReadPost',
+    config = function()
+        vim.g.highlighturl_guifg = '#8AB4F8'
+    end,
+}
+
 return ui

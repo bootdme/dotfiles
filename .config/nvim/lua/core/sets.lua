@@ -53,3 +53,7 @@ set('n', '<leader>hp', '<cmd>Gitsigns preview_hunk<cr>', { desc = 'Hunk Preview'
 set('n', '<leader>hb', '<cmd>lua require("gitsigns.actions").blame_line({ full = true })<cr>', { desc = 'Blame line' })
 
 set('n', '<leader>td', '<cmd>Gitsigns toggle_deleted<cr>', { desc = 'Toggle Deleted' })
+
+-- m - markdown
+set('n', '<leader>mp', '<cmd>MarkdownPreviewToggle<cr>', { desc = 'Markdown Preview' })
+set('n', '<leader>ms', '<cmd>MarkdownPreviewStop<cr>', { desc = 'Markdown Stop' })
