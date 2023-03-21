@@ -5,6 +5,16 @@ tool['tpope/vim-fugitive'] = {
     cmd = { 'Git', 'G' },
 }
 
+tool['mbbill/undotree'] = {
+    lazy = true,
+    cmd = 'UndotreeToggle',
+}
+
+tool['dstein64/vim-startuptime'] = {
+    lazy = true,
+    cmd = 'StartupTime',
+}
+
 tool['nvim-telescope/telescope.nvim'] = {
     lazy = true,
     cmd = 'Telescope',

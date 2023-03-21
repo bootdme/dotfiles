@@ -66,3 +66,6 @@ set(
     '<cmd>lua require("nvim-comment-frame").add_multiline_comment()<cr>',
     { desc = 'Add multiline comment' }
 )
+
+-- u - undo
+set('n', '<leader>ut', '<cmd>UndotreeToggle<cr>', { desc = 'Undotree Toggle' })

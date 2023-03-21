@@ -1,5 +1,4 @@
 return function()
-    local u = require('core.func')
     require('gitsigns').setup({
         signs = {
             add = {
