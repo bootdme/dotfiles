@@ -57,3 +57,12 @@ set('n', '<leader>td', '<cmd>Gitsigns toggle_deleted<cr>', { desc = 'Toggle Dele
 -- m - markdown
 set('n', '<leader>mp', '<cmd>MarkdownPreviewToggle<cr>', { desc = 'Markdown Preview' })
 set('n', '<leader>ms', '<cmd>MarkdownPreviewStop<cr>', { desc = 'Markdown Stop' })
+
+-- c - commment
+set('n', '<leader>cf', '<cmd>lua require("nvim-comment-frame").add_comment()<cr>', { desc = 'Add comment' })
+set(
+    'n',
+    '<leader>cF',
+    '<cmd>lua require("nvim-comment-frame").add_multiline_comment()<cr>',
+    { desc = 'Add multiline comment' }
+)
