@@ -15,6 +15,27 @@ tool['dstein64/vim-startuptime'] = {
     cmd = 'StartupTime',
 }
 
+tool['mfussenegger/nvim-dap'] = {
+    lazy = true,
+    cmd = {
+        'DapSetLogLevel',
+        'DapShowLog',
+        'DapContinue',
+        'DapToggleBreakpoint',
+        'DapToggleRepl',
+        'DapStepOver',
+        'DapStepInto',
+        'DapStepOut',
+        'DapTerminate',
+    },
+    config = require('tool.dap'),
+    dependencies = {
+        { 'rcarriga/nvim-dap-ui' },
+        { 'theHamsta/nvim-dap-virtual-text' },
+        { 'jbyuki/one-small-step-for-vimkind' },
+    },
+}
+
 tool['nvim-telescope/telescope.nvim'] = {
     lazy = true,
     cmd = 'Telescope',

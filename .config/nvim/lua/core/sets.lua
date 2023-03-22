@@ -69,3 +69,15 @@ set(
 
 -- u - undo
 set('n', '<leader>ut', '<cmd>UndotreeToggle<cr>', { desc = 'Undotree Toggle' })
+
+-- d - dap
+set('n', '<leader>db', '<cmd>DapToggleBreakpoint<cr>')
+set('n', '<leader>dr', '<cmd>DapToggleRepl<cr>')
+set('n', '<leader>dq', '<cmd>DapTerminate<cr>')
+set('n', '<leader>dl', '<cmd>lua require("dap").run_last()<cr>')
+set('n', '<F5>', '<cmd>DapContinue<cr>')
+set('n', '<F10>', '<cmd>DapStepOver<cr>')
+set('n', '<F11>', '<cmd>DapStepInto<cr>')
+set('n', '<F12>', '<cmd>DapStepOut<cr>')
+set('n', '<leader>dB', '<cmd>lua require("dap").set_breakpoint(vim.fn.input("Breakpoint condition: "))<cr>')
+set('n', '<leader>dp', '<cmd>lua require("dap").set_breakpoint(nil, nil, vim.fn.input("Log point message: "))<cr>')

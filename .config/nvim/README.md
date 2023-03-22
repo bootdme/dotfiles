@@ -20,3 +20,4 @@
 - [ThePrimeagen](https://github.com/ThePrimeagen/init.lua/tree/249f3b14cc517202c80c6babd0f9ec548351ec71)
 - [Jint-lzxy](https://github.com/Jint-lzxy/nvimconfig)
 - [Traap](https://github.com/Traap/nvim)
+- [u0398](https://github.com/u0398/.dotfiles)
