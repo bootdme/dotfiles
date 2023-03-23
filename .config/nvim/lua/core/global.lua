@@ -76,7 +76,7 @@ global['lsp_format_lint_dap'] = {
     'node-debug2-adapter',
     'chrome-debug-adapter',
     'firefox-debug-adapter',
-    'cpptools',
+    'codelldb',
 }
 
 global:load_variables()

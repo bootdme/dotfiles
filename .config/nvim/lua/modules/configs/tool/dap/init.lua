@@ -43,4 +43,5 @@ return function()
     )
 
     require('tool.dap.dap-osv')
+    require('tool.dap.dap-codelldb')
 end
