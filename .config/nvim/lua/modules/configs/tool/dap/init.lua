@@ -3,7 +3,7 @@ return function()
     local dapui = require('dapui')
     local dapvt = require('nvim-dap-virtual-text')
 
-    dap.set_log_level('INFO')
+    dap.set_log_level('DEBUG')
 
     dapui.setup()
     dapvt.setup()

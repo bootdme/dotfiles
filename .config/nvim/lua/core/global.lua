@@ -53,6 +53,7 @@ global['lsp_format_lint_dap'] = {
     'eslint-lsp',
     'json-lsp',
     'lua-language-server',
+    'rust-analyzer',
     'marksman',
     'sqlls',
     'vim-language-server',
@@ -73,9 +74,8 @@ global['lsp_format_lint_dap'] = {
 
     -- DAPs
     'bash-debug-adapter',
-    'node-debug2-adapter',
+    'codelldb',
     'chrome-debug-adapter',
-    'firefox-debug-adapter',
     'codelldb',
 }
 

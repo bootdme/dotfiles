@@ -1,4 +1,8 @@
 return function()
+    local extension_path = vim.fn.stdpath('data') .. '/mason/packages/codelldb/extension'
+    local codelldb_path = extension_path .. '/adapter/codelldb'
+    local liblldb_path = extension_path .. 'lldb/lib/liblldb.dylib'
+
     local opts = {
         tools = { -- rust-tools options
 
@@ -160,11 +164,7 @@ return function()
 
         -- debugging stuff
         dap = {
-            adapter = {
-                type = 'executable',
-                command = vim.fn.stdpath('data') .. '/mason/bin/codelldb',
-                name = 'lldb',
-            },
+            adapter = require('rust-tools.dap').get_codelldb_adapter(codelldb_path, liblldb_path),
         },
     }
 
