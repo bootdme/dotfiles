@@ -37,6 +37,7 @@ local sources = {
         end,
     }),
     diagnostics.eslint_d,
+    diagnostics.fish,
 }
 
 local M = {}
