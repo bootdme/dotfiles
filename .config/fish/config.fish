@@ -37,6 +37,8 @@ set -gx NODE_REPL_HISTORY ''
 set -gx LESSHISTFILE $XDG_STATE_HOME/less/history
 set -gx LESSKEY $XDG_STATE_HOME/less/keys
 
+set -gx PATH "$HOME/.cargo/bin" $PATH
+
 fish_add_path ~/.local/share/nvim/mason/bin
 
 # Aliases
