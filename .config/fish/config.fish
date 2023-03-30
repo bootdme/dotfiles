@@ -57,6 +57,9 @@ alias c='clear'
 # Git bare repository for dotfiles
 alias config='git --git-dir=$HOME/.dot/ --work-tree=$HOME'
 
+# Chrome
+alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
+
 # Human readable disk commands
 alias df='df -h'
 alias du='du -ch'
