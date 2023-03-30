@@ -14,6 +14,7 @@ local sources = {
         extra_args = { '--no-semi', '--single-quote', '--jsx-single-quote' },
     }),
     formatting.rustfmt,
+    formatting.clang_format,
     formatting.sql_formatter.with({
         extra_args = { '--language', 'tsql' },
     }),
@@ -21,6 +22,7 @@ local sources = {
     formatting.fish_indent,
 
     -- Diagnostics
+    diagnostics.cpplint,
     diagnostics.markdownlint.with({
         extra_args = { '-r', '~MD013,~MD036,~MD025' },
     }),
@@ -29,11 +31,12 @@ local sources = {
     }),
     diagnostics.shellcheck,
     diagnostics.selene.with({
-        cwd = function(_params)
+        cwd = function()
             return vim.fs.dirname(vim.fs.find({ 'selene.toml' }, { upward = true })[1])
                 or vim.fs.normalize('~/.config/nvim/selene.toml')
         end,
     }),
+    diagnostics.eslint_d,
 }
 
 local M = {}

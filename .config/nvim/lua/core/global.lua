@@ -35,6 +35,7 @@ global['ts'] = {
 
 global['lsp'] = {
     'bashls',
+    'clangd',
     'emmet_ls',
     'eslint',
     'null-ls',
@@ -49,6 +50,7 @@ global['lsp'] = {
 global['lsp_format_lint_dap'] = {
     -- LSPs
     'bash-language-server',
+    'clangd',
     'emmet-ls',
     'eslint-lsp',
     'json-lsp',
@@ -60,6 +62,7 @@ global['lsp_format_lint_dap'] = {
 
     -- Formatters
     'cbfmt',
+    'clang-format',
     'shfmt',
     'markdownlint',
     'prettierd',
@@ -69,13 +72,14 @@ global['lsp_format_lint_dap'] = {
 
     -- Linters
     'selene',
+    'cpplint',
     'shellcheck',
+    'eslint_d',
     'sqlfluff',
 
     -- DAPs
     'bash-debug-adapter',
     'codelldb',
-    'chrome-debug-adapter',
     'codelldb',
 }
 
