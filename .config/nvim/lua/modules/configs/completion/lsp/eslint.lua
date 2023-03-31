@@ -2,12 +2,21 @@
 local M = {}
 
 M.setup = function(on_attach, capabilities)
-    require('lspconfig').eslint.setup({
+    local lspconfig = require('lspconfig')
+
+    lspconfig['eslint'].setup({
+        root_dir = lspconfig.util.root_pattern('.eslintrc', '.eslintrc.js', '.eslintrc.json'),
         on_attach = function(client, bufnr)
             on_attach(client, bufnr)
+
             client.server_capabilities.documentFormattingProvider = true
         end,
         capabilities = capabilities,
+        settings = {
+            format = {
+                enable = true,
+            },
+        },
         handlers = {
             -- this error shows up occasionally when formatting
             -- formatting actually works, so this will supress it

@@ -80,7 +80,7 @@ global['lsp_format_lint_dap'] = {
     -- DAPs
     'bash-debug-adapter',
     'codelldb',
-    'codelldb',
+    'js-debug-adapter',
 }
 
 global:load_variables()

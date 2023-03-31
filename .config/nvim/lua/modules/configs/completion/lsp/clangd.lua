@@ -1,3 +1,4 @@
+-- https://github.com/neovim/nvim-lspconfig/blob/master/lua/lspconfig/server_configurations/clangd.lua
 local M = {}
 
 local function get_binary_path(binary)

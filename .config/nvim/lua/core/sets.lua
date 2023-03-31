@@ -41,6 +41,7 @@ set('n', '<leader>fgb', '<cmd>Telescope git_branches<cr>', { desc = 'Find git br
 set('n', 'gps', '<cmd>G push<cr>', { desc = 'Git Push' })
 set('n', 'gpl', '<cmd>G pull<cr>', { desc = 'Git Pull' })
 set('n', '<leader>G', '<cmd>G<cr>', { desc = 'Git Fugitive' })
+set('n', '<leader>Gc', '<cmd>G commit<cr>', { desc = 'Git commit' })
 
 -- h - hunk
 set('n', ']g', '<cmd>Gitsigns next_hunk<cr>', { desc = 'Next hunk' })

@@ -31,6 +31,7 @@ tool['mfussenegger/nvim-dap'] = {
     config = require('tool.dap'),
     dependencies = {
         { 'rcarriga/nvim-dap-ui' },
+        { 'mxsdev/nvim-dap-vscode-js' },
         { 'theHamsta/nvim-dap-virtual-text' },
         { 'jbyuki/one-small-step-for-vimkind' },
     },
