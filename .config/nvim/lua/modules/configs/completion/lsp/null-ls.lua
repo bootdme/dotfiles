@@ -44,7 +44,7 @@ local M = {}
 
 M.setup = function(on_attach)
     null_ls.setup({
-        debug = true,
+        -- debug = true,
         sources = sources,
         on_attach = on_attach,
     })
