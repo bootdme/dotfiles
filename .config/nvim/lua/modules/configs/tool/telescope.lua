@@ -1,3 +1,4 @@
+-- https://github.com/nvim-telescope/telescope.nvim
 return function()
     local lga_actions = require('telescope-live-grep-args.actions')
 

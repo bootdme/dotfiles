@@ -1,8 +1,11 @@
 -- https://github.com/hrsh7th/nvim-cmp
 return function()
     local compare = require('cmp.config.compare')
+
+    -- nvim_replace_termcodes
     local t = require('core.func').t
 
+    -- Better sort completion
     compare.lsp_scores = function(entry1, entry2)
         local diff
 
@@ -57,8 +60,7 @@ return function()
             ['<C-k>'] = cmp.mapping.select_prev_item(),
             ['<C-j>'] = cmp.mapping.select_next_item(),
             ['<C-d>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
-            ['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
-            ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
+            ['<C-u>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
             ['<C-e>'] = cmp.mapping({
                 i = cmp.mapping.abort(),
                 c = cmp.mapping.close(),
@@ -68,15 +70,6 @@ return function()
                     cmp.select_next_item()
                 elseif require('luasnip').expand_or_jumpable() then
                     vim.fn.feedkeys(t('<Plug>luasnip-expand-or-jump'), '')
-                else
-                    fallback()
-                end
-            end, { 'i', 's' }),
-            ['<S-Tab>'] = cmp.mapping(function(fallback)
-                if cmp.visible() then
-                    cmp.select_prev_item()
-                elseif require('luasnip').jumpable(-1) then
-                    vim.fn.feedkeys(t('<Plug>luasnip-jump-prev'), '')
                 else
                     fallback()
                 end

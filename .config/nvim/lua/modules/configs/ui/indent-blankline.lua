@@ -1,3 +1,4 @@
+-- https://github.com/lukas-reineke/indent-blankline.nvim
 return function()
     require('indent_blankline').setup({
         char = '│',

@@ -1,7 +1,16 @@
 -- https://github.com/windwp/nvim-autopairs
 return function()
     require('nvim-autopairs').setup({
+        -- Enable treesitter
         check_ts = true,
+        ts_config = {
+            -- Don't add pairs in lua string treesitter nodes
+            lua = { 'string' },
+            -- Don't add pairs in javascript template_string treesitter nodes
+            javascript = { 'template_string' },
+            -- Don't check treesitter on java
+            java = false,
+        },
         disable_filetype = { 'vim' },
     })
 

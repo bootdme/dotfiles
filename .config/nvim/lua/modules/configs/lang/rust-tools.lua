@@ -157,10 +157,28 @@ return function()
         -- these override the defaults set by rust-tools.nvim
         -- see https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#rust_analyzer
         server = {
-            -- standalone file support
-            -- setting it to false may improve startup time
-            standalone = true,
-        }, -- rust-analyer options
+            settings = {
+                ['rust-analyzer'] = {
+                    assist = {
+                        importEnforceGranularity = true,
+                        importPrefix = 'crate',
+                    },
+                    cargo = {
+                        allFeatures = true,
+                    },
+                    checkOnSave = {
+                        -- default: `cargo check`
+                        command = 'clippy',
+                    },
+                },
+                inlayHints = {
+                    lifetimeElisionHints = {
+                        enable = true,
+                        useParameterNames = true,
+                    },
+                },
+            },
+        },
 
         -- debugging stuff
         dap = {

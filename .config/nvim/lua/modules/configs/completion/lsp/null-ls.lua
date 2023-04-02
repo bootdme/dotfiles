@@ -7,12 +7,13 @@ local diagnostics = b.diagnostics
 local sources = {
     -- Formatting
     formatting.cbfmt,
-    formatting.markdownlint,
-    formatting.shfmt,
     formatting.prettierd.with({
         extra_filetypes = { 'toml' },
+        disabled_filetypes = { 'md', 'markdown' },
         extra_args = { '--no-semi', '--single-quote', '--jsx-single-quote' },
     }),
+    formatting.markdownlint,
+    formatting.shfmt,
     formatting.rustfmt,
     formatting.clang_format,
     formatting.sql_formatter.with({
