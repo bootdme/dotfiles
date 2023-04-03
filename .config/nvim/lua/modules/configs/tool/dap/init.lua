@@ -45,4 +45,5 @@ return function()
     require('tool.dap.dap-osv')
     require('tool.dap.dap-codelldb')
     require('tool.dap.dap-bashdb')
+    require('tool.dap.dap-js')
 end
