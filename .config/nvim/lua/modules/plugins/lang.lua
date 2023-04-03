@@ -17,6 +17,7 @@ lang['simrat39/rust-tools.nvim'] = {
 lang['chrisbra/csv.vim'] = {
     lazy = true,
     ft = 'csv',
+    config = require('lang.csv'),
 }
 
 return lang

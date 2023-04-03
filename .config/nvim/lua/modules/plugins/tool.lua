@@ -15,6 +15,14 @@ tool['dstein64/vim-startuptime'] = {
     cmd = 'StartupTime',
 }
 
+tool['tpope/vim-dadbod'] = {
+    lazy = true,
+    cmd = { 'DBUI', 'DBUIFindBuffer', 'DBUIAddConnection' },
+    dependencies = {
+        { 'kristijanhusak/vim-dadbod-ui' },
+    },
+}
+
 tool['mfussenegger/nvim-dap'] = {
     lazy = true,
     cmd = {
