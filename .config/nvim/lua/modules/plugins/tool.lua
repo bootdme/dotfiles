@@ -15,6 +15,12 @@ tool['dstein64/vim-startuptime'] = {
     cmd = 'StartupTime',
 }
 
+tool['folke/trouble.nvim'] = {
+    lazy = true,
+    cmd = { 'Trouble', 'TroubleToggle', 'TroubleRefresh' },
+    config = require('tool.trouble'),
+}
+
 tool['tpope/vim-dadbod'] = {
     lazy = true,
     cmd = { 'DBUI', 'DBUIFindBuffer', 'DBUIAddConnection' },
