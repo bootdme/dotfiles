@@ -11,7 +11,7 @@ return function()
             -- Don't check treesitter on java
             java = false,
         },
-        disable_filetype = { 'vim' },
+        disable_filetype = { 'TelescopePrompt', 'vim' },
     })
 
     -- If you want insert `(` after select function or method item

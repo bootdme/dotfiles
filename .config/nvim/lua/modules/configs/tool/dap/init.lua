@@ -42,7 +42,6 @@ return function()
         { text = '', texthl = 'DapStopped', linehl = 'DapStopped', numhl = 'DapStopped' }
     )
 
-    require('tool.dap.dap-osv')
     require('tool.dap.dap-codelldb')
     require('tool.dap.dap-bashdb')
     require('tool.dap.dap-js')

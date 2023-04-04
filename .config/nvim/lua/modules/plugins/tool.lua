@@ -41,7 +41,6 @@ tool['mfussenegger/nvim-dap'] = {
         { 'rcarriga/nvim-dap-ui' },
         { 'mxsdev/nvim-dap-vscode-js' },
         { 'theHamsta/nvim-dap-virtual-text' },
-        { 'jbyuki/one-small-step-for-vimkind' },
     },
 }
 
