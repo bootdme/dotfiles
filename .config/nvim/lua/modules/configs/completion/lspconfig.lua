@@ -9,6 +9,7 @@ return function()
     vim.diagnostic.config({
         underline = false,
         virtual_text = false,
+        update_in_insert = true,
         virtual_lines = false,
         signs = true,
         float = {

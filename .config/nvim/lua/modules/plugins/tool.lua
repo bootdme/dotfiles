@@ -15,6 +15,17 @@ tool['dstein64/vim-startuptime'] = {
     cmd = 'StartupTime',
 }
 
+tool['sudormrfbin/cheatsheet.nvim'] = {
+    lazy = true,
+    cmd = 'Cheatsheet',
+    config = require('tool.cheatsheet'),
+    dependencies = {
+        { 'nvim-telescope/telescope.nvim' },
+        { 'nvim-lua/plenary.nvim' },
+        { 'nvim-lua/popup.nvim' },
+    },
+}
+
 tool['folke/trouble.nvim'] = {
     lazy = true,
     cmd = { 'Trouble', 'TroubleToggle', 'TroubleRefresh' },
