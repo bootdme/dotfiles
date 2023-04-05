@@ -16,7 +16,7 @@ local sources = {
     formatting.shfmt,
     formatting.rustfmt,
     formatting.clang_format,
-    formatting.sql_formatter.with({
+    formatting.sqlfmt.with({
         extra_args = { '--language', 'tsql' },
     }),
     formatting.stylua,

@@ -67,7 +67,7 @@ global['lsp_format_lint_dap'] = {
     'markdownlint',
     'prettierd',
     'rustfmt',
-    'sql-formatter',
+    'sqlfmt',
     'stylua',
 
     -- Linters
