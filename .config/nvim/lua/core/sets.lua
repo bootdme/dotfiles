@@ -75,6 +75,8 @@ set('n', '<leader>xw', '<cmd>TroubleToggle workspace_diagnostics<cr>', { desc = 
 set('n', '<leader>xq', '<cmd>TroubleToggle quickfix<cr>', { desc = 'Trouble Quickfix' })
 set('n', '<leader>xl', '<cmd>TroubleToggle loclist<cr>', { desc = 'Trouble loclist' })
 
+set('n', '<leader>tt', '<cmd>ToggleTerm<cr>', { desc = 'Toggle Term' })
+
 -- m - markdown
 set('n', '<leader>mp', '<cmd>MarkdownPreviewToggle<cr>', { desc = 'Markdown Preview' })
 set('n', '<leader>ms', '<cmd>MarkdownPreviewStop<cr>', { desc = 'Markdown Stop' })

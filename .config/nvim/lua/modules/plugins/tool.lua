@@ -23,14 +23,7 @@ tool['folke/trouble.nvim'] = {
 
 tool['akinsho/toggleterm.nvim'] = {
     lazy = true,
-    cmd = {
-        'ToggleTerm',
-        'ToggleTermSetName',
-        'ToggleTermToggleAll',
-        'ToggleTermSendVisualLines',
-        'ToggleTermSendCurrentLine',
-        'ToggleTermSendVisualSelection',
-    },
+    cmd = { 'ToggleTerm' },
     config = require('tool.toggleterm'),
 }
 
