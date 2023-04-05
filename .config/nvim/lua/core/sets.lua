@@ -67,13 +67,13 @@ set('n', '<F12>', '<cmd>DapStepOut<cr>')
 set('n', '<leader>dB', '<cmd>lua require("dap").set_breakpoint(vim.fn.input("Breakpoint condition: "))<cr>')
 set('n', '<leader>dp', '<cmd>lua require("dap").set_breakpoint(nil, nil, vim.fn.input("Log point message: "))<cr>')
 
--- t - trouble
-set('n', '<leader>tt', '<cmd>TroubleToggle<cr>', { desc = 'Trouble Toggle' })
-set('n', '<leader>tr', '<cmd>TroubleToggle lsp_references<cr>', { desc = 'Trouble LSP References' })
-set('n', '<leader>td', '<cmd>TroubleToggle document_diagnostics<cr>', { desc = 'Trouble Document Diagnostics' })
-set('n', '<leader>tw', '<cmd>TroubleToggle workspace_diagnostics<cr>', { desc = 'Trouble Workspace Diagnostics' })
-set('n', '<leader>tq', '<cmd>TroubleToggle quickfix<cr>', { desc = 'Trouble Quickfix' })
-set('n', '<leader>tl', '<cmd>TroubleToggle loclist<cr>', { desc = 'Trouble loclist' })
+-- x - trouble
+set('n', '<leader>xt', '<cmd>TroubleToggle<cr>', { desc = 'Trouble Toggle' })
+set('n', '<leader>xr', '<cmd>TroubleToggle lsp_references<cr>', { desc = 'Trouble LSP References' })
+set('n', '<leader>xd', '<cmd>TroubleToggle document_diagnostics<cr>', { desc = 'Trouble Document Diagnostics' })
+set('n', '<leader>xw', '<cmd>TroubleToggle workspace_diagnostics<cr>', { desc = 'Trouble Workspace Diagnostics' })
+set('n', '<leader>xq', '<cmd>TroubleToggle quickfix<cr>', { desc = 'Trouble Quickfix' })
+set('n', '<leader>xl', '<cmd>TroubleToggle loclist<cr>', { desc = 'Trouble loclist' })
 
 -- m - markdown
 set('n', '<leader>mp', '<cmd>MarkdownPreviewToggle<cr>', { desc = 'Markdown Preview' })

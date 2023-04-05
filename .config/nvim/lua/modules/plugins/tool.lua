@@ -21,6 +21,19 @@ tool['folke/trouble.nvim'] = {
     config = require('tool.trouble'),
 }
 
+tool['akinsho/toggleterm.nvim'] = {
+    lazy = true,
+    cmd = {
+        'ToggleTerm',
+        'ToggleTermSetName',
+        'ToggleTermToggleAll',
+        'ToggleTermSendVisualLines',
+        'ToggleTermSendCurrentLine',
+        'ToggleTermSendVisualSelection',
+    },
+    config = require('tool.toggleterm'),
+}
+
 tool['tpope/vim-dadbod'] = {
     lazy = true,
     cmd = { 'DBUI', 'DBUIFindBuffer', 'DBUIAddConnection' },
