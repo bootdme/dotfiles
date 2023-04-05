@@ -28,6 +28,7 @@ set -gx XDG_DATA_HOME ~/.local/share
 
 # Node Version Manager 
 set -gx NVM_DIR ~/.nvm
+set PATH "$NVM_DIR/versions/node/v19.7.0/bin/" $PATH
 nvm use default --silent
 
 # Disable .node_repl_history
