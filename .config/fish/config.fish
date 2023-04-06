@@ -57,6 +57,12 @@ set -gx PATH "$HOME/.cargo/bin" $PATH
 
 fish_add_path ~/.local/share/nvim/mason/bin
 
+# Rustup tab completions
+if [ ! -d $HOME/.config/fish/completions ]
+    mkdir -p ~/.config/fish/completions
+    rustup completions fish >~/.config/fish/completions/rustup.fish
+end
+
 # Aliases
 
 # Vim
