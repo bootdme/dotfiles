@@ -6,6 +6,9 @@ switch (uname)
         /Applications/kitty.app/Contents/MacOS/kitty + complete setup fish | source
 end
 
+# Vi Mode
+fish_vi_key_bindings
+
 # Disable fish greeting
 set fish_greeting ""
 
@@ -25,6 +28,18 @@ set -gx XDG_CONFIG_HOME ~/.config
 set -gx XDG_STATE_HOME ~/.local/state
 set -gx XDG_CACHE_HOME ~/.cache
 set -gx XDG_DATA_HOME ~/.local/share
+
+# fzf
+set -gx FZF_DEFAULT_COMMAND 'fd --type f --color=never --hidden'
+set -gx FZF_DEFAULT_OPTS --no-height
+
+set -gx FZF_CTRL_T_COMMAND $FZF_DEFAULT_COMMAND
+set -gx FZF_CTRL_T_OPTS "--preview 'bat --color=always --line-range :50 {}'"
+
+bind -M insert ç fzf-cd-widget
+
+set -gx FZF_ALT_C_COMMAND 'fd --type d . --color=never --hidden'
+set -gx FZF_ALT_C_OPTS "--preview 'tree -C {} | head -50'"
 
 # Node Version Manager 
 set -gx NVM_DIR ~/.nvm
