@@ -36,6 +36,7 @@ set -gx FZF_DEFAULT_OPTS --no-height
 set -gx FZF_CTRL_T_COMMAND $FZF_DEFAULT_COMMAND
 set -gx FZF_CTRL_T_OPTS "--preview 'bat --color=always --line-range :50 {}'"
 
+# Fixes Alt+C (in vi mode)
 bind -M insert ç fzf-cd-widget
 
 set -gx FZF_ALT_C_COMMAND 'fd --type d . --color=never --hidden'
