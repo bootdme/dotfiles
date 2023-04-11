@@ -1,0 +1,27 @@
+- defaults:
+    link:
+      create: true
+      relink: true
+
+# Remove dead symlinks
+- clean:
+    ~/:
+    ~/.config:
+      recursive: true
+
+- link:
+    # Neovim
+    ~/.config/nvim:
+      glob: true
+      path: nvim/*
+    # Fish
+    ~/.config/fish:
+      glob: true
+      path: fish/*
+    # Kitty
+    ~/.config/kitty: kitty/
+    # Git
+    ~/.config/git/config.base: git/config.base
+
+- shell:
+    - [git submodule update --init --recursive, Installing submodules]
