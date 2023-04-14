@@ -18,8 +18,6 @@ end
 global['ts'] = {
     'bash',
     'css',
-    'c',
-    'cpp',
     'fish',
     'gitignore',
     'help',
@@ -37,7 +35,6 @@ global['ts'] = {
 
 global['lsp'] = {
     'bashls',
-    'clangd',
     'eslint',
     'null-ls',
     'jsonls',
@@ -51,7 +48,6 @@ global['lsp'] = {
 global['lsp_format_lint_dap'] = {
     -- LSPs
     'bash-language-server',
-    'clangd',
     'eslint-lsp',
     'json-lsp',
     'lua-language-server',
@@ -62,7 +58,6 @@ global['lsp_format_lint_dap'] = {
 
     -- Formatters
     'cbfmt',
-    'clang-format',
     'shfmt',
     'markdownlint',
     'prettierd',
@@ -72,7 +67,6 @@ global['lsp_format_lint_dap'] = {
 
     -- Linters
     'selene',
-    'cpplint',
     'shellcheck',
     'eslint_d',
     'sqlfluff',
