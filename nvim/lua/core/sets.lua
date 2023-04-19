@@ -15,10 +15,6 @@ set('n', 'J', 'mzJ`z', { desc = 'Keep cursor inplace' })
 set('n', 'Q', '<nop>', { desc = 'Never press' })
 
 -- l - lazy
-set('n', '<leader>lc', '<cmd>Lazy check<cr>', { desc = 'Lazy check' })
-set('n', '<leader>lh', '<cmd>Lazy home<cr>', { desc = 'Lazy home' })
-set('n', '<leader>ls', '<cmd>Lazy sync<cr>', { desc = 'Lazy sync' })
-set('n', '<leader>ll', '<cmd>Lazy log<cr>', { desc = 'Lazy log' })
 set('n', '<leader>lp', '<cmd>Lazy profile<cr>', { desc = 'Lazy profile' })
 set('n', '<leader>lu', '<cmd>Lazy update<cr>', { desc = 'Lazy update' })
 set('n', '<leader>lx', '<cmd>Lazy clean<cr>', { desc = 'Lazy clean' })
