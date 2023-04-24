@@ -11,6 +11,10 @@ ui['nvim-treesitter/nvim-treesitter'] = {
     build = ':TSUpdate',
     event = { 'CursorHold', 'CursorHoldI' },
     config = require('ui.treesitter'),
+    dependencies = {
+        'NvChad/nvim-colorizer.lua',
+        config = require('ui.colorizer'),
+    },
 }
 
 ui['lewis6991/gitsigns.nvim'] = {
