@@ -26,12 +26,6 @@ tool['sudormrfbin/cheatsheet.nvim'] = {
     },
 }
 
-tool['folke/trouble.nvim'] = {
-    lazy = true,
-    cmd = { 'Trouble', 'TroubleToggle', 'TroubleRefresh' },
-    config = require('tool.trouble'),
-}
-
 tool['akinsho/toggleterm.nvim'] = {
     lazy = true,
     cmd = { 'ToggleTerm' },
