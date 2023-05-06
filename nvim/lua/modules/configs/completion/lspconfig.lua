@@ -69,15 +69,13 @@ return function()
         u.buf_command(bufnr, 'LspDef', 'Telescope lsp_definitions')
 
         -- Bindings
-        u.buf_set(bufnr, 'n', 'gi', ':LspRename<CR>')
+        u.buf_set(bufnr, 'n', 'gd', ':LspDef<CR>')
         u.buf_set(bufnr, 'n', 'K', ':LspHover<CR>')
         u.buf_set(bufnr, 'n', '[a', ':LspDiagPrev<CR>')
         u.buf_set(bufnr, 'n', ']a', ':LspDiagNext<CR>')
+        u.buf_set(bufnr, 'n', 'gi', ':LspRename<CR>')
         u.buf_set(bufnr, 'n', '<Leader>a', ':LspDiagLine<CR>')
 
-        u.buf_set(bufnr, 'n', 'gy', ':LspRef<CR>')
-        u.buf_set(bufnr, 'n', 'gh', ':LspTypeDef<CR>')
-        u.buf_set(bufnr, 'n', 'gd', ':LspDef<CR>')
         u.buf_set(bufnr, 'n', 'ga', ':LspAct<CR>')
         u.buf_set(bufnr, 'x', 'ga', function()
             vim.lsp.buf.code_action() -- range
