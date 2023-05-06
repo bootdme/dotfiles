@@ -25,3 +25,26 @@
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
+
+- ifmacos:
+    - brew:
+        - bash
+        - fish
+        - gnupg
+        - pinentry-mac
+        - exa
+        - fzf
+        - docker
+        - bat
+        - wget
+        - fd
+        - ripgrep
+        - google-chrome
+        - go
+        - kitty
+        - neovim
+        - postgresql
+    - tap:
+        - homebrew/cask-fonts
+    - cask:
+        [bitwarden, spotify, discord, postman, font-jetbrains-mono-nerd-font]
