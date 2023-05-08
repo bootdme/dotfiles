@@ -27,6 +27,7 @@
     - [git submodule update --init --recursive, Installing submodules]
 
 - ifmacos:
+    - tap: [homebrew/core, homebrew/cask-fonts]
     - brew:
         - bash
         - fish
@@ -44,8 +45,5 @@
         - kitty
         - neovim
         - postgresql
-    - tap:
-	- homebrew/core
-        - homebrew/cask-fonts
     - cask:
         [bitwarden, spotify, discord, postman, font-jetbrains-mono-nerd-font]
