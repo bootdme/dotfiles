@@ -20,7 +20,6 @@ global['ts'] = {
     'css',
     'fish',
     'gitignore',
-    'help',
     'html',
     'javascript',
     'jsonc',

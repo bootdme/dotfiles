@@ -44,7 +44,7 @@ set -gx FZF_ALT_C_OPTS "--preview 'tree -C {} | head -50'"
 
 # Node Version Manager 
 set -gx NVM_DIR ~/.nvm
-set PATH "$NVM_DIR/versions/node/v19.7.0/bin/" $PATH
+set PATH "$(which node)" $PATH
 nvm use default --silent
 
 # Disable .node_repl_history
