@@ -45,6 +45,7 @@
         - neovim
         - postgresql
     - tap:
+	- homebrew/core
         - homebrew/cask-fonts
     - cask:
         [bitwarden, spotify, discord, postman, font-jetbrains-mono-nerd-font]
