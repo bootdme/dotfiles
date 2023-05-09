@@ -46,4 +46,11 @@
         - neovim
         - postgresql
     - cask:
-        [bitwarden, spotify, discord, postman, font-jetbrains-mono-nerd-font]
+        [
+          bitwarden,
+          brave-browser,
+          spotify,
+          discord,
+          postman,
+          font-jetbrains-mono-nerd-font,
+        ]
