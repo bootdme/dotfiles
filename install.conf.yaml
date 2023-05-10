@@ -35,7 +35,8 @@
         - pinentry-mac
         - exa
         - fzf
-        - docker
+        - kubectl
+        - eksctl
         - bat
         - wget
         - fd
@@ -43,12 +44,14 @@
         - google-chrome
         - go
         - kitty
+        - FiloSottile/musl-cross/musl-cross
         - neovim
         - postgresql
     - cask:
         [
           bitwarden,
           brave-browser,
+          docker,
           spotify,
           discord,
           postman,
