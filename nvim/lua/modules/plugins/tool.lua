@@ -47,27 +47,6 @@ tool['tpope/vim-dadbod'] = {
     },
 }
 
-tool['mfussenegger/nvim-dap'] = {
-    lazy = true,
-    cmd = {
-        'DapSetLogLevel',
-        'DapShowLog',
-        'DapContinue',
-        'DapToggleBreakpoint',
-        'DapToggleRepl',
-        'DapStepOver',
-        'DapStepInto',
-        'DapStepOut',
-        'DapTerminate',
-    },
-    config = require('tool.dap'),
-    dependencies = {
-        { 'rcarriga/nvim-dap-ui' },
-        { 'mxsdev/nvim-dap-vscode-js' },
-        { 'theHamsta/nvim-dap-virtual-text' },
-    },
-}
-
 tool['nvim-telescope/telescope.nvim'] = {
     lazy = true,
     cmd = 'Telescope',

@@ -69,11 +69,6 @@ global['lsp_format_lint_dap'] = {
     'shellcheck',
     'eslint_d',
     'sqlfluff',
-
-    -- DAPs
-    'bash-debug-adapter',
-    'codelldb',
-    'js-debug-adapter',
 }
 
 global:load_variables()

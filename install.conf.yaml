@@ -27,7 +27,7 @@
     - [git submodule update --init --recursive, Installing submodules]
 
 - ifmacos:
-    - tap: [homebrew/core, homebrew/cask-fonts]
+    - tap: [homebrew/core, homebrew/services, homebrew/cask-fonts]
     - brew:
         - bash
         - fish
