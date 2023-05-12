@@ -23,7 +23,6 @@ local sources = {
     formatting.fish_indent,
 
     -- Diagnostics
-    diagnostics.cpplint,
     diagnostics.markdownlint.with({
         extra_args = { '-r', '~MD013,~MD036,~MD025' },
     }),

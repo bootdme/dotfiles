@@ -21,10 +21,4 @@ lang['Saecki/crates.nvim'] = {
     dependencies = { 'nvim-lua/plenary.nvim' },
 }
 
-lang['chrisbra/csv.vim'] = {
-    lazy = true,
-    ft = 'csv',
-    config = require('lang.csv'),
-}
-
 return lang

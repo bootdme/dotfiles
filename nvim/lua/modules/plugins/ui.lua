@@ -29,11 +29,6 @@ ui['j-hui/fidget.nvim'] = {
     config = require('ui.fidget'),
 }
 
-ui['andweeb/presence.nvim'] = {
-    lazy = false,
-    config = require('ui.presence'),
-}
-
 ui['lukas-reineke/indent-blankline.nvim'] = {
     lazy = true,
     event = 'BufReadPost',

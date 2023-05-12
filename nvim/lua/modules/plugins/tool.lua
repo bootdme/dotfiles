@@ -26,12 +26,6 @@ tool['sudormrfbin/cheatsheet.nvim'] = {
     },
 }
 
-tool['akinsho/toggleterm.nvim'] = {
-    lazy = true,
-    cmd = { 'ToggleTerm' },
-    config = require('tool.toggleterm'),
-}
-
 tool['tpope/vim-dadbod'] = {
     lazy = true,
     cmd = { 'DBUI', 'DBUIFindBuffer', 'DBUIAddConnection' },
