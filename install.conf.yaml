@@ -46,7 +46,6 @@
         - koekeishiya/formulae/yabai
         - koekeishiya/formulae/skhd
         - kitty
-        - FiloSottile/musl-cross/musl-cross
         - neovim
         - postgresql
     - cask:

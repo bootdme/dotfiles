@@ -68,21 +68,6 @@ set('n', '<leader>cR', '<cmd>lua require("crates").open_repository()<cr>', { des
 set('n', '<leader>cD', '<cmd>lua require("crates").open_documentation()<cr>', { desc = 'Crates Documentation' })
 set('n', '<leader>cO', '<cmd>lua require("crates").open_crates_io()<cr>', { desc = 'Crates Open Crates' })
 
--- d - dap
-set('n', '<leader>db', '<cmd>DapToggleBreakpoint<cr>')
-set('n', '<leader>dr', '<cmd>DapToggleRepl<cr>')
-set('n', '<leader>dq', '<cmd>DapTerminate<cr>')
-set('n', '<leader>dl', '<cmd>lua require("dap").run_last()<cr>')
-set('n', '<F5>', '<cmd>DapContinue<cr>')
-set('n', '<F3>', '<cmd>DapStepOver<cr>')
-set('n', '<F2>', '<cmd>DapStepInto<cr>')
-set('n', '<F12>', '<cmd>DapStepOut<cr>')
-set('n', '<leader>dB', '<cmd>lua require("dap").set_breakpoint(vim.fn.input("Breakpoint condition: "))<cr>')
-set('n', '<leader>dp', '<cmd>lua require("dap").set_breakpoint(nil, nil, vim.fn.input("Log point message: "))<cr>')
-
--- t - toggle term
-set('n', '<leader>tt', '<cmd>ToggleTerm<cr>', { desc = 'Toggle Term' })
-
 -- c - cheatsheet
 set('n', '<leader>cs', '<cmd>Cheatsheet<cr>', { desc = 'Cheatsheet' })
 

@@ -15,7 +15,6 @@ local sources = {
     formatting.markdownlint,
     formatting.shfmt,
     formatting.rustfmt,
-    formatting.clang_format,
     formatting.sqlfmt.with({
         extra_args = { '--language', 'tsql' },
     }),
