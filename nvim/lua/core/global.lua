@@ -56,7 +56,6 @@ global['lsp_format_lint_dap'] = {
     -- 'vim-language-server',
 
     -- Formatters
-    'cbfmt',
     'shfmt',
     'markdownlint',
     'prettierd',

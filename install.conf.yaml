@@ -9,6 +9,9 @@
     ~/.config:
       recursive: true
 
+- shell:
+    - [git submodule update --init --recursive, Installing submodules]
+
 - link:
     # Neovim
     ~/.config/nvim:
@@ -23,10 +26,12 @@
     # Git
     ~/.config/git/config.base: git/config.base
 
-- shell:
-    - [git submodule update --init --recursive, Installing submodules]
-
 - ifmacos:
+    - link:
+        # Yabai
+        ~/.config/yabai: yabai/
+        # Skhd
+        ~/.config/skhd: skhd/
     - tap: [homebrew/core, homebrew/services, homebrew/cask-fonts]
     - brew:
         - bash
