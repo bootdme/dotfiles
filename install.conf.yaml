@@ -63,3 +63,19 @@
           postman,
           font-jetbrains-mono-nerd-font,
         ]
+
+- omnipkg:
+    - install:
+        [
+          { dnf: neovim },
+          { dnf: exa },
+          { dnf: fzf },
+          { dnf: fd-find },
+          { dnf: ripgrep },
+          { dnf: golang },
+          { dnf: kitty },
+          { dnf: postgresql },
+          { dnf: spotify },
+          { dnf: discord },
+          { dnf: postman },
+        ]

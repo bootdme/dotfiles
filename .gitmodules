@@ -7,3 +7,6 @@
 [submodule "dotbot-ifplatform"]
 	path = dotbot-ifplatform
 	url = https://github.com/ssbanerje/dotbot-ifplatform.git
+[submodule "dotbot-omnipkg"]
+	path = dotbot-omnipkg
+	url = https://github.com/code-maniac/dotbot-omnipkg
