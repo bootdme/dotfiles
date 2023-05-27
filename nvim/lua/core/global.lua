@@ -40,7 +40,6 @@ global['lsp'] = {
     'lua_ls',
     'marksman',
     'sqlls',
-    -- 'vimls',
 }
 -- Mason tool installer
 -- https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim
@@ -53,7 +52,6 @@ global['lsp_format_lint_dap'] = {
     'rust-analyzer',
     'marksman',
     'sqlls',
-    -- 'vim-language-server',
 
     -- Formatters
     'shfmt',
