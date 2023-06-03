@@ -33,40 +33,37 @@
         # Skhd
         ~/.config/skhd: skhd/
     - tap: [homebrew/core, homebrew/services, homebrew/cask-fonts]
-    - brew:
-        - bash
-        - fish
-        - gnupg
-        - pinentry-mac
-        - exa
-        - fzf
-        - kubectl
-        - eksctl
-        - bat
-        - wget
-        - fd
-        - ripgrep
-        - google-chrome
-        - go
-        - koekeishiya/formulae/yabai
-        - koekeishiya/formulae/skhd
-        - kitty
-        - neovim
-        - postgresql
-    - cask:
-        [
-          bitwarden,
-          brave-browser,
-          docker,
-          spotify,
-          discord,
-          postman,
-          font-jetbrains-mono-nerd-font,
-        ]
 
 - omnipkg:
     - install:
         [
+          { brew: bat },
+          { brew: bitwarden },
+          { brew: brave-browser },
+          { brew: discord },
+          { brew: docker },
+          { brew: eksctl },
+          { brew: exa },
+          { brew: fd },
+          { brew: fish },
+          { brew: font-jetbrains-mono-nerd-font },
+          { brew: fzf },
+          { brew: google-chrome },
+          { brew: go },
+          { brew: gnupg },
+          { brew: kitty },
+          { brew: kubectl },
+          { brew: koekeishiya/formulae/skhd },
+          { brew: koekeishiya/formulae/yabai },
+          { brew: neovim },
+          { brew: pinentry-mac },
+          { brew: postgresql },
+          { brew: postman },
+          { brew: ripgrep },
+          { brew: skhd },
+          { brew: spotify },
+          { brew: wget },
+          { brew: yabai },
           { dnf: neovim },
           { dnf: exa },
           { dnf: fzf },

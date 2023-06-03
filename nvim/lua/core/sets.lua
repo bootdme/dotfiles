@@ -47,7 +47,12 @@ set({ 'n', 'v' }, '<leader>hr', '<cmd>Gitsigns reset_hunk<cr>', { desc = 'Hunk R
 set('n', '<leader>hu', '<cmd>Gitsigns undo_stage_hunk<cr>', { desc = 'Hunk Undo' })
 set('n', '<leader>hR', '<cmd>Gitsigns reset_buffer<cr>', { desc = 'Reset buffer' })
 set('n', '<leader>hp', '<cmd>Gitsigns preview_hunk<cr>', { desc = 'Hunk Preview' })
-set('n', '<leader>hb', '<cmd>lua require("gitsigns.actions").blame_line({ full = true })<cr>', { desc = 'Blame line' })
+set(
+    'n',
+    '<leader>hb',
+    '<cmd>lua require("gitsigns.actions").blame_line({ full = true })<cr>',
+    { desc = 'Show hunk commit' }
+)
 
 set('n', '<leader>td', '<cmd>Gitsigns toggle_deleted<cr>', { desc = 'Toggle Deleted' })
 
@@ -67,9 +72,6 @@ set('n', '<leader>cH', '<cmd>lua require("crates").open_homepage()<cr>', { desc 
 set('n', '<leader>cR', '<cmd>lua require("crates").open_repository()<cr>', { desc = 'Crates Repository' })
 set('n', '<leader>cD', '<cmd>lua require("crates").open_documentation()<cr>', { desc = 'Crates Documentation' })
 set('n', '<leader>cO', '<cmd>lua require("crates").open_crates_io()<cr>', { desc = 'Crates Open Crates' })
-
--- c - cheatsheet
-set('n', '<leader>cs', '<cmd>Cheatsheet<cr>', { desc = 'Cheatsheet' })
 
 -- m - markdown
 set('n', '<leader>mp', '<cmd>MarkdownPreviewToggle<cr>', { desc = 'Markdown Preview' })
