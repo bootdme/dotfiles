@@ -137,7 +137,7 @@ return function()
             },
         },
         null_ls = {
-            enabled = false,
+            enabled = true,
             name = 'Crates',
         },
     })

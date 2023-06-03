@@ -15,17 +15,6 @@ tool['dstein64/vim-startuptime'] = {
     cmd = 'StartupTime',
 }
 
-tool['sudormrfbin/cheatsheet.nvim'] = {
-    lazy = true,
-    cmd = 'Cheatsheet',
-    config = require('tool.cheatsheet'),
-    dependencies = {
-        { 'nvim-telescope/telescope.nvim' },
-        { 'nvim-lua/plenary.nvim' },
-        { 'nvim-lua/popup.nvim' },
-    },
-}
-
 tool['tpope/vim-dadbod'] = {
     lazy = true,
     cmd = { 'DBUI', 'DBUIFindBuffer', 'DBUIAddConnection' },
