@@ -4,6 +4,9 @@ switch (uname)
         fish_add_path /opt/homebrew/bin
         fish_add_path /opts/homebrew/sbin
         /Applications/kitty.app/Contents/MacOS/kitty + complete setup fish | source
+    case Linux
+        source /usr/share/fzf/shell/key-bindings.fish
+        set -gx GPG_TTY (tty)
 end
 
 # Vi Mode
