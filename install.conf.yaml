@@ -34,6 +34,11 @@
         ~/.config/skhd: skhd/
     - tap: [homebrew/core, homebrew/services, homebrew/cask-fonts]
 
+- iffedora:
+    - link:
+        # i3
+        ~/.config/i3: i3/
+
 - omnipkg:
     - install:
         [
