@@ -64,7 +64,6 @@ global['lsp_format_lint_dap'] = {
     -- Linters
     'selene',
     'shellcheck',
-    'eslint_d',
     'sqlfluff',
 }
 

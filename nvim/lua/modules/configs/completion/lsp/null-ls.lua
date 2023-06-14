@@ -35,7 +35,6 @@ local sources = {
                 or vim.fs.normalize('~/.config/nvim/selene.toml')
         end,
     }),
-    diagnostics.eslint_d,
     diagnostics.fish,
 }
 
