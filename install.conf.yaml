@@ -28,6 +28,8 @@
 
 - ifmacos:
     - link:
+        # Nu Shell
+        ~/Library/Application Support/nushell: nushell/
         # Yabai
         ~/.config/yabai: yabai/
         # Skhd

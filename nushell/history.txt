@@ -1,0 +1,3 @@
+rm -rf nushell/
+clear
+ls -la
