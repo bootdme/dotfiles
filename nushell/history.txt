@@ -1,3 +1,387 @@
 rm -rf nushell/
 clear
 ls -la
+clear
+ls -la
+brew uninstall nu
+brew uninstall nushell
+cargo install nu
+ls -la
+c
+clear
+ls -la
+sccache 
+clear
+ls -la
+c
+clear
+$nu.scope.aliases
+g
+n
+p
+shells
+ls -la
+clear
+ls -la
+c
+clear
+ls -la
+clear
+cd
+list
+do 
+clear
+ls -la
+cd
+cd dotfiles/
+ls -la
+cd nushell/
+ls -la
+nvim config.nu
+config path
+cd
+config path | clip
+which nu
+sudo nvim /etc/shells
+cd
+config set path $nu.path
+sudo chsh -s /Users/bootdme/.cargo/bin/nu
+which sh
+chsh
+sh
+clear
+ls -la
+config path | clip 
+cd
+cd dotfiles/
+ls -la
+cd nushell/
+ls -la
+nvim config.nu
+cd
+node
+nvim
+clear
+ls -la
+cd dotfiles/
+ls -la
+cd fish/
+ls -la
+cd dotfiles/
+ls -la
+cd nushell/
+ls -la
+vim env.nu
+vim config.nu
+vim env.nu
+cd
+config
+config env
+$nu.config-path
+cd dotfiles/nushell/
+vim config.nu
+cargo install starship
+ls -la
+vim config.nu
+vim env.nu
+ls *
+cd
+alias ll = ls -l
+cd dotfiles/nushell/
+ls -la
+vim config.nu
+cd
+cd `Library/Application Support/nushell/`
+cd
+cd `Library/Application Support/nushell/`
+ls -la
+git st
+git diff
+ls -la
+git st
+cd
+cd Library/
+cd `Application Support/`
+ls -la
+cd nushell/
+ls -la
+ll
+clear
+ll
+$nu.scope.aliases
+cd dotfiles/nushell/
+ls -la
+clear
+ls -la
+c
+clear
+ls -la
+cd
+cd dotfiles/
+ls -la
+vim install.conf.yaml
+ls -la
+brew
+cd nushell/
+ls -la
+vim config.nu
+vim env.nu
+..
+brew
+ls -la
+clear
+ls -al
+clear
+cd dotfiles/
+ls -al
+cd nushell/
+ls -la
+vim env.nu
+clear
+cargo
+brew
+git st
+git diff env.nu
+ls -la
+vim env.nu
+sys
+sys | get os
+sys | get host
+cd dotfiles/
+ls -la
+cd
+cd dotfiles/
+cd nushell/
+ls -la
+vim env.nu
+sys | get host | trim
+sys | get host
+sys | get name
+sys | get host.name
+vim env.nu
+brew
+ls -la
+c
+ls -al
+clear
+cd dotfiles/
+ls -la
+ls -al
+cd fish/
+ls -la
+cd nushell/
+ls -la
+vim env.nu
+cd
+ls -la
+($env.PATH | split row)
+($env.PATH)
+cd
+env.PATH
+$env.PATH
+vim env.nu
+cargo
+vim env.nu
+cargo
+$env.PATH
+cd dotfiles/
+ls -la
+cd nushell/
+ls -la
+vim env.nu
+$env.PATH
+cargo
+$env.PATH
+cargo
+nvim
+clear
+ls -la
+node
+$(which node)
+which node
+which nvim
+which nvim.path
+ls -la
+$env.PATH
+cargo
+vim env.nu
+cargo
+$env.PATH
+nvm
+ls -la
+$env.PATH
+nvm
+$env.NVM_DIR
+$env.COMMAND_MODE
+$env.MANPATH
+$env.PATH
+$env.TERMINFO
+which nvm
+nvm
+ls- la
+ls -la
+cargo
+cargo install fnm
+fnm
+which fnm
+node
+vim env.nu
+fnm use
+fnm env
+ls -la
+fnm
+ls -la
+fnm
+fnm use
+clear
+ls -la
+clear
+ls -la
+clear
+fnm
+eval $(fnm env)
+eval "$(fnm env)"
+eval
+cd dotfiles/
+ls -la
+cd nushell/
+ls -la
+nvim env.nu
+vim env.nu
+ls -la
+clear
+curl -fsSL https://fnm.vercel.app/install | bash
+ls -la
+fnm
+ls -la
+brew uninstall fnm
+load-env (fnm env --shell bash | lines | str replace 'export ' '' | str replace -a '"' '' | split column = | rename name value | where name != "FNM_ARCH" && name != "PATH" | reduce -f {} {|it, acc| $acc | upsert $it.name $it.value })
+clear
+ls -la
+cd dotfiles/nushell/
+ls -la
+fnm --env
+fnm env
+fnm env --shell bash
+fnm env --shell bash | lines
+fnm env --shell bash | lines | str replace 'export ' ''
+fnm env --shell bash | lines | str replace 'export ' '' | str replace -a '"' ''
+fnm env --shell bash | lines | str replace 'export ' '' | str replace -a '"' '' | split column
+fnm env --shell bash | lines | str replace 'export ' '' | str replace -a '"' '' | split column =
+fnm env --shell bash | lines | str replace 'export ' '' | str replace -a '"' '' | split column = | rename name value
+fnm env --shell bash | lines | str replace 'export ' '' | str replace -a '"' '' | split column = | rename name value | where name != "FNM_ARCH"
+fnm env --shell bash | lines | str replace 'export ' '' | str replace -a '"' '' | split column = | rename name value | where name != "FNM_ARCH" && name != "PATH"
+fnm env --shell bash | lines | str replace 'export ' '' | str replace -a '"' '' | split column = | rename name value | where name != "FNM_ARCH" and name != "PATH"
+fnm env --shell bash | lines | str replace 'export ' '' | str replace -a '"' '' | split column = | rename name value | where name != "FNM_ARCH" and name != "PATH" | reduce -f {} {|it, acc| $acc | upsert $it.name $it.value }
+ls -la
+vim env.nu
+fnm env --shell bash | lines | str replace 'export ' '' | str replace -a '"' '' | split column = | rename name value | where name != "FNM_ARCH" and name != "PATH" | reduce -f {} {|it, acc| $acc | upsert $it.name $it.value }
+$env.FNM_MULTISHELL_PATH
+cd dotfiles/nushell/
+ls -la
+vim env.nu
+FNM_MULTISHELL_PATH
+fnm
+fnm use
+fnv env --shell bash
+fnm env --shell bash | lines | str replace 'export ' '' | str replace -a '"' '' | split column = | rename name value | where name != "FNM_ARCH" and name != "PATH" | reduce -f {} {|it, acc| $acc | upsert $it.name $it.value }
+let-env PATH = ($env.PATH | prepend $"($env.FNM_MULTISHELL_PATH)/bin")
+fnm env --shell bash | lines | str replace 'export ' '' | str replace -a '"' '' | split column = | rename name value | where name != "FNM_ARCH" and name != "PATH" | reduce -f {} {|it, acc| $acc | upsert $it.name $it.value } | load-env 
+pathvar add $nu.env.FNM_MULTISHELL_PATH
+pathvar add $env.FNM_MULTISHELL_PATH
+path add $env.FNM_MULTISHELL_PATH
+path add $env.FNM_MULTISHELL_PATH + /binec
+echo $nu.path
+echo $env-path
+echo env-path
+ls -la
+load-env (fnm env --shell bash | lines | str replace 'export ' '' | str replace -a '"' '' | split column = | rename name value | where name != "FNM_ARCH" and name != "PATH" | reduce -f {} {|it, acc| $acc | upsert $it.name $it.value })
+let-env PATH = ($env.PATH | append [ <\n>$"($env.FNM_MULTISHELL_PATH)/bin"<\n>])
+$env.PATH
+cd dotfiles/nushell/
+ls -la
+vim env.nu
+$env.PATH
+ls -la
+cd dotfiles/nushell/
+ls -la
+vim env.nu
+$env.PATH
+fnm
+fnm use
+node
+fnm install
+ls -la
+clear
+ls -la
+fnm
+fnm list
+fnm env
+which fnm
+$env.PATH
+cd .cargo/bin/
+ls -la
+cd
+cd dotfiles/nushell/
+ls- la
+ls -la
+which fnm
+vim env.nu
+$env.PATH
+fnm
+fnm install
+fnm install 14
+clear
+ls -la
+cd dotfiles/nushell/
+ls -la
+vim env.nu
+c
+ls -la
+clear
+cd
+ls -la
+fnm
+fnm install
+ls -la
+fnm install latest
+fnm install 20
+ls -la
+node
+clear
+ls -la
+cd dotfiles/
+cd nushell/
+ls -la
+vim env.nu
+$env.PATH
+ls -la
+clear
+ls -la
+cd dotfiles/
+ls -la
+cd nushell/
+ls -la
+vim env.nu
+$env.PATH
+ls -la
+clear
+ls -la
+cd dot
+cd dotfiles/
+ls -la
+clear
+ls -la
+cd nushell/
+ls -la
+..
+git st
+ls -la
+cd nushell/
+ls -la
+vim config.nu
+vim env.nu
+vim config.nu
+nvim
+nvim config.nu
+git st
