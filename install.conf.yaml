@@ -35,7 +35,7 @@
         ~/.config/yabai: yabai/
         # Skhd
         ~/.config/skhd: skhd/
-    # - tap: [homebrew/core, homebrew/services, homebrew/cask-fonts]
+    - tap: [homebrew/core, homebrew/services, homebrew/cask-fonts]
 
 - iffedora:
     - link:
