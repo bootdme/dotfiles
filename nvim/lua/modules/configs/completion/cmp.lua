@@ -48,7 +48,6 @@ return function()
                         nvim_lua = '[LUA]',
                         path = '[PATH]',
                         rg = '[RG]',
-                        fish = '[FISH]',
                         luasnip = '[SNIP]',
                         treesitter = '[TS]',
                     })[entry.source.name]
@@ -92,7 +91,6 @@ return function()
             { name = 'path' },
             { name = 'rg' },
             { name = 'crates' },
-            { name = 'fish' },
             { name = 'buffer' },
             { name = 'treesitter' },
         },

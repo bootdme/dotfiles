@@ -385,3 +385,350 @@ vim config.nu
 nvim
 nvim config.nu
 git st
+ls -la
+clear
+ls- la
+ls -la
+clear
+cd Documents/mpi/
+ls -la
+vim gpg.sh
+./cleanup.sh
+cd
+ls -la
+clear
+ls- la
+ls -la
+fnm
+brew
+clear
+ls -la
+cd Documents/mpi/
+ls -la
+vim cleanup.sh
+fnm install node
+fnm install 20
+node
+clear
+ls -la
+clear
+ls -la
+clear
+ls- la
+ls -la
+clear
+cd dotfiles/
+ls -la
+zoxide 
+zoxide kitty/
+zoxide kitty
+cd
+ls- la
+ls -la
+fd
+clear
+ls -la
+c
+ls- la
+clear
+ls- la
+c
+clear
+ls- la
+ls -la
+cd
+clear
+nvim
+$nu.config-path
+cd dotfiles/nushell/
+ls -la
+vim
+nvim config.nu
+ls -la
+clear
+ls -la
+cd
+ls -la
+cd Documents/mpi/
+ls -la
+git st
+git status
+cd
+cd dotfiles/nushell/
+ls -la
+vim env.nu
+vim config.nu
+$nu.scope
+$nu.scope.aliases
+vim config.nu
+vim
+$nu.scope.aliases
+cd dotfiles/nushell/
+ls -la
+vim config.nu
+c
+clear
+ls -la
+ls- la
+clear
+ls -la
+vim config.nu
+cd
+mkdir .cache/starship
+starship init nu | save -f ~/.cache/starship/init.nu
+ls -la
+cd .cache/ls -la
+cd .cache
+ls -la
+cd starship/
+ls -la
+vim init.nu
+which nu
+nu --v
+nu --version
+clear
+ls- la
+c
+ls -la
+vim
+cd dotfiles/nushell/
+ls -la
+vim config.nu
+cd dotfiles/nushell/
+ls- la
+ls -la
+vim config.nu
+vim env.nu
+cd
+cd .cache/starship/
+vim init.nu
+c
+clear
+ls- la
+clear
+ls- la
+ls -la
+clear
+cd .cache/starship/
+ls -la
+vim init.nu
+cd dotfiles/nushell/
+cd
+cd .cache/starship/
+ls -la
+vim init.nu
+cd
+cd dotfiles/nushell/
+vim config.nu
+ls -la
+ls- la
+c
+ls -la
+c
+ls- la
+ls -la
+c
+ls -la
+c
+ls -la
+c
+ls -la
+cd dotfiles/nushell/
+ls- la
+ls -la
+c
+ls -la
+vim config.nu
+cd dotfiles/nushell/
+vim config.nu
+ls- la
+ls -la
+c
+ls -la
+cd dotfiles/
+git st
+cd
+ls -la
+cd .config/
+ls -la
+cd git/
+ls -la
+vim config.base
+ls -la
+cp config.base config
+ls- a
+ls- la
+ls -la
+vim config
+git st
+cd dotfiles/
+ls -la
+git st
+c
+ls -la
+cd nvim/
+ls -la
+cd lua/
+ls -la
+cd modules/
+ls -la
+cd configs/
+ls -al
+..
+cd plugins/
+ls -la
+..
+cd plugins/
+ls -la
+vim completion.lua
+ls -la
+vim editor.lua
+..
+...
+ls -la
+cd nvim/
+ls -la
+cd lua/
+ls -al
+cd core/
+ls -la
+vim sets.lua
+vim func.lua
+clear
+ls -la
+clear
+c
+ls -la
+c
+ls -la
+x
+c
+ls -la
+vim auto.lua
+vim boot.lua
+vim clip.lua
+vim dirs.lua
+vim global.lua
+cd ..
+ls -la
+cd modules/
+ls -al
+cd configs/
+ls la
+ls -la
+cd completion/
+ls -la
+cd lsp/
+ls -la
+rm -rf eslint.lua
+ls -la
+..
+ls -la
+c
+ls -al
+..
+ls -la
+cd core/
+sl -al
+ls -la
+c
+ls -al
+vim opts.lua
+c
+ls -la
+vim sets.lua
+c
+ls -la
+vim sets.lua
+vim opts.lua
+ls -la
+..
+l s-la
+ls -la
+cd modules/
+ls -la
+cd plugins/
+ls -la
+vim completion.lua
+..
+ls -la
+cd configs/
+ls -la
+cd completion/
+ls -la
+cd lsp/
+ls -la
+..
+ls -la
+vim cmp.lua
+cd lsp/
+ls -la
+vim null-ls.lua
+..
+ls -la
+clear
+ls- la
+ls -la
+vim autopairs.lua
+vim cmp.lua
+vim lspconfig.lua
+vim mason-tool-installer.lua
+..
+ls -0a
+ls -la
+cd completion/
+ls -la
+..
+ls -la
+..
+ls -la
+cd plugins/
+ls -la
+vim lang.lua
+..
+ls -la
+cd configs/
+ls -la
+cd lang/
+ls -la
+vim rust-tools.lua
+..
+ls -la
+cd core/
+ls -la
+ls- la
+ls -la
+c
+ls -la
+cd dotfiles/nvim/
+ls -la
+git st
+ls -la
+c
+ls -la
+git st
+c
+ls -la
+..
+ls -la
+cd
+cd Documents/
+ls -la
+git clone https://github.com/bootdme/mma-rs
+cd mma-rs/
+ls -la
+vim Cargo.toml
+vim sets.lua
+ls -la
+c
+ls- la
+ls -la
+git st
+..
+ls -la
+..
+ls -la
+..
+ls -la
+cd dotfiles/
+git st

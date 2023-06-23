@@ -29,12 +29,10 @@ global['ts'] = {
     'regex',
     'rust',
     'sql',
-    'vim',
 }
 
 global['lsp'] = {
     'bashls',
-    'eslint',
     'null-ls',
     'jsonls',
     'lua_ls',
@@ -46,7 +44,6 @@ global['lsp'] = {
 global['lsp_format_lint_dap'] = {
     -- LSPs
     'bash-language-server',
-    'eslint-lsp',
     'json-lsp',
     'lua-language-server',
     'rust-analyzer',

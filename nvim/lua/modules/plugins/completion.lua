@@ -38,7 +38,6 @@ completion['hrsh7th/nvim-cmp'] = {
         { 'hrsh7th/cmp-path' },
         { 'hrsh7th/cmp-buffer' },
         { 'lukas-reineke/cmp-rg' },
-        { 'mtoohey31/cmp-fish' },
         { 'ray-x/cmp-treesitter' },
         {
             'windwp/nvim-autopairs',

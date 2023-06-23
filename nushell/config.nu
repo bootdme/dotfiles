@@ -542,3 +542,8 @@ let-env config = {
     }
   ]
 }
+
+source ~/.cache/starship/init.nu
+
+alias vim = nvim
+alias c = clear

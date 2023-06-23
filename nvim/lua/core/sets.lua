@@ -31,7 +31,6 @@ set('n', '<leader>fp', '<cmd>Telescope repo<cr>', { desc = 'Find repo' })
 set('n', '<leader>fe', '<cmd>Telescope env<cr>', { desc = 'Find environment' })
 set('n', '<leader>fgc', '<cmd>Telescope git_commits<cr>', { desc = 'Find git commits' })
 set('n', '<leader>fgs', '<cmd>Telescope git_status<cr>', { desc = 'Find git status' })
-set('n', '<leader>fgb', '<cmd>Telescope git_branches<cr>', { desc = 'Find git branches' })
 
 -- g - git
 set('n', 'gps', '<cmd>G push<cr>', { desc = 'Git Push' })
@@ -45,7 +44,6 @@ set('n', '[g', '<cmd>Gitsigns prev_hunk<cr>', { desc = 'Previous hunk' })
 set({ 'n', 'v' }, '<leader>hs', '<cmd>Gitsigns stage_hunk<cr>', { desc = 'Hunk Stage' })
 set({ 'n', 'v' }, '<leader>hr', '<cmd>Gitsigns reset_hunk<cr>', { desc = 'Hunk Reset' })
 set('n', '<leader>hu', '<cmd>Gitsigns undo_stage_hunk<cr>', { desc = 'Hunk Undo' })
-set('n', '<leader>hR', '<cmd>Gitsigns reset_buffer<cr>', { desc = 'Reset buffer' })
 set('n', '<leader>hp', '<cmd>Gitsigns preview_hunk<cr>', { desc = 'Hunk Preview' })
 set(
     'n',
@@ -68,8 +66,6 @@ set('n', '<leader>ca', '<cmd>lua require("crates").update_all_crates()<cr>', { d
 set('n', '<leader>cU', '<cmd>lua require("crates").upgrade_crate()<cr>', { desc = 'Crates Upgrade' })
 set('v', '<leader>cU', '<cmd>lua require("crates").upgrade_crates()<cr>', { desc = 'Crates Upgrade(s)' })
 set('n', '<leader>ct', '<cmd>lua require("crates").upgrade_all_crates()<cr>', { desc = 'Crates Upgrade All' })
-set('n', '<leader>cH', '<cmd>lua require("crates").open_homepage()<cr>', { desc = 'Crates Homepage' })
-set('n', '<leader>cR', '<cmd>lua require("crates").open_repository()<cr>', { desc = 'Crates Repository' })
 set('n', '<leader>cD', '<cmd>lua require("crates").open_documentation()<cr>', { desc = 'Crates Documentation' })
 set('n', '<leader>cO', '<cmd>lua require("crates").open_crates_io()<cr>', { desc = 'Crates Open Crates' })
 

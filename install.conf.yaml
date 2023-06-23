@@ -34,7 +34,7 @@
         ~/.config/yabai: yabai/
         # Skhd
         ~/.config/skhd: skhd/
-    - tap: [homebrew/core, homebrew/services, homebrew/cask-fonts]
+    # - tap: [homebrew/core, homebrew/services, homebrew/cask-fonts]
 
 - iffedora:
     - link:
@@ -42,48 +42,38 @@
         ~/.config/i3: i3/
 
 - omnipkg:
-    - install:
+    - install: 
         [
-          { brew: bat },
           { brew: bitwarden },
-          { brew: brave-browser },
+          { brew: cmake },
           { brew: discord },
           { brew: docker },
-          { brew: eksctl },
-          { brew: exa },
           { brew: fd },
           { brew: fish },
+          { brew: firefox },
           { brew: font-jetbrains-mono-nerd-font },
           { brew: fzf },
           { brew: google-chrome },
           { brew: go },
           { brew: gnupg },
           { brew: kitty },
-          { brew: kubectl },
           { brew: koekeishiya/formulae/skhd },
           { brew: koekeishiya/formulae/yabai },
           { brew: neovim },
           { brew: pinentry-mac },
           { brew: postgresql },
           { brew: postman },
-          { brew: ripgrep },
-          { brew: skhd },
           { brew: spotify },
           { brew: wget },
-          { brew: yabai },
-          { dnf: bat },
-          { dnf: brave-browser },
-          { dnf: copr enable elxreno/jetbrains-mono-nerd-fonts },
-          { dnf: jetbrains-mono-fonts },
-          { dnf: neovim },
-          { dnf: exa },
-          { dnf: fzf },
-          { dnf: fd-find },
-          { dnf: ripgrep },
-          { dnf: golang },
-          { dnf: kitty },
-          { dnf: gcc-c++ },
-          { dnf: postgresql },
-          { dnf: discord },
-          { dnf: fish },
         ]
+
+- cargo:
+    - bat
+    - bacon
+    - cargo-info
+    - exa
+    - fnm
+    - ripgrep
+    - starship
+    - nu
+    - zoxide

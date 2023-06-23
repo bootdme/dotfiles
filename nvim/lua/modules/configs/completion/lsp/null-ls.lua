@@ -19,7 +19,6 @@ local sources = {
         extra_args = { '--language', 'tsql' },
     }),
     formatting.stylua,
-    formatting.fish_indent,
 
     -- Diagnostics
     diagnostics.markdownlint.with({
