@@ -544,6 +544,10 @@ let-env config = {
 }
 
 source ~/.cache/starship/init.nu
+source ~/.config/.zoxide.nu
 
 alias vim = nvim
 alias c = clear
+alias sl = ls
+alias rm = trash
+alias cd = z
