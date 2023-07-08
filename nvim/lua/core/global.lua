@@ -44,6 +44,7 @@ global['lsp'] = {
 global['lsp_format_lint_dap'] = {
     -- LSPs
     'bash-language-server',
+    'eslint-lsp',
     'json-lsp',
     'lua-language-server',
     'rust-analyzer',
@@ -54,7 +55,6 @@ global['lsp_format_lint_dap'] = {
     'shfmt',
     'markdownlint',
     'prettierd',
-    'rustfmt',
     'sqlfmt',
     'stylua',
 

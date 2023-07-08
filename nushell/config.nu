@@ -552,5 +552,3 @@ alias sl = ls
 alias rm = trash
 alias cd = z
 alias wget = wget --no-hsts
-alias ls = exa -al --color=always --group-directories-first
-alias la = exa -a --color=always --group-directories-first
