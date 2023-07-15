@@ -1,3 +1,4 @@
+-- https://github.com/simrat39/rust-tools.nvim
 return function()
     local extension_path = vim.fn.stdpath('data') .. '/mason/packages/codelldb/extension'
     local codelldb_path = extension_path .. '/adapter/codelldb'

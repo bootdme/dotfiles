@@ -1,3 +1,4 @@
+-- https://github.com/Saecki/crates.nvim
 return function()
     require('crates').setup({
         smart_insert = true,

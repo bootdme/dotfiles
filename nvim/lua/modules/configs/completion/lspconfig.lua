@@ -1,3 +1,4 @@
+-- https://github.com/neovim/nvim-lspconfig
 return function()
     local u = require('core.func')
     local lsp = vim.lsp

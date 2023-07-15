@@ -1,3 +1,4 @@
+-- Variables
 local global = require('core.global')
 
 local data_dir = {

@@ -1,3 +1,4 @@
+-- https://github.com/iamcco/markdown-preview.nvim
 return function()
     -- If true, open markdown preview after entering a markdown buffer.
     vim.g.mkdp_auto_start = true

@@ -1,3 +1,4 @@
+-- Variables
 -- https://github.com/CharlesChiuGit/nvimdots.lua/blob/main/lua/core/pack.lua
 local fn = vim.fn
 local global = require('core.global')

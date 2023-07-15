@@ -1,3 +1,4 @@
+-- Variables
 local set = require('core.func').set
 
 -- Move to beginning/end of line
