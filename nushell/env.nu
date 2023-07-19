@@ -97,4 +97,7 @@ let-env PATH = ($env.PATH | split row (char esep) | append $"($env.FNM_MULTISHEL
 # MacOS
 if ((sys | get host.name) == "Darwin") {
 	let-env PATH = ($env.PATH | split row (char esep) | prepend '/opt/homebrew/sbin' | prepend '/opt/homebrew/bin')
+
+    # Temporary fix for postgresql@15 to access psql
+    let-env PATH = ($env.PATH | split row (char esep) | append '/opt/homebrew/opt/postgresql@15/bin')
 }

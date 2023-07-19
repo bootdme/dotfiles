@@ -15,21 +15,6 @@ tool['dstein64/vim-startuptime'] = {
     cmd = 'StartupTime',
 }
 
-tool['tpope/vim-dadbod'] = {
-    lazy = true,
-    cmd = { 'DBUI', 'DBUIFindBuffer', 'DBUIAddConnection' },
-    dependencies = {
-        { 'kristijanhusak/vim-dadbod-ui' },
-        {
-            'lifepillar/pgsql.vim',
-            config = function()
-                vim.g.sql_type_default = 'pgsql'
-            end,
-            ft = 'sql',
-        },
-    },
-}
-
 tool['nvim-telescope/telescope.nvim'] = {
     lazy = true,
     cmd = 'Telescope',
