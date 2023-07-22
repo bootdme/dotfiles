@@ -15,18 +15,18 @@ local sources = {
     formatting.markdownlint,
     formatting.shfmt,
     formatting.rustfmt,
-    formatting.sqlfmt.with({
+    --[[ formatting.sqlfmt.with({
         extra_args = { '--language', 'tsql' },
-    }),
+    }), ]]
     formatting.stylua,
 
     -- Diagnostics
     diagnostics.markdownlint.with({
         extra_args = { '-r', '~MD013,~MD036,~MD025' },
     }),
-    diagnostics.sqlfluff.with({
+    --[[ diagnostics.sqlfluff.with({
         extra_args = { '--dialect', 'tsql' },
-    }),
+    }), ]]
     diagnostics.shellcheck,
     diagnostics.selene.with({
         cwd = function()

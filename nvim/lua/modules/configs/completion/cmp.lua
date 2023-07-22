@@ -47,13 +47,17 @@ return function()
                         nvim_lsp = '[LSP]',
                         nvim_lua = '[LUA]',
                         path = '[PATH]',
-                        rg = '[RG]',
+                        -- rg = '[RG]',
                         luasnip = '[SNIP]',
                         treesitter = '[TS]',
                     })[entry.source.name]
                     return vim_item
                 end,
             }),
+        },
+        performance = {
+            async_budget = 1,
+            max_view_entries = 20,
         },
         mapping = cmp.mapping.preset.insert({
             ['<CR>'] = cmp.mapping.confirm({ select = false }),
@@ -89,7 +93,7 @@ return function()
             { name = 'nvim_lua' },
             { name = 'luasnip' },
             { name = 'path' },
-            { name = 'rg' },
+            -- { name = 'rg' },
             { name = 'crates' },
             { name = 'buffer' },
             { name = 'treesitter' },
