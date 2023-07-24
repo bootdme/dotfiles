@@ -32,36 +32,23 @@ global['ts'] = {
 }
 
 global['lsp'] = {
-    'bashls',
-    'null-ls',
     'jsonls',
     'lua_ls',
-    'marksman',
-    'sqlls',
 }
+
 -- Mason tool installer
 -- https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim
-global['lsp_format_lint_dap'] = {
+global['mason_installs'] = {
     -- LSPs
-    'bash-language-server',
-    'eslint-lsp',
     'json-lsp',
     'lua-language-server',
     'rust-analyzer',
-    'marksman',
-    'sqlls',
 
     -- Formatters
-    'shfmt',
-    'markdownlint',
-    'prettierd',
-    'sqlfmt',
     'stylua',
 
     -- Linters
     'selene',
-    'shellcheck',
-    'sqlfluff',
 }
 
 global:load_variables()

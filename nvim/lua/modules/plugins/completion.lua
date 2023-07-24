@@ -2,13 +2,9 @@ local completion = {}
 
 completion['neovim/nvim-lspconfig'] = {
     lazy = true,
-    event = { 'BufReadPost', 'BufAdd', 'BufNewFile' },
+    event = { 'CursorHold', 'CursorHoldI' },
     config = require('completion.lspconfig'),
     dependencies = {
-        {
-            'jose-elias-alvarez/null-ls.nvim',
-            dependencies = { 'nvim-lua/plenary.nvim' },
-        },
         { 'b0o/schemastore.nvim' },
         { 'williamboman/mason.nvim' },
         { 'williamboman/mason-lspconfig.nvim' },
@@ -28,17 +24,13 @@ completion['hrsh7th/nvim-cmp'] = {
             'L3MON4D3/LuaSnip',
             dependencies = { 'rafamadriz/friendly-snippets' },
             config = require('completion.luasnip'),
-            build = 'make install_jsregexp',
         },
         { 'onsails/lspkind.nvim' },
         { 'lukas-reineke/cmp-under-comparator' },
         { 'saadparwaiz1/cmp_luasnip' },
         { 'hrsh7th/cmp-nvim-lsp' },
-        { 'hrsh7th/cmp-nvim-lua' },
         { 'hrsh7th/cmp-path' },
         { 'hrsh7th/cmp-buffer' },
-        { 'lukas-reineke/cmp-rg' },
-        { 'ray-x/cmp-treesitter' },
         {
             'windwp/nvim-autopairs',
             config = require('completion.autopairs'),

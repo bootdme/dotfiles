@@ -1,20 +1,5 @@
 local tool = {}
 
-tool['tpope/vim-fugitive'] = {
-    lazy = true,
-    cmd = { 'Git', 'G' },
-}
-
-tool['mbbill/undotree'] = {
-    lazy = true,
-    cmd = 'UndotreeToggle',
-}
-
-tool['dstein64/vim-startuptime'] = {
-    lazy = true,
-    cmd = 'StartupTime',
-}
-
 tool['nvim-telescope/telescope.nvim'] = {
     lazy = true,
     cmd = 'Telescope',
@@ -24,7 +9,6 @@ tool['nvim-telescope/telescope.nvim'] = {
         { 'nvim-lua/plenary.nvim' },
         { 'nvim-lua/popup.nvim' },
         { 'LinArcX/telescope-env.nvim' },
-        { 'cljoly/telescope-repo.nvim' },
         { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
         { 'nvim-telescope/telescope-live-grep-args.nvim' },
     },

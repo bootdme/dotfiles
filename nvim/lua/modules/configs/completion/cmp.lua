@@ -43,21 +43,21 @@ return function()
                 ellipsis_char = '...',
                 before = function(entry, vim_item)
                     vim_item.menu = ({
-                        buffer = '[BUF]',
-                        nvim_lsp = '[LSP]',
-                        nvim_lua = '[LUA]',
+                        buffer = '[BUFFER]',
+                        nvim_lsp = '[NVIM LSP]',
                         path = '[PATH]',
-                        -- rg = '[RG]',
-                        luasnip = '[SNIP]',
-                        treesitter = '[TS]',
+                        luasnip = '[LUA SNIP]',
                     })[entry.source.name]
                     return vim_item
                 end,
             }),
         },
+        matching = {
+            disallow_partial_fuzzy_matching = false,
+        },
         performance = {
             async_budget = 1,
-            max_view_entries = 20,
+            max_view_entries = 60,
         },
         mapping = cmp.mapping.preset.insert({
             ['<CR>'] = cmp.mapping.confirm({ select = false }),
@@ -90,13 +90,10 @@ return function()
         },
         sources = {
             { name = 'nvim_lsp' },
-            { name = 'nvim_lua' },
             { name = 'luasnip' },
-            { name = 'path' },
-            -- { name = 'rg' },
-            { name = 'crates' },
             { name = 'buffer' },
-            { name = 'treesitter' },
+            { name = 'crates' },
+            { name = 'path' },
         },
     })
 end

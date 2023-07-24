@@ -8,7 +8,11 @@ ui['folke/tokyonight.nvim'] = {
 ui['nvim-treesitter/nvim-treesitter'] = {
     lazy = true,
     version = false,
-    build = ':TSUpdate',
+    build = function()
+        if #vim.api.nvim_list_uis() ~= 0 then
+            vim.api.nvim_command('TSUpdate')
+        end
+    end,
     event = { 'CursorHold', 'CursorHoldI' },
     config = require('ui.treesitter'),
     dependencies = {
@@ -19,7 +23,7 @@ ui['nvim-treesitter/nvim-treesitter'] = {
 
 ui['lewis6991/gitsigns.nvim'] = {
     lazy = true,
-    event = 'BufReadPost',
+    event = { 'CursorHold', 'CursorHoldI' },
     config = require('ui.gitsigns'),
 }
 

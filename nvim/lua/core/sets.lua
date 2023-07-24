@@ -28,16 +28,7 @@ set('n', '<leader>fw', '<cmd>Telescope live_grep_args<cr>', { desc = 'Find word'
 set('n', '<leader>fo', '<cmd>Telescope oldfiles<cr>', { desc = 'Find old files' })
 set('n', '<leader>ff', '<cmd>Telescope find_files<cr>', { desc = 'Find files' })
 set('n', '<leader>fb', '<cmd>Telescope buffers<cr>', { desc = 'Find buffer' })
-set('n', '<leader>fp', '<cmd>Telescope repo<cr>', { desc = 'Find repo' })
 set('n', '<leader>fe', '<cmd>Telescope env<cr>', { desc = 'Find environment' })
-set('n', '<leader>fgc', '<cmd>Telescope git_commits<cr>', { desc = 'Find git commits' })
-set('n', '<leader>fgs', '<cmd>Telescope git_status<cr>', { desc = 'Find git status' })
-
--- g - git
-set('n', 'gps', '<cmd>G push<cr>', { desc = 'Git Push' })
-set('n', 'gpl', '<cmd>G pull<cr>', { desc = 'Git Pull' })
-set('n', '<leader>g', '<cmd>G<cr>', { desc = 'Git Fugitive' })
-set('n', '<leader>gc', '<cmd>G commit<cr>', { desc = 'Git commit' })
 
 -- h - hunk
 set('n', ']g', '<cmd>Gitsigns next_hunk<cr>', { desc = 'Next hunk' })
@@ -73,6 +64,3 @@ set('n', '<leader>cO', '<cmd>lua require("crates").open_crates_io()<cr>', { desc
 -- m - markdown
 set('n', '<leader>mp', '<cmd>MarkdownPreviewToggle<cr>', { desc = 'Markdown Preview' })
 set('n', '<leader>ms', '<cmd>MarkdownPreviewStop<cr>', { desc = 'Markdown Stop' })
-
--- u - undo
-set('n', '<leader>ut', '<cmd>UndotreeToggle<cr>', { desc = 'Undotree Toggle' })
