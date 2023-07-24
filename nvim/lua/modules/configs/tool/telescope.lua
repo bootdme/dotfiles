@@ -6,13 +6,13 @@ return function()
         defaults = {
             vimgrep_arguments = {
                 'rg',
+                '-L',
                 '--color=never',
                 '--no-heading',
                 '--with-filename',
                 '--line-number',
                 '--column',
                 '--smart-case',
-                '--hidden',
             },
             layout_strategy = 'horizontal',
             layout_config = {
