@@ -92,8 +92,8 @@ return function()
             { name = 'nvim_lsp' },
             { name = 'luasnip' },
             { name = 'buffer' },
-            { name = 'crates' },
             { name = 'path' },
+            { name = 'crates' },
         },
     })
 end

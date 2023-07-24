@@ -6,7 +6,10 @@ completion['neovim/nvim-lspconfig'] = {
     config = require('completion.lspconfig'),
     dependencies = {
         { 'b0o/schemastore.nvim' },
-        { 'williamboman/mason.nvim' },
+        { 
+            'williamboman/mason.nvim',
+              build = ':MasonUpdate'
+        },
         { 'williamboman/mason-lspconfig.nvim' },
         {
             'WhoIsSethDaniel/mason-tool-installer.nvim',
