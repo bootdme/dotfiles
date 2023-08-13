@@ -1,5 +1,4 @@
 -- Variables
--- https://github.com/CharlesChiuGit/nvimdots.lua/blob/main/lua/core/options.lua
 local opt = vim.opt
 local global = require('core.global')
 

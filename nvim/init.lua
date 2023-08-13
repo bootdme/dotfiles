@@ -3,7 +3,7 @@ vim.g.mapleader = ' '
 vim.api.nvim_set_keymap('n', ' ', '', { noremap = true })
 vim.api.nvim_set_keymap('x', ' ', '', { noremap = true })
 
--- Load files
+-- Load core files
 require('core.boot')
 require('core.clip')
 require('core.dirs')

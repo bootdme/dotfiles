@@ -6,6 +6,7 @@ if vim.loop.os_uname().sysname == 'Darwin' then
         paste = { ['+'] = 'pbpaste', ['*'] = 'pbpaste' },
         cache_enabled = true,
     }
+
 -- Fedora clipboard
 else
     vim.g.clipboard = {
