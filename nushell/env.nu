@@ -85,6 +85,12 @@ let-env NU_PLUGIN_DIRS = [
     ($nu.default-config-dir | path join 'plugins')
 ]
 
+# XDG Path Names
+let-env XDG_CONFIG_HOME = ~/.config
+let-env XDG_STATE_HOME = ~/.local/state
+let-env XDG_CACHE_HOME = ~/.cache
+let-env XDG_DATA_HOME = ~/.local/share
+
 # To add entries to PATH (on Windows you might use Path), you can use the following pattern:
 
 # Cargo
