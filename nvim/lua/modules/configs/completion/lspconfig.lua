@@ -60,9 +60,6 @@ return function()
         u.buf_command(bufnr, 'LspAct', function()
             vim.lsp.buf.code_action()
         end)
-        u.buf_command(bufnr, 'LspRename', function()
-            vim.lsp.buf.rename()
-        end)
 
         -- Telescope
         u.buf_command(bufnr, 'LspRef', 'Telescope lsp_references')
@@ -74,7 +71,6 @@ return function()
         u.buf_set(bufnr, 'n', 'K', ':LspHover<CR>')
         u.buf_set(bufnr, 'n', '[a', ':LspDiagPrev<CR>')
         u.buf_set(bufnr, 'n', ']a', ':LspDiagNext<CR>')
-        u.buf_set(bufnr, 'n', 'gi', ':LspRename<CR>')
         u.buf_set(bufnr, 'n', '<Leader>a', ':LspDiagLine<CR>')
 
         u.buf_set(bufnr, 'n', 'ga', ':LspAct<CR>')
