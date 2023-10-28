@@ -33,12 +33,6 @@ ui['j-hui/fidget.nvim'] = {
     config = require('ui.fidget'),
 }
 
-ui['lukas-reineke/indent-blankline.nvim'] = {
-    lazy = true,
-    event = 'BufReadPost',
-    config = require('ui.indent-blankline'),
-}
-
 ui['nvim-lualine/lualine.nvim'] = {
     lazy = true,
     event = { 'BufReadPost', 'BufAdd', 'BufNewFile' },

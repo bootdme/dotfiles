@@ -2,7 +2,7 @@
 switch (uname)
     case Darwin
         fish_add_path /opt/homebrew/bin
-        fish_add_path /opts/homebrew/sbin
+        fish_add_path /opt/homebrew/sbin
         /Applications/kitty.app/Contents/MacOS/kitty + complete setup fish | source
     case Linux
         source /usr/share/fzf/shell/key-bindings.fish
