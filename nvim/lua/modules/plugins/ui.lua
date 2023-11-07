@@ -27,13 +27,6 @@ ui['lewis6991/gitsigns.nvim'] = {
     config = require('ui.gitsigns'),
 }
 
-ui['j-hui/fidget.nvim'] = {
-    lazy = true,
-    tag = 'legacy',
-    event = 'BufReadPost',
-    config = require('ui.fidget'),
-}
-
 ui['nvim-lualine/lualine.nvim'] = {
     lazy = true,
     event = { 'BufReadPost', 'BufAdd', 'BufNewFile' },
