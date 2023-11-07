@@ -112,6 +112,6 @@ if ((sys | get host.name) == "Darwin") {
 	$env.PATH = ($env.PATH | split row (char esep) | prepend '/opt/homebrew/sbin' | prepend '/opt/homebrew/bin')
 
     # Temporary fix for postgresql@15 to access psql
-    $env.PATH = ($env.PATH | split row (char esep) | append '/opt/homebrew/opt/postgresql@15/bin')
+    $env.PATH = ($env.PATH | split row (char esep) | append '/opt/homebrew/opt/postgresql@16/bin')
 }
 

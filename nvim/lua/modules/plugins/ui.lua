@@ -29,6 +29,7 @@ ui['lewis6991/gitsigns.nvim'] = {
 
 ui['j-hui/fidget.nvim'] = {
     lazy = true,
+    tag = 'legacy',
     event = 'BufReadPost',
     config = require('ui.fidget'),
 }
