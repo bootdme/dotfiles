@@ -80,6 +80,7 @@
     - fnm
     - ripgrep
     - sccache
+    - speedtest-rs
     - starship
     - nu
     - zoxide
