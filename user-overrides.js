@@ -10,11 +10,6 @@
 user_pref("network.trr.uri", "https://mozilla.cloudflare-dns.com/dns-query");
 user_pref("network.trr.mode", 2);
 
-//Disable Safe Browsing, this phones home to Google.
-user_pref("browser.safebrowsing.malware.enabled", false);
-user_pref("browser.safebrowsing.phishing.enabled", false);
-user_pref("browser.safebrowsing.downloads.enabled", false);
-
 // Leave IPv6 enabled
 user_pref("network.dns.disableIPv6", false);
 
@@ -42,7 +37,6 @@ user_pref("network.http.referer.XOriginPolicy", 2);
    // user_pref("media.gmp-provider.enabled", false);
 // Disable DRM, FCKDRM
    // user_pref("media.gmp-widevinecdm.enabled", false);
-user_pref("media.eme.enabled", false);
 //Autoplaying settings
 //0=Allow all, 1=Block non-muted media (default), 5=Block all
    // user_pref("media.autoplay.default", 5);
@@ -90,15 +84,9 @@ user_pref("privacy.sanitize.timeSpan", 0);
 //Helps against forensic tools.
 user_pref("places.history.enabled", false);
 
-//WebGL is a security risk, but sometimes breaks things like 23andMe
-//or Google Maps (not always).
-user_pref("webgl.disabled", true);
-
 //Firefox stores passwords in plain text and obsolete if you use a password manager.
 //Mozilla also told people to stop using their password manager.
 user_pref("signon.rememberSignons", false);
-//Disable Pocket, it's proprietary trash
-user_pref("extensions.pocket.enabled", false);
 // Disable Mozilla account
 user_pref("identity.fxaccounts.enabled", false);
 
