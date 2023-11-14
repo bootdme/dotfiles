@@ -132,14 +132,6 @@ return function()
                 prerelease = '  pre-release ',
                 yanked = '  yanked ',
             },
-            coq = {
-                enabled = false,
-                name = 'Crates',
-            },
-        },
-        null_ls = {
-            enabled = true,
-            name = 'Crates',
         },
     })
 end
