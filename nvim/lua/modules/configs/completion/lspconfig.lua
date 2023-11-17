@@ -40,15 +40,6 @@ return function()
 
     local augroup = vim.api.nvim_create_augroup('LspFormatting', {})
 
-    local lsp_formatting = function(bufnr)
-        lsp.buf.format({
-            filter = function(client)
-                return client.name == 'null-ls'
-            end,
-            bufnr = bufnr,
-        })
-    end
-
     local on_attach = function(client, bufnr)
         -- Commands
         u.buf_command(bufnr, 'LspHover', vim.lsp.buf.hover)
@@ -77,22 +68,6 @@ return function()
         u.buf_set(bufnr, 'x', 'ga', function()
             vim.lsp.buf.code_action() -- range
         end)
-
-        if client.supports_method('textDocument/formatting') then
-            local formatting_cb = function()
-                lsp_formatting(bufnr)
-            end
-
-            u.buf_command(bufnr, 'LspFormatting', formatting_cb)
-            u.buf_set(bufnr, 'n', '<CR>', formatting_cb)
-
-            vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
-            vim.api.nvim_create_autocmd('BufWritePre', {
-                group = augroup,
-                buffer = bufnr,
-                command = 'LspFormatting',
-            })
-        end
     end
 
     -- Advertise to LSP servers that nvim-cmp supports LSP
