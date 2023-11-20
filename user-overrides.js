@@ -145,9 +145,6 @@ user_pref("device.sensors.proximity.enabled", false);
 // Disable battery status API
 user_pref("dom.battery.enabled", false);
 
-// Disable clipboard events
-user_pref("dom.event.clipboardevents.enabled", false);
-
 // Disable Web Audio API
 user_pref("dom.webaudio.enabled", false);
 
