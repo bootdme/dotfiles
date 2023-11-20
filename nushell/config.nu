@@ -762,6 +762,7 @@ source ~/.config/.zoxide.nu
 alias vim = nvim
 alias c = clear
 alias sl = ls
+alias s = ls
 alias rm = trash
 alias cd = z
 alias wget = wget --no-hsts
