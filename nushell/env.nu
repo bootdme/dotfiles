@@ -103,6 +103,9 @@ $env.NU_PLUGIN_DIRS = [
 # Cargo
 $env.PATH = ($env.PATH | split row (char esep) | append '.cargo/bin')
 
+# Mason
+$env.PATH = ($env.PATH | split row (char esep) | append '/Users/bootdme/.local/share/nvim/mason/bin')
+
 # fnm
 load-env (fnm env --shell bash | lines | str replace 'export ' '' | str replace -a '"' '' | split column = | rename name value | where name != "FNM_ARCH" and name != "PATH" | reduce -f {} {|it, acc| $acc | upsert $it.name $it.value })
 $env.PATH = ($env.PATH | split row (char esep) | append $"($env.FNM_MULTISHELL_PATH)/bin")
