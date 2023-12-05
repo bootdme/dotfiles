@@ -30,22 +30,6 @@ set('n', '<leader>ff', '<cmd>Telescope find_files<cr>', { desc = 'Find files' })
 set('n', '<leader>fb', '<cmd>Telescope buffers<cr>', { desc = 'Find buffer' })
 set('n', '<leader>fe', '<cmd>Telescope env<cr>', { desc = 'Find environment' })
 
--- h - hunk
-set('n', ']g', '<cmd>Gitsigns next_hunk<cr>', { desc = 'Next hunk' })
-set('n', '[g', '<cmd>Gitsigns prev_hunk<cr>', { desc = 'Previous hunk' })
-set({ 'n', 'v' }, '<leader>hs', '<cmd>Gitsigns stage_hunk<cr>', { desc = 'Hunk Stage' })
-set({ 'n', 'v' }, '<leader>hr', '<cmd>Gitsigns reset_hunk<cr>', { desc = 'Hunk Reset' })
-set('n', '<leader>hu', '<cmd>Gitsigns undo_stage_hunk<cr>', { desc = 'Hunk Undo' })
-set('n', '<leader>hp', '<cmd>Gitsigns preview_hunk<cr>', { desc = 'Hunk Preview' })
-set(
-    'n',
-    '<leader>hb',
-    '<cmd>lua require("gitsigns.actions").blame_line({ full = true })<cr>',
-    { desc = 'Show hunk commit' }
-)
-
-set('n', '<leader>td', '<cmd>Gitsigns toggle_deleted<cr>', { desc = 'Toggle Deleted' })
-
 -- c - crates
 set('n', '<leader>ct', '<cmd>lua require("crates").toggle()<cr>', { desc = 'Crates Toggle' })
 set('n', '<leader>cr', '<cmd>lua require("crates").reload()<cr>', { desc = 'Crates Reload' })

@@ -21,12 +21,6 @@ ui['nvim-treesitter/nvim-treesitter'] = {
     },
 }
 
-ui['lewis6991/gitsigns.nvim'] = {
-    lazy = true,
-    event = { 'CursorHold', 'CursorHoldI' },
-    config = require('ui.gitsigns'),
-}
-
 ui['nvim-lualine/lualine.nvim'] = {
     lazy = true,
     event = { 'BufReadPost', 'BufAdd', 'BufNewFile' },
