@@ -46,7 +46,7 @@ return function()
                         buffer = '[BUFFER]',
                         nvim_lsp = '[NVIM LSP]',
                         path = '[PATH]',
-                        luasnip = '[LUA SNIP]',
+                        luasnip = '[LUASNIP]',
                     })[entry.source.name]
                     return vim_item
                 end,
