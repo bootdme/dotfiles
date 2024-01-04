@@ -37,7 +37,7 @@ return function()
         border = 'shadow',
     })
 
-    local on_attach = function(client)
+    local on_attach = function(client, bufnr)
         vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
         vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
         vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)

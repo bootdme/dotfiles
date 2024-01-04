@@ -63,7 +63,6 @@
           { brew: koekeishiya/formulae/skhd },
           { brew: koekeishiya/formulae/yabai },
           { brew: neovim },
-          { brew: obsidian },
           { brew: pinentry-mac },
           { brew: postgresql },
           { brew: postman },
@@ -76,6 +75,7 @@
     - bat
     - bacon
     - cargo-info
+    - cargo-install
     - exa
     - fnm
     - ripgrep

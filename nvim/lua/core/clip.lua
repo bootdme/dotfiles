@@ -4,7 +4,7 @@ if vim.loop.os_uname().sysname == 'Darwin' then
         name = 'macOS-clipboard',
         copy = { ['+'] = 'pbcopy', ['*'] = 'pbcopy' },
         paste = { ['+'] = 'pbpaste', ['*'] = 'pbpaste' },
-        cache_enabled = true,
+        cache_enabled = 0,
     }
 
 -- Fedora clipboard

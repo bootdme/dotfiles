@@ -18,7 +18,6 @@ set('n', 'Q', '<nop>', { desc = 'Never press' })
 -- l - lazy
 set('n', '<leader>lp', '<cmd>Lazy profile<cr>', { desc = 'Lazy profile' })
 set('n', '<leader>lu', '<cmd>Lazy update<cr>', { desc = 'Lazy update' })
-set('n', '<leader>lx', '<cmd>Lazy clean<cr>', { desc = 'Lazy clean' })
 
 -- f - find
 set('n', '<leader>fh', '<cmd>Telescope help_tags<cr>', { desc = 'Find help' })

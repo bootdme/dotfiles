@@ -18,6 +18,16 @@ completion['neovim/nvim-lspconfig'] = {
     },
 }
 
+completion["nvimtools/none-ls.nvim"] = {
+    lazy = true,
+	event = { "CursorHold", "CursorHoldI" },
+	config = require("completion.none-ls"),
+	dependencies = {
+        "nvim-lua/plenary.nvim",
+		"jay-babu/mason-null-ls.nvim",
+	},
+}
+
 completion['hrsh7th/nvim-cmp'] = {
     lazy = true,
     event = 'InsertEnter',

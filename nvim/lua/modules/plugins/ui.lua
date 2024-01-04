@@ -13,7 +13,7 @@ ui['nvim-treesitter/nvim-treesitter'] = {
             vim.api.nvim_command('TSUpdate')
         end
     end,
-    event = { 'CursorHold', 'CursorHoldI' },
+    event = 'BufReadPre',
     config = require('ui.treesitter'),
     dependencies = {
         'NvChad/nvim-colorizer.lua',

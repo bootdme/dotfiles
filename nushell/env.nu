@@ -101,14 +101,19 @@ $env.NU_PLUGIN_DIRS = [
 # $env.PATH = ($env.PATH | split row (char esep) | prepend '/some/path')
 
 # Cargo
-$env.PATH = ($env.PATH | split row (char esep) | append '.cargo/bin')
+$env.PATH = ($env.PATH | split row (char esep) | prepend '.cargo/bin')
 
 # Mason
 $env.PATH = ($env.PATH | split row (char esep) | append '/Users/bootdme/.local/share/nvim/mason/bin')
 
 # fnm
-load-env (fnm env --shell bash | lines | str replace 'export ' '' | str replace -a '"' '' | split column = | rename name value | where name != "FNM_ARCH" and name != "PATH" | reduce -f {} {|it, acc| $acc | upsert $it.name $it.value })
-$env.PATH = ($env.PATH | split row (char esep) | append $"($env.FNM_MULTISHELL_PATH)/bin")
+# load-env (fnm env --shell bash | lines | str replace 'export ' '' | str replace -a '"' '' | split column = | rename name value | where name != "FNM_ARCH" and name != "PATH" | reduce -f {} {|it, acc| $acc | upsert $it.name $it.value })
+# $env.PATH = ($env.PATH | split row (char esep) | append $"($env.FNM_MULTISHELL_PATH)/bin")
+
+if not (which fnm | is-empty) {
+    ^fnm env --json | from json | load-env
+    $env.PATH = ($env.PATH | prepend [$"($env.FNM_MULTISHELL_PATH)/bin"])
+}
 
 # MacOS
 if ((sys | get host.name) == "Darwin") {
@@ -118,3 +123,4 @@ if ((sys | get host.name) == "Darwin") {
     $env.PATH = ($env.PATH | split row (char esep) | append '/opt/homebrew/opt/postgresql@16/bin')
 }
 
+zoxide init nushell | save -f ~/dotfiles/nushell/.zoxide.nu
