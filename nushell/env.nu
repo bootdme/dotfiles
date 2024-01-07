@@ -100,16 +100,18 @@ $env.NU_PLUGIN_DIRS = [
 # To add entries to PATH (on Windows you might use Path), you can use the following pattern:
 # $env.PATH = ($env.PATH | split row (char esep) | prepend '/some/path')
 
+let XDG_CONFIG_HOME = "~/.config"
+let XDG_STATE_HOME = "~/.local/state"
+let XDG_CACHE_HOME = "~/.cache"
+let XDG_DATA_HOME = "~/.local/share"
+
 # Cargo
-$env.PATH = ($env.PATH | split row (char esep) | prepend '.cargo/bin')
+$env.PATH = ($env.PATH | split row (char esep) | prepend '~/.cargo/bin')
 
 # Mason
-$env.PATH = ($env.PATH | split row (char esep) | append '/Users/bootdme/.local/share/nvim/mason/bin')
+$env.PATH = ($env.PATH | split row (char esep) | append '~/.local/share/nvim/mason/bin')
 
 # fnm
-# load-env (fnm env --shell bash | lines | str replace 'export ' '' | str replace -a '"' '' | split column = | rename name value | where name != "FNM_ARCH" and name != "PATH" | reduce -f {} {|it, acc| $acc | upsert $it.name $it.value })
-# $env.PATH = ($env.PATH | split row (char esep) | append $"($env.FNM_MULTISHELL_PATH)/bin")
-
 if not (which fnm | is-empty) {
     ^fnm env --json | from json | load-env
     $env.PATH = ($env.PATH | prepend [$"($env.FNM_MULTISHELL_PATH)/bin"])
@@ -119,7 +121,7 @@ if not (which fnm | is-empty) {
 if ((sys | get host.name) == "Darwin") {
 	$env.PATH = ($env.PATH | split row (char esep) | prepend '/opt/homebrew/sbin' | prepend '/opt/homebrew/bin')
 
-    # Temporary fix for postgresql@15 to access psql
+    # Temporary fix for postgresql@16 to access psql
     $env.PATH = ($env.PATH | split row (char esep) | append '/opt/homebrew/opt/postgresql@16/bin')
 }
 

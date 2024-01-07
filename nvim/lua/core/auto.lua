@@ -54,4 +54,4 @@ autocmd('TextYankPost', {
 autocmd({ 'FocusGained', 'TermClose', 'TermLeave' }, { command = 'checktime' })
 
 -- Don't auto comment new line
-autocmd('BufEnter', { command = [[set formatoptions-=cro]] })
+autocmd('FileType', { command = [[set formatoptions-=cro]] })

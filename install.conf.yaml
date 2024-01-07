@@ -32,7 +32,7 @@
         ~/Library/Application Support/nushell/env.nu: nushell/env.nu
         ~/Library/Application Support/nushell/config.nu: nushell/config.nu
 
-        ~/.config/.zoxide.nu: nushell/.zoxide.nu
+        # ~/.config/.zoxide.nu: nushell/.zoxide.nu
 
         ~/.config/yabai: yabai/
         # Skhd
