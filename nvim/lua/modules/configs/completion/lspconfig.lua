@@ -3,7 +3,7 @@ return function()
     local lsp = vim.lsp
 
     -- For LSP debugging
-    lsp.set_log_level("debug")
+    lsp.set_log_level('debug')
 
     -- Manage LSP diagnostics
     vim.diagnostic.config({
@@ -37,7 +37,7 @@ return function()
         border = 'shadow',
     })
 
-    local on_attach = function(client, bufnr)
+    local on_attach = function()
         vim.keymap.set('n', 'gd', vim.lsp.buf.declaration)
         vim.keymap.set('n', 'K', vim.lsp.buf.hover)
         vim.keymap.set('n', '[a', vim.diagnostic.goto_prev)
