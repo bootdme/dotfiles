@@ -3,7 +3,7 @@ return function()
     local lsp = vim.lsp
 
     -- For LSP debugging
-    lsp.set_log_level(vim.log.levels.DEBUG)
+    lsp.set_log_level("debug")
 
     -- Manage LSP diagnostics
     vim.diagnostic.config({
@@ -38,12 +38,10 @@ return function()
     })
 
     local on_attach = function(client, bufnr)
-        vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
-        vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
-        vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
-        vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
-        vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
-        vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, opts)
+        vim.keymap.set('n', 'gd', vim.lsp.buf.declaration)
+        vim.keymap.set('n', 'K', vim.lsp.buf.hover)
+        vim.keymap.set('n', '[a', vim.diagnostic.goto_prev)
+        vim.keymap.set('n', ']a', vim.diagnostic.goto_next)
     end
 
     -- Advertise to LSP servers that nvim-cmp supports LSP

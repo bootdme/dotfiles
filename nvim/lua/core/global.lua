@@ -32,7 +32,6 @@ global['ts'] = {
 }
 
 global['lsp'] = {
-    'jsonls',
     'lua_ls',
 }
 
@@ -40,7 +39,6 @@ global['lsp'] = {
 -- https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim
 global['mason_installs'] = {
     -- LSPs
-    'json-lsp',
     'lua-language-server',
     'rust-analyzer',
 

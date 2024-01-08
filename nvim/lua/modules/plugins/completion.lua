@@ -4,8 +4,8 @@ completion['neovim/nvim-lspconfig'] = {
     lazy = true,
     event = { 'CursorHold', 'CursorHoldI' },
     config = require('completion.lspconfig'),
+    build = ':LspStart',
     dependencies = {
-        { 'b0o/schemastore.nvim' },
         { 
             'williamboman/mason.nvim',
               build = ':MasonUpdate'

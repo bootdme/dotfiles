@@ -109,7 +109,7 @@ let XDG_DATA_HOME = "~/.local/share"
 $env.PATH = ($env.PATH | split row (char esep) | prepend '~/.cargo/bin')
 
 # Mason
-$env.PATH = ($env.PATH | split row (char esep) | append '~/.local/share/nvim/mason/bin')
+$env.PATH = ($env.PATH | split row (char esep) | prepend '~/.local/share/nvim/mason/bin')
 
 # fnm
 if not (which fnm | is-empty) {
