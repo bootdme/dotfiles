@@ -27,10 +27,10 @@ return function()
 
     local sources = {
         builtins.formatting.stylua,
+        builtins.diagnostics.selene,
     }
 
     null_ls.setup({
-        diagnostics_format = '[#{c}] #{m} (#{s})',
         sources = sources,
         on_attach = on_attach,
     })

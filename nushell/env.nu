@@ -97,13 +97,23 @@ $env.NU_PLUGIN_DIRS = [
     ($nu.default-config-dir | path join 'plugins') # add <nushell-config-dir>/plugins
 ]
 
+export-env { load-env {
+    XDG_STATE_HOME: ($env.HOME | path join '.local' 'share')
+    XDG_CONFIG_HOME: ($env.HOME | path join '.config')
+    XDG_CACHE_HOME: ($env.HOME | path join '.cache')
+    XDG_DATA_HOME: ($env.HOME | path join '.local' 'share')
+} } 
+
+export-env { load-env {
+    LESSHISTFILE: ($env.XDG_STATE_HOME | path join 'less' 'history')
+    LESSKEY: ($env.XDG_STATE_HOME | path join 'less' 'keys')
+} }
+
+$env.EDITOR = 'nvim -f'
+$env.VISUAL = $env.EDITOR
+
 # To add entries to PATH (on Windows you might use Path), you can use the following pattern:
 # $env.PATH = ($env.PATH | split row (char esep) | prepend '/some/path')
-
-let XDG_CONFIG_HOME = "~/.config"
-let XDG_STATE_HOME = "~/.local/state"
-let XDG_CACHE_HOME = "~/.cache"
-let XDG_DATA_HOME = "~/.local/share"
 
 # Cargo
 $env.PATH = ($env.PATH | split row (char esep) | prepend '~/.cargo/bin')

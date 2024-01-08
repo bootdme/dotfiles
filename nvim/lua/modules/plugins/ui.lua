@@ -20,7 +20,8 @@ ui['nvim-treesitter/nvim-treesitter'] = {
             'NvChad/nvim-colorizer.lua',
             config = require('ui.colorizer'),
         },
-        'neovim/nvim-lspconfig',
+        { 'neovim/nvim-lspconfig' },
+        { 'nushell/tree-sitter-nu' },
     },
 }
 

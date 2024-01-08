@@ -25,16 +25,17 @@
     ~/.config/kitty: kitty/
     # Git
     ~/.config/git/config.base: git/config.base
-
+    # Starship
+    ~/.config/starship.toml: starship.toml
 - ifmacos:
     - link:
         # Nu Shell
         ~/Library/Application Support/nushell/env.nu: nushell/env.nu
         ~/Library/Application Support/nushell/config.nu: nushell/config.nu
 
-        # ~/.config/.zoxide.nu: nushell/.zoxide.nu
-
+        # Yabai
         ~/.config/yabai: yabai/
+
         # Skhd
         ~/.config/skhd: skhd/
     - tap: [homebrew/core, homebrew/services, homebrew/cask-fonts]

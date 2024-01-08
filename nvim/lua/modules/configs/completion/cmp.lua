@@ -43,9 +43,9 @@ return function()
                 ellipsis_char = '...',
                 before = function(entry, vim_item)
                     vim_item.menu = ({
+                        nvim_lsp = '[NVIM LSP]',
                         luasnip = '[LUASNIP]',
                         buffer = '[BUFFER]',
-                        nvim_lsp = '[NVIM LSP]',
                         path = '[PATH]',
                     })[entry.source.name]
                     return vim_item
