@@ -25,13 +25,12 @@
     ~/.config/kitty: kitty/
     # Git
     ~/.config/git/config.base: git/config.base
-    # Starship
-    ~/.config/starship.toml: starship.toml
 - ifmacos:
     - link:
         # Nu Shell
         ~/Library/Application Support/nushell/env.nu: nushell/env.nu
         ~/Library/Application Support/nushell/config.nu: nushell/config.nu
+        ~/Library/Application Support/nushell/aliases.nu: nushell/aliases.nu
 
         # Yabai
         ~/.config/yabai: yabai/
@@ -68,7 +67,7 @@
           { brew: postgresql },
           { brew: postman },
           { brew: spotify },
-          { brew: trash },
+          { brew: macos-trash },
           { brew: wget },
         ]
 
@@ -82,6 +81,5 @@
     - ripgrep
     - sccache
     - speedtest-rs
-    - starship
     - nu
     - zoxide

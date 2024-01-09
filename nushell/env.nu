@@ -85,6 +85,32 @@ $env.ENV_CONVERSIONS = {
     }
 }
 
+# ------------------------------------------------------------------------------
+
+export-env { load-env {
+    XDG_STATE_HOME: ($env.HOME | path join '.local' 'share')
+    XDG_CONFIG_HOME: ($env.HOME | path join '.config')
+    XDG_CACHE_HOME: ($env.HOME | path join '.cache')
+    XDG_DATA_HOME: ($env.HOME | path join '.local' 'share')
+} } 
+
+export-env { load-env {
+    CARGO_HOME: ($env.HOME | path join '.cargo')
+    LESSHISTFILE: ($env.XDG_STATE_HOME | path join 'less' 'history')
+    LESSKEY: ($env.XDG_STATE_HOME | path join 'less' 'keys')
+    SSH_AGENT_TIMEOUT: 300
+} }
+
+$env.EDITOR = 'nvim -f'
+$env.VISUAL = $env.EDITOR
+
+export-env {
+    let env_file = $nu.home-path | path join '.env'
+        if ($env_file | path exists) {
+            open $env_file | from nuon | load-env
+        }
+}
+
 # Directories to search for scripts when calling source or use
 # The default for this is $nu.default-config-dir/scripts
 $env.NU_LIB_DIRS = [
@@ -95,22 +121,9 @@ $env.NU_LIB_DIRS = [
 # The default for this is $nu.default-config-dir/plugins
 $env.NU_PLUGIN_DIRS = [
     ($nu.default-config-dir | path join 'plugins') # add <nushell-config-dir>/plugins
+    ($env.CARGO_HOME | path join 'bin')
 ]
 
-export-env { load-env {
-    XDG_STATE_HOME: ($env.HOME | path join '.local' 'share')
-    XDG_CONFIG_HOME: ($env.HOME | path join '.config')
-    XDG_CACHE_HOME: ($env.HOME | path join '.cache')
-    XDG_DATA_HOME: ($env.HOME | path join '.local' 'share')
-} } 
-
-export-env { load-env {
-    LESSHISTFILE: ($env.XDG_STATE_HOME | path join 'less' 'history')
-    LESSKEY: ($env.XDG_STATE_HOME | path join 'less' 'keys')
-} }
-
-$env.EDITOR = 'nvim -f'
-$env.VISUAL = $env.EDITOR
 
 # To add entries to PATH (on Windows you might use Path), you can use the following pattern:
 # $env.PATH = ($env.PATH | split row (char esep) | prepend '/some/path')
@@ -130,9 +143,11 @@ if not (which fnm | is-empty) {
 # MacOS
 if ((sys | get host.name) == "Darwin") {
 	$env.PATH = ($env.PATH | split row (char esep) | prepend '/opt/homebrew/sbin' | prepend '/opt/homebrew/bin')
-
-    # Temporary fix for postgresql@16 to access psql
     $env.PATH = ($env.PATH | split row (char esep) | append '/opt/homebrew/opt/postgresql@16/bin')
+}
+
+if ((sys | get host.name) == "Linux") {
+    $env.GPG_TTY = (tty)
 }
 
 zoxide init nushell | save -f ~/dotfiles/nushell/.zoxide.nu

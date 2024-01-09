@@ -7,7 +7,7 @@ return function()
 
     -- Manage LSP diagnostics
     vim.diagnostic.config({
-        underline = false,
+        underline = true,
         virtual_text = false,
         update_in_insert = true,
         virtual_lines = false,
