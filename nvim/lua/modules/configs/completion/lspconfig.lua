@@ -2,10 +2,8 @@
 return function()
     local lsp = vim.lsp
 
-    -- For LSP debugging
     lsp.set_log_level('debug')
 
-    -- Manage LSP diagnostics
     vim.diagnostic.config({
         underline = true,
         virtual_text = false,
