@@ -160,6 +160,7 @@ return function()
         server = {
             settings = {
                 ['rust-analyzer'] = {
+                    diagnostics = { enable = true },
                     assist = {
                         importEnforceGranularity = true,
                         importPrefix = 'crate',

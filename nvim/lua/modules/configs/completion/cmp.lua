@@ -45,7 +45,6 @@ return function()
                     vim_item.menu = ({
                         nvim_lsp = '[NVIM LSP]',
                         luasnip = '[LUASNIP]',
-                        buffer = '[BUFFER]',
                         path = '[PATH]',
                     })[entry.source.name]
                     return vim_item
@@ -89,7 +88,6 @@ return function()
         sources = {
             { name = 'nvim_lsp' },
             { name = 'luasnip' },
-            { name = 'buffer' },
             { name = 'path' },
         },
     })

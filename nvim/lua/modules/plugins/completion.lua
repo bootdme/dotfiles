@@ -42,7 +42,6 @@ completion['hrsh7th/nvim-cmp'] = {
         { 'saadparwaiz1/cmp_luasnip' },
         { 'hrsh7th/cmp-nvim-lsp' },
         { 'hrsh7th/cmp-path' },
-        { 'hrsh7th/cmp-buffer' },
         {
             'windwp/nvim-autopairs',
             config = require('completion.autopairs'),

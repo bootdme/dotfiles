@@ -761,6 +761,8 @@ $env.config = {
     ]
 }
 
+# Make edits below
+
 source ~/dotfiles/nushell/.zoxide.nu
 
 source ($nu.default-config-dir | path join 'aliases.nu')
