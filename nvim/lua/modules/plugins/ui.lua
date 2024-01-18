@@ -21,8 +21,13 @@ ui['nvim-treesitter/nvim-treesitter'] = {
             config = require('ui.colorizer'),
         },
         { 'neovim/nvim-lspconfig' },
-        { 'nushell/tree-sitter-nu' },
     },
+}
+
+ui['nushell/tree-sitter-nu'] = {
+    lazy = true,
+    dependencies = { 'nvim-treesitter/nvim-treesitter' },
+    ft = { 'nu' },
 }
 
 return ui

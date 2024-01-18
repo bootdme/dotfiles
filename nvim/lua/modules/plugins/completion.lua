@@ -9,7 +9,6 @@ completion['neovim/nvim-lspconfig'] = {
             'williamboman/mason.nvim',
             build = ':MasonUpdate',
         },
-        { 'williamboman/mason-lspconfig.nvim' },
         {
             'WhoIsSethDaniel/mason-tool-installer.nvim',
             config = require('completion.mason-tool-installer'),
@@ -23,7 +22,6 @@ completion['nvimtools/none-ls.nvim'] = {
     config = require('completion.none-ls'),
     dependencies = {
         { 'nvim-lua/plenary.nvim' },
-        { 'jay-babu/mason-null-ls.nvim' },
     },
 }
 
@@ -38,7 +36,6 @@ completion['hrsh7th/nvim-cmp'] = {
             config = require('completion.luasnip'),
         },
         { 'onsails/lspkind.nvim' },
-        { 'lukas-reineke/cmp-under-comparator' },
         { 'saadparwaiz1/cmp_luasnip' },
         { 'hrsh7th/cmp-nvim-lsp' },
         { 'hrsh7th/cmp-path' },

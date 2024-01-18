@@ -29,7 +29,6 @@ return function()
                 compare.exact,
                 compare.lsp_scores,
                 compare.score,
-                require('cmp-under-comparator').under,
                 compare.kind,
                 compare.sort_text,
                 compare.length,
@@ -62,10 +61,6 @@ return function()
             ['<CR>'] = cmp.mapping.confirm({ select = false }),
             ['<C-k>'] = cmp.mapping.select_prev_item(),
             ['<C-j>'] = cmp.mapping.select_next_item(),
-            ['<C-e>'] = cmp.mapping({
-                i = cmp.mapping.abort(),
-                c = cmp.mapping.close(),
-            }),
             ['<Tab>'] = cmp.mapping(function(fallback)
                 if cmp.visible() then
                     cmp.select_next_item()
