@@ -34,7 +34,6 @@ global['ts'] = {
 
 global['lsp'] = {
     'lua_ls',
-    'rust_analyzer',
 }
 
 -- Mason tool installer

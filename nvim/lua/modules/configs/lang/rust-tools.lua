@@ -1,8 +1,6 @@
 -- https://github.com/simrat39/rust-tools.nvim
 return function()
-    local extension_path = vim.fn.stdpath('data') .. '/mason/packages/codelldb/extension'
-    local codelldb_path = extension_path .. '/adapter/codelldb'
-    local liblldb_path = extension_path .. 'lldb/lib/liblldb.dylib'
+    local lsp = vim.lsp
 
     local opts = {
         tools = { -- rust-tools options
@@ -158,6 +156,12 @@ return function()
         -- these override the defaults set by rust-tools.nvim
         -- see https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#rust_analyzer
         server = {
+            on_attach = function()
+                vim.keymap.set('n', 'gd', vim.lsp.buf.declaration)
+                vim.keymap.set('n', 'K', vim.lsp.buf.hover)
+                vim.keymap.set('n', '[a', vim.diagnostic.goto_prev)
+                vim.keymap.set('n', ']a', vim.diagnostic.goto_next)
+            end,
             settings = {
                 ['rust-analyzer'] = {
                     diagnostics = { enable = true },
