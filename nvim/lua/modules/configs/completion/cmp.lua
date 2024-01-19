@@ -2,8 +2,9 @@
 return function()
     local compare = require('cmp.config.compare')
 
-    -- nvim_replace_termcodes
-    local t = require('core.func').t
+    local t = function(str)
+        return vim.api.nvim_replace_termcodes(str, true, true, true)
+    end
 
     -- Better sort completion
     compare.lsp_scores = function(entry1, entry2)

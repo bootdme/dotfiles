@@ -16,10 +16,6 @@ ui['nvim-treesitter/nvim-treesitter'] = {
     event = 'BufReadPre',
     config = require('ui.treesitter'),
     dependencies = {
-        {
-            'NvChad/nvim-colorizer.lua',
-            config = require('ui.colorizer'),
-        },
         { 'neovim/nvim-lspconfig' },
     },
 }

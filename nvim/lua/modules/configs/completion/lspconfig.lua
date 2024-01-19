@@ -5,7 +5,7 @@ return function()
     lsp.set_log_level('debug')
 
     vim.diagnostic.config({
-        underline = true,
+        underline = false,
         virtual_text = false,
         update_in_insert = true,
         virtual_lines = false,
