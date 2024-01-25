@@ -62,15 +62,6 @@ return function()
             ['<CR>'] = cmp.mapping.confirm({ select = false }),
             ['<C-k>'] = cmp.mapping.select_prev_item(),
             ['<C-j>'] = cmp.mapping.select_next_item(),
-            ['<Tab>'] = cmp.mapping(function(fallback)
-                if cmp.visible() then
-                    cmp.select_next_item()
-                elseif require('luasnip').expand_or_jumpable() then
-                    vim.fn.feedkeys(t('<Plug>luasnip-expand-or-jump'), '')
-                else
-                    fallback()
-                end
-            end, { 'i', 's' }),
         }),
         snippet = {
             expand = function(args)
