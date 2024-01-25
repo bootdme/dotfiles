@@ -20,16 +20,6 @@ autocmd('FileType', {
     end,
 })
 
--- Fix fold issue of files opened by telescope
-autocmd('BufRead', {
-    callback = function()
-        autocmd('BufWinEnter', {
-            once = true,
-            command = 'normal! zx',
-        })
-    end,
-})
-
 -- Auto jump to last place in file
 autocmd('BufReadPost', {
     callback = function()

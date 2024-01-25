@@ -3,6 +3,7 @@ vim.g.mapleader = ' '
 vim.api.nvim_set_keymap('n', ' ', '', { noremap = true })
 vim.api.nvim_set_keymap('x', ' ', '', { noremap = true })
 
+-- Ctrl + C temporary fix in .sql files
 vim.g.omni_sql_no_default_maps = 1
 
 -- Load core files

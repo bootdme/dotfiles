@@ -32,6 +32,7 @@ global['ts'] = {
     'sql',
 }
 
+-- LSP variables
 global['lsp'] = {
     'lua_ls',
 }

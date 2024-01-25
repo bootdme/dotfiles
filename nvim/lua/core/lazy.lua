@@ -11,6 +11,7 @@ local modules_dir = vim_path .. '/lua/modules'
 
 local lazy = {}
 
+-- Loads plugins from specified directories, organizes them into a table, and extends their configurations into a list of modules
 function lazy:load_plugins()
     self.modules = {}
 
@@ -43,6 +44,7 @@ function lazy:load_plugins()
     end
 end
 
+-- Sets up lazy vim with plugins and settings
 function lazy:load_lazy()
     self:load_plugins()
 

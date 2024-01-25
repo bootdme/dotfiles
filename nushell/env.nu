@@ -128,6 +128,8 @@ $env.NU_PLUGIN_DIRS = [
 # To add entries to PATH (on Windows you might use Path), you can use the following pattern:
 # $env.PATH = ($env.PATH | split row (char esep) | prepend '/some/path')
 
+$env.PATH = ($env.PATH | split row (char esep) | append '~/Library/Python/3.9/bin')
+
 # Cargo
 $env.PATH = ($env.PATH | split row (char esep) | prepend '~/.cargo/bin')
 
@@ -150,4 +152,4 @@ if ((sys | get host.name) == "Linux") {
     $env.GPG_TTY = (tty)
 }
 
-zoxide init nushell | save -f ~/dotfiles/nushell/.zoxide.nu
+zoxide init nushell | str replace --all "$env.PWD -- $rest" "$env.PWD -- ...$rest" | str replace --all "def-env" "def --env" | save -f ~/dotfiles/nushell/.zoxide.nu
