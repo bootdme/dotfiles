@@ -2,10 +2,6 @@
 return function()
     local compare = require('cmp.config.compare')
 
-    local t = function(str)
-        return vim.api.nvim_replace_termcodes(str, true, true, true)
-    end
-
     -- Better sort completion
     compare.lsp_scores = function(entry1, entry2)
         local diff
@@ -26,10 +22,12 @@ return function()
         sorting = {
             priority_weight = 2,
             comparators = {
-                compare.offset,
-                compare.exact,
+                compare.locality,
+                compare.recently_used,
                 compare.lsp_scores,
                 compare.score,
+                compare.offset,
+                compare.exact,
                 compare.kind,
                 compare.sort_text,
                 compare.length,
@@ -44,7 +42,7 @@ return function()
                 before = function(entry, vim_item)
                     vim_item.menu = ({
                         nvim_lsp = '[LSP]',
-                        luasnip = '[LUASNIP]',
+                        luasnip = '[SNIP]',
                         path = '[PATH]',
                     })[entry.source.name]
                     return vim_item

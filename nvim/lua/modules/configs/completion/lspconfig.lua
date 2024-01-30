@@ -24,6 +24,21 @@ return function()
         },
     })
 
+    -- Publish diagnostic
+    lsp.handlers['textDocument/publishDiagnostics'] = lsp.with(lsp.diagnostic.on_publish_diagnostics, {
+        virtual_text = {
+            prefix = '←',
+            spacing = 2,
+            severity = { min = vim.diagnostic.severity.HINT },
+        },
+        signs = {
+            priority = 30,
+            severity = { min = vim.diagnostic.severity.HINT },
+        },
+        severity_sort = true,
+        update_in_insert = false,
+    })
+
     -- Close signature help
     lsp.handlers['textDocument/signatureHelp'] = lsp.with(lsp.handlers.signature_help, {
         border = 'shadow',
@@ -36,8 +51,6 @@ return function()
     })
 
     local on_attach = function()
-        vim.keymap.set('n', 'gd', vim.lsp.buf.declaration)
-        vim.keymap.set('n', 'gi', vim.lsp.buf.implementation)
         vim.keymap.set('n', 'K', vim.lsp.buf.hover)
         vim.keymap.set('n', '[a', vim.diagnostic.goto_prev)
         vim.keymap.set('n', ']a', vim.diagnostic.goto_next)

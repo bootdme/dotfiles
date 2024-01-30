@@ -20,10 +20,4 @@ ui['nvim-treesitter/nvim-treesitter'] = {
     },
 }
 
-ui['nushell/tree-sitter-nu'] = {
-    lazy = true,
-    dependencies = { 'nvim-treesitter/nvim-treesitter' },
-    ft = { 'nu' },
-}
-
 return ui

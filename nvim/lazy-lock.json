@@ -13,9 +13,8 @@
   "nvim-autopairs": { "branch": "master", "commit": "096d0baecc34f6c5d8a6dd25851e9d5ad338209b" },
   "nvim-cmp": { "branch": "main", "commit": "538e37ba87284942c1d76ed38dd497e54e65b891" },
   "nvim-lspconfig": { "branch": "master", "commit": "021906284dcfb938bc236f8295af2650c60cb807" },
-  "nvim-treesitter": { "branch": "master", "commit": "e24dab6696aa2a6682a117e241adc32c38e93d53" },
+  "nvim-treesitter": { "branch": "master", "commit": "5f950cdcb82d2cf74e6b30338897b3a4897f52b3" },
   "plenary.nvim": { "branch": "master", "commit": "4f71c0c4a196ceb656c824a70792f3df3ce6bb6d" },
-  "rustaceanvim": { "branch": "master", "commit": "7c63115b539e56b29194f733c7ae804b99c0e4e5" },
-  "tokyonight": { "branch": "main", "commit": "e3301873c1e96903daebb98cc9b5926810bf73dd" },
-  "tree-sitter-nu": { "branch": "main", "commit": "4e51ef80957a8237d33bf27c29b4f9c2296378a3" }
+  "rustaceanvim": { "branch": "master", "commit": "2126b818ca02ccd4b10ece44a43c381a31239579" },
+  "tokyonight": { "branch": "main", "commit": "e3301873c1e96903daebb98cc9b5926810bf73dd" }
 }
