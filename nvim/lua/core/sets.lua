@@ -1,5 +1,20 @@
 -- Variables
-local set = require('core.func').set
+
+-- Get key-value options for mappings
+local get_map_options = function(custom_options)
+    local options = { noremap = true, silent = true }
+
+    if custom_options then
+        options = vim.tbl_extend('force', options, custom_options)
+    end
+
+    return options
+end
+
+-- Set key mappings in Neovim
+local set = function(mode, target, source, opts)
+    vim.keymap.set(mode, target, source, get_map_options(opts))
+end
 
 -- Move to beginning/end of line
 set('n', 'H', '^', { desc = 'Beginning of line' })

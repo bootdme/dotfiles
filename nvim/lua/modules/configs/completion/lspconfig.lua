@@ -37,6 +37,7 @@ return function()
 
     local on_attach = function()
         vim.keymap.set('n', 'gd', vim.lsp.buf.declaration)
+        vim.keymap.set('n', 'gi', vim.lsp.buf.implementation)
         vim.keymap.set('n', 'K', vim.lsp.buf.hover)
         vim.keymap.set('n', '[a', vim.diagnostic.goto_prev)
         vim.keymap.set('n', ']a', vim.diagnostic.goto_next)

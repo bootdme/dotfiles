@@ -3,15 +3,16 @@ local lang = {}
 lang['iamcco/markdown-preview.nvim'] = {
     lazy = true,
     ft = 'markdown',
-    build = ':call mkdp#util#install()',
+    build = function()
+        vim.fn['mkdp#util#install']()
+    end,
     config = require('lang.markdown-preview'),
 }
 
-lang['simrat39/rust-tools.nvim'] = {
+lang['mrcjkb/rustaceanvim'] = {
     lazy = true,
-    ft = 'rust',
-    config = require('lang.rust-tools'),
-    dependencies = { 'nvim-lua/plenary.nvim' },
+    version = '^4',
+    ft = { 'rust', 'rs' },
 }
 
 return lang

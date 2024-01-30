@@ -12,3 +12,5 @@ if not vim.loop.fs_stat(lazy_path) then
         '!git clone --filter=blob:none --branch=stable https://github.com/folke/lazy.nvim.git ' .. lazy_path
     )
 end
+
+vim.opt.rtp:prepend(vim.env.LAZY or lazy_path)

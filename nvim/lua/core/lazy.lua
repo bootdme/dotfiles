@@ -74,7 +74,6 @@ function lazy:load_lazy()
                     'gzip',
                     'matchit',
                     'matchparen',
-                    'DisableSqlOmni',
                     'netrwPlugin',
                     'rplugin',
                     'tarPlugin',
