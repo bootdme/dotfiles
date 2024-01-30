@@ -62,6 +62,7 @@
           { brew: kitty },
           { brew: koekeishiya/formulae/skhd },
           { brew: koekeishiya/formulae/yabai },
+          { brew: mold },
           { brew: neovim },
           { brew: pinentry-mac },
           { brew: postgresql },

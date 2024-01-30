@@ -21,7 +21,7 @@ function lazy:load_plugins()
 
         if type(plugins_list) == 'table' then
             for _, f in ipairs(plugins_list) do
-                list[#list + 1] = f:sub(#modules_dir - 6, -1)
+                list[#list + 1] = f:find(modules_dir) and f:sub(#modules_dir - 6, -1)
             end
         end
 
