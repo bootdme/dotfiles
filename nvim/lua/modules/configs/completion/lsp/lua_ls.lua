@@ -14,7 +14,7 @@ local settings = {
         diagnostics = {
             enable = true,
             globals = { 'vim' },
-            disable = { 'different-requires' },
+            disable = { 'different-requires', 'undefined-field' },
         },
         completion = {
             enable = true,
