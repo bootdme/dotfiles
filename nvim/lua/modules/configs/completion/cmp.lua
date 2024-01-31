@@ -22,9 +22,9 @@ return function()
         sorting = {
             priority_weight = 2,
             comparators = {
+                compare.lsp_scores,
                 compare.locality,
                 compare.recently_used,
-                compare.lsp_scores,
                 compare.score,
                 compare.offset,
                 compare.exact,

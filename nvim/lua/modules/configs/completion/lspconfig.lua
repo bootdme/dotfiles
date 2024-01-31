@@ -36,7 +36,7 @@ return function()
             severity = { min = vim.diagnostic.severity.HINT },
         },
         severity_sort = true,
-        update_in_insert = false,
+        update_in_insert = true,
     })
 
     -- Close signature help

@@ -21,8 +21,8 @@ set('n', 'H', '^', { desc = 'Beginning of line' })
 set('n', 'L', '$', { desc = 'End of line' })
 
 -- Move blocks of code up/down
-set('v', 'J', ":m '>+1<CR>gv=gv", { desc = 'Move code down' })
-set('v', 'K', ":m '<-2<CR>gv=gv", { desc = 'Move code up' })
+set('x', 'J', ":m '>+1<CR>gv=gv", { desc = 'Move code down' })
+set('x', 'K', ":m '<-2<CR>gv=gv", { desc = 'Move code up' })
 
 -- Keep cursor in-place if below line append to current line when moving
 set('n', 'J', 'mzJ`z', { desc = 'Keep cursor inplace' })
@@ -33,6 +33,7 @@ set('n', 'Q', '<nop>', { desc = 'Never press' })
 -- l - lazy
 set('n', '<leader>lp', '<cmd>Lazy profile<cr>', { desc = 'Lazy profile' })
 set('n', '<leader>lu', '<cmd>Lazy update<cr>', { desc = 'Lazy update' })
+set('n', '<leader>lh', '<cmd>Lazy home<cr>', { desc = 'Lazy home' })
 
 -- m - markdown
 set('n', '<leader>mp', '<cmd>MarkdownPreviewToggle<cr>', { desc = 'Markdown Preview' })

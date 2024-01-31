@@ -9,7 +9,19 @@ return function()
 
             settings = {
                 ['rust-analyzer'] = {
-                    inlayHints = {
+                    diagnostics = { enable = true },
+                    assist = {
+                        importEnforceGranularity = true,
+                        importPrefix = 'crate',
+                    },
+                    cargo = {
+                        allFeatures = true,
+                    },
+                    checkOnSave = {
+                        -- default: `cargo check`
+                        command = 'clippy',
+                    },
+                    nlayHints = {
                         chainingHints = {
                             bindingModeHints = {
                                 enable = true,
