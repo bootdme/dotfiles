@@ -44,6 +44,11 @@
         # i3
         ~/.config/i3: i3/
 
+        # Nu Shell
+        ~/.config/nushell/env.nu: nushell/env.nu
+        ~/.config/nushell/config.nu: nushell/config.nu
+        ~/.config/nushell/aliases.nu: nushell/aliases.nu
+
 - omnipkg:
     - install:
         [
@@ -70,6 +75,13 @@
           { brew: spotify },
           { brew: macos-trash },
           { brew: wget },
+          { dnf: cmake },
+          { dnf: fzf },
+          { dnf: golang },
+          { dnf: kitty },
+          { dnf: neovim },
+          { dnf: openssl-devel },
+          { dnf: postgresql },
         ]
 
 - cargo:

@@ -104,6 +104,8 @@ export-env { load-env {
 $env.EDITOR = 'nvim -f'
 $env.VISUAL = $env.EDITOR
 
+$env.GPG_TTY = (echo (tty))
+
 export-env {
     let env_file = $nu.home-path | path join '.env'
         if ($env_file | path exists) {
