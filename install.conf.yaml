@@ -29,6 +29,7 @@
     - link:
         # Nu Shell
         ~/Library/Application Support/nushell/env.nu: nushell/env.nu
+        ~/Library/Application Support/nushell/completion.nu: nushell/completion.nu
         ~/Library/Application Support/nushell/config.nu: nushell/config.nu
         ~/Library/Application Support/nushell/aliases.nu: nushell/aliases.nu
 
@@ -37,7 +38,7 @@
 
         # Skhd
         ~/.config/skhd: skhd/
-    - tap: [homebrew/core, homebrew/services, homebrew/cask-fonts]
+    - tap: [homebrew/core, homebrew/services, homebrew/cask-fonts, rsteube/homebrew-tap]
 
 - iffedora:
     - link:
@@ -72,6 +73,7 @@
           { brew: pinentry-mac },
           { brew: postgresql },
           { brew: postman },
+          { brew: rsteube/tap/carapace },
           { brew: spotify },
           { brew: macos-trash },
           { brew: wget },

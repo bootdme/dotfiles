@@ -46,7 +46,6 @@
     alias = !git config -l | grep alias | cut -c 7-
 
     # Abbreviations
-    cm = commit
     co = checkout
     st = status
     lg = log --graph --date=relative --pretty=tformat:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%an %ad)%Creset'
