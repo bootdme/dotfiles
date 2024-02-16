@@ -5,7 +5,7 @@ return function()
         ensure_installed = require('core.global').ts,
 
         -- Install parsers asynchronously
-        sync_install = true,
+        sync_install = false,
 
         -- Automaticaly install missing parsers when entering buffer
         -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
@@ -28,7 +28,7 @@ return function()
         -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
         -- Using this option may slow down your editor, and you may see some duplicate highlights.
         -- Instead of true it can also be a list of languages
-        additional_vim_regex_highlighting = false,
+        additional_vim_regex_highlighting = { 'mardown' },
     })
 
     require('nvim-treesitter.install').prefer_git = true

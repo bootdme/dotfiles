@@ -1,39 +1,8 @@
 -- https://github.com/hrsh7th/nvim-cmp
 return function()
-    local compare = require('cmp.config.compare')
-
-    -- Better sort completion
-    compare.lsp_scores = function(entry1, entry2)
-        local diff
-
-        if entry1.completion_item.score and entry2.completion_item.score then
-            diff = (entry2.completion_item.score * entry2.score) - (entry1.completion_item.score * entry1.score)
-        else
-            diff = entry2.score - entry1.score
-        end
-
-        return (diff < 0)
-    end
-
     local cmp = require('cmp')
     local lspkind = require('lspkind')
-
     cmp.setup({
-        sorting = {
-            priority_weight = 2,
-            comparators = {
-                compare.lsp_scores,
-                compare.locality,
-                compare.recently_used,
-                compare.score,
-                compare.offset,
-                compare.exact,
-                compare.kind,
-                compare.sort_text,
-                compare.length,
-                compare.order,
-            },
-        },
         formatting = {
             format = lspkind.cmp_format({
                 mode = 'symbol_text',

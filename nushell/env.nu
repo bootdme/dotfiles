@@ -154,4 +154,4 @@ if ((sys | get host.name) == "Linux") {
     $env.GPG_TTY = (tty)
 }
 
-zoxide init nushell | str replace --all "$env.PWD -- $rest" "$env.PWD -- ...$rest" | str replace --all "def-env" "def --env" | save -f ~/dotfiles/nushell/.zoxide.nu
+zoxide init nushell | save -f ~/dotfiles/nushell/.zoxide.nu
