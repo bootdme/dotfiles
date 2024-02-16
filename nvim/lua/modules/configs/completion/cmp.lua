@@ -42,7 +42,6 @@ return function()
                 before = function(entry, vim_item)
                     vim_item.menu = ({
                         nvim_lsp = '[LSP]',
-                        luasnip = '[SNIP]',
                         path = '[PATH]',
                     })[entry.source.name]
                     return vim_item
@@ -61,14 +60,8 @@ return function()
             ['<C-k>'] = cmp.mapping.select_prev_item(),
             ['<C-j>'] = cmp.mapping.select_next_item(),
         }),
-        snippet = {
-            expand = function(args)
-                require('luasnip').lsp_expand(args.body)
-            end,
-        },
         sources = {
             { name = 'nvim_lsp' },
-            { name = 'luasnip' },
             { name = 'path' },
         },
     })
