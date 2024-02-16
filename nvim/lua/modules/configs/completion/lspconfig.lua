@@ -4,26 +4,6 @@ return function()
 
     lsp.set_log_level('debug')
 
-    vim.diagnostic.config({
-        underline = false,
-        virtual_text = false,
-        update_in_insert = true,
-        virtual_lines = false,
-        signs = true,
-        float = {
-            focusable = false,
-            style = 'minimal',
-            source = 'always',
-            format = function(diagnostic)
-                if diagnostic.code then
-                    return string.format('[%s]\n%s', diagnostic.code, diagnostic.message)
-                else
-                    return diagnostic.message
-                end
-            end,
-        },
-    })
-
     -- Publish diagnostic
     lsp.handlers['textDocument/publishDiagnostics'] = lsp.with(lsp.diagnostic.on_publish_diagnostics, {
         virtual_text = {
@@ -37,17 +17,6 @@ return function()
         },
         severity_sort = true,
         update_in_insert = true,
-    })
-
-    -- Close signature help
-    lsp.handlers['textDocument/signatureHelp'] = lsp.with(lsp.handlers.signature_help, {
-        border = 'shadow',
-        close_events = { 'CursorMoved', 'BufHidden', 'InsertCharPre' },
-    })
-
-    -- Handle hover
-    lsp.handlers['textDocument/hover'] = lsp.with(lsp.handlers.hover, {
-        border = 'shadow',
     })
 
     local on_attach = function()

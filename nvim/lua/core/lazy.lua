@@ -56,11 +56,6 @@ function lazy:load_lazy()
         },
         checker = { enabled = true },
         install = { missing = true },
-        ui = {
-            size = { width = 0.88, height = 0.8 },
-            wrap = true,
-            border = 'rounded',
-        },
         performance = {
             cache = {
                 enabled = true,
