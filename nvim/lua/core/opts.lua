@@ -12,7 +12,7 @@ vim.g.loaded_remote_plugins = 1
 -- Do not load native syntax completion
 vim.g.loaded_spellfile_plugin = 1
 
--- Ctrl + C temporary fix in .sql files
+-- Ctrl + C fix in .sql files
 vim.g.omni_sql_no_default_maps = 1
 vim.g.loaded_sql_completion = 1
 

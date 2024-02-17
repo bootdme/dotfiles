@@ -2,6 +2,7 @@
 return function()
     local cmp = require('cmp')
     local lspkind = require('lspkind')
+
     cmp.setup({
         formatting = {
             format = lspkind.cmp_format({
@@ -29,6 +30,11 @@ return function()
             ['<C-k>'] = cmp.mapping.select_prev_item(),
             ['<C-j>'] = cmp.mapping.select_next_item(),
         }),
+        snippet = {
+            expand = function(args)
+                require('luasnip').lsp_expand(args.body)
+            end,
+        },
         sources = {
             { name = 'nvim_lsp' },
             { name = 'path' },

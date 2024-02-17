@@ -27,6 +27,10 @@ completion['hrsh7th/nvim-cmp'] = {
     event = 'InsertEnter',
     config = require('completion.cmp'),
     dependencies = {
+        {
+            'L3MON4D3/LuaSnip',
+            dependencies = { 'rafamadriz/friendly-snippets' },
+        },
         { 'onsails/lspkind.nvim' },
         { 'hrsh7th/cmp-nvim-lsp' },
         { 'hrsh7th/cmp-path' },

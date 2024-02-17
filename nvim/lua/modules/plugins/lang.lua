@@ -9,10 +9,4 @@ lang['iamcco/markdown-preview.nvim'] = {
     config = require('lang.markdown-preview'),
 }
 
-lang['mrcjkb/rustaceanvim'] = {
-    lazy = true,
-    version = '^4',
-    ft = { 'rust', 'rs' },
-}
-
 return lang

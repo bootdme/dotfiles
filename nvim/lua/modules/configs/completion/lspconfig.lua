@@ -2,25 +2,20 @@
 return function()
     local lsp = vim.lsp
 
-    lsp.set_log_level('debug')
-
-    -- Publish diagnostic
-    lsp.handlers['textDocument/publishDiagnostics'] = lsp.with(lsp.diagnostic.on_publish_diagnostics, {
-        virtual_text = {
-            prefix = '←',
-            spacing = 2,
-            severity = { min = vim.diagnostic.severity.HINT },
-        },
-        signs = {
-            priority = 30,
-            severity = { min = vim.diagnostic.severity.HINT },
-        },
-        severity_sort = true,
+    vim.diagnostic.config({
         update_in_insert = true,
+        float = {
+            focusable = false,
+            style = 'minimal',
+            source = 'always',
+            header = '',
+            prefix = '',
+        },
     })
 
     local on_attach = function()
         vim.keymap.set('n', 'K', vim.lsp.buf.hover)
+        vim.keymap.set('n', 'gd', vim.lsp.buf.definition)
         vim.keymap.set('n', '[a', vim.diagnostic.goto_prev)
         vim.keymap.set('n', ']a', vim.diagnostic.goto_next)
     end
