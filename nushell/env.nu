@@ -92,7 +92,9 @@ export-env { load-env {
 $env.EDITOR = 'nvim -f'
 $env.VISUAL = $env.EDITOR
 
-$env.GPG_TTY = (echo (tty))
+if ((sys | get host.name) == "Linux") {
+    $env.GPG_TTY = (tty)
+}
 
 export-env {
     let env_file = $nu.home-path | path join '.env'
@@ -138,8 +140,5 @@ if ((sys | get host.name) == "Darwin") {
     $env.PATH = ($env.PATH | split row (char esep) | append '/opt/homebrew/opt/postgresql@16/bin')
 }
 
-if ((sys | get host.name) == "Linux") {
-    $env.GPG_TTY = (tty)
-}
 
 zoxide init nushell | save -f ~/dotfiles/nushell/.zoxide.nu

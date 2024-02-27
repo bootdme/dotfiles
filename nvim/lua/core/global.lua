@@ -47,7 +47,6 @@ global['mason_installs'] = {
 
     -- Formatters
     'stylua',
-    'rustfmt',
 
     -- Linters
     'selene',

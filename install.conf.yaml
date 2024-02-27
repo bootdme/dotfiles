@@ -57,25 +57,20 @@
           { brew: cmake },
           { brew: discord },
           { brew: docker },
-          { brew: fd },
           { brew: fish },
           { brew: firefox },
-          { brew: font-jetbrains-mono-nerd-font },
           { brew: fzf },
           { brew: google-chrome },
           { brew: go },
           { brew: gnupg },
           { brew: kitty },
-          { brew: koekeishiya/formulae/skhd },
           { brew: koekeishiya/formulae/yabai },
-          { brew: mold },
           { brew: neovim },
           { brew: pinentry-mac },
           { brew: postgresql },
           { brew: postman },
           { brew: rsteube/tap/carapace },
           { brew: spotify },
-          { brew: macos-trash },
           { brew: wget },
           { dnf: cmake },
           { dnf: fzf },
@@ -88,13 +83,8 @@
 
 - cargo:
     - bat
-    - bacon
-    - cargo-info
     - cargo-install
     - exa
     - fnm
-    - ripgrep
-    - sccache
-    - speedtest-rs
     - nu
     - zoxide
