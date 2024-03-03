@@ -36,6 +36,7 @@ global['ts'] = {
 global['lsp'] = {
     'lua_ls',
     'rust_analyzer',
+    'bashls',
 }
 
 -- Mason tool installer
@@ -44,6 +45,7 @@ global['mason_installs'] = {
     -- LSPs
     'lua-language-server',
     'rust-analyzer',
+    'bash-language-server',
 
     -- Formatters
     'stylua',
