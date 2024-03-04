@@ -41,13 +41,14 @@ export-env {
         }
 }
 
+# Python
 $env.PATH = ($env.PATH | split row (char esep) | append '~/Library/Python/3.9/bin')
 
 # Cargo
-$env.PATH = ($env.PATH | split row (char esep) | prepend '~/.cargo/bin')
+$env.PATH = ($env.PATH | split row (char esep) | append '~/.cargo/bin')
 
 # Mason
-$env.PATH = ($env.PATH | split row (char esep) | prepend '~/.local/share/nvim/mason/bin')
+$env.PATH = ($env.PATH | split row (char esep) | append '~/.local/share/nvim/mason/bin')
 
 # fnm
 if not (which fnm | is-empty) {
@@ -57,9 +58,10 @@ if not (which fnm | is-empty) {
 
 # MacOS
 if ((sys | get host.name) == "Darwin") {
-	$env.PATH = ($env.PATH | split row (char esep) | prepend '/opt/homebrew/sbin' | prepend '/opt/homebrew/bin')
+	$env.PATH = ($env.PATH | split row (char esep) | append '/opt/homebrew/sbin' | append '/opt/homebrew/bin')
     $env.PATH = ($env.PATH | split row (char esep) | append '/opt/homebrew/opt/postgresql@16/bin')
 }
 
+$env.PATH = ($env.PATH | uniq)
 
 zoxide init nushell | save -f ~/dotfiles/nushell/.zoxide.nu
