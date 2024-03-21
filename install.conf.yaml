@@ -34,7 +34,7 @@
         ~/Library/Application Support/nushell/aliases.nu: nushell/aliases.nu
     - tap: [homebrew/core, homebrew/services, homebrew/cask-fonts, rsteube/homebrew-tap]
 
-- iffedora:
+- ifanylinux:
     - link:
         # Nu Shell
         ~/.config/nushell/env.nu: nushell/env.nu
