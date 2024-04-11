@@ -13,6 +13,3 @@
 [submodule "dotbot-brew"]
 	path = dotbot-brew
 	url = https://github.com/d12frosted/dotbot-brew.git
-[submodule "user.js"]
-	path = user.js
-	url = https://github.com/arkenfox/user.js
