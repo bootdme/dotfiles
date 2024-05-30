@@ -30,7 +30,7 @@ export-env { load-env {
 $env.EDITOR = 'nvim -f'
 $env.VISUAL = $env.EDITOR
 
-if ((sys | get host.name) == "Linux") {
+if ((sys host | get name) == "Linux") {
     $env.GPG_TTY = (tty)
 }
 
@@ -57,7 +57,7 @@ if not (which fnm | is-empty) {
 }
 
 # MacOS
-if ((sys | get host.name) == "Darwin") {
+if ((sys host | get name) == "Darwin") {
 	$env.PATH = ($env.PATH | split row (char esep) | append '/opt/homebrew/sbin' | append '/opt/homebrew/bin')
     $env.PATH = ($env.PATH | split row (char esep) | append '/opt/homebrew/opt/postgresql@16/bin')
 }
