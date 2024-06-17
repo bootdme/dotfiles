@@ -1,3 +1,19 @@
+def create_left_prompt [] {
+    let dir = match (do --ignore-shell-errors { $env.PWD | path relative-to $nu.home-path }) {
+        null => $env.PWD
+        '' => '~'
+        $relative_pwd => ([~ $relative_pwd] | path join)
+    }
+
+    let path_color = (if (is-admin) { ansi red_bold } else { ansi green_bold })
+    let separator_color = (if (is-admin) { ansi light_red_bold } else { ansi light_green_bold })
+    let path_segment = $"($path_color)($dir)"
+
+    $path_segment | str replace --all (char path_sep) $"($separator_color)(char path_sep)($path_color)"
+}
+
+$env.PROMPT_COMMAND = {|| create_left_prompt }
+
 # Specifies how environment variables are:
 # - converted from a string to a value on Nushell startup (from_string)
 # - converted from a value back to a string when running external commands (to_string)
@@ -13,32 +29,13 @@ $env.ENV_CONVERSIONS = {
     }
 }
 
-export-env { load-env {
-    XDG_STATE_HOME: ($env.HOME | path join '.local' 'share')
-    XDG_CONFIG_HOME: ($env.HOME | path join '.config')
-    XDG_CACHE_HOME: ($env.HOME | path join '.cache')
-    XDG_DATA_HOME: ($env.HOME | path join '.local' 'share')
-} } 
-
-export-env { load-env {
-    CARGO_HOME: ($env.HOME | path join '.cargo')
-    LESSHISTFILE: ($env.XDG_STATE_HOME | path join 'less' 'history')
-    LESSKEY: ($env.XDG_STATE_HOME | path join 'less' 'keys')
-    SSH_AGENT_TIMEOUT: 300
-} }
-
 $env.EDITOR = 'nvim -f'
 $env.VISUAL = $env.EDITOR
 
+$env.PATH = ($env.PATH | uniq)
+
 if ((sys host | get name) == "Linux") {
     $env.GPG_TTY = (tty)
-}
-
-export-env {
-    let env_file = $nu.home-path | path join '.env'
-        if ($env_file | path exists) {
-            open $env_file | from nuon | load-env
-        }
 }
 
 # Python
@@ -53,7 +50,7 @@ $env.PATH = ($env.PATH | split row (char esep) | append '~/.local/share/nvim/mas
 # fnm
 if not (which fnm | is-empty) {
     ^fnm env --json | from json | load-env
-    $env.PATH = ($env.PATH | prepend [$"($env.FNM_MULTISHELL_PATH)/bin"])
+    $env.PATH = ($env.PATH | append [$"($env.FNM_MULTISHELL_PATH)/bin"])
 }
 
 # MacOS
@@ -61,7 +58,5 @@ if ((sys host | get name) == "Darwin") {
 	$env.PATH = ($env.PATH | split row (char esep) | append '/opt/homebrew/sbin' | append '/opt/homebrew/bin')
     $env.PATH = ($env.PATH | split row (char esep) | append '/opt/homebrew/opt/postgresql@16/bin')
 }
-
-$env.PATH = ($env.PATH | uniq)
 
 zoxide init nushell | save -f ~/dotfiles/nushell/.zoxide.nu

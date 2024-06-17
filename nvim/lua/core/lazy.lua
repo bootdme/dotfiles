@@ -54,7 +54,6 @@ function lazy:load_lazy()
             timeout = 300,
             url_format = 'https://github.com/%s.git',
         },
-        -- checker = { enabled = true },
         install = { missing = true },
         performance = {
             cache = {

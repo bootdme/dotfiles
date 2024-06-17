@@ -1,3 +1,4 @@
+# https://github.com/amtoine/dotfiles/blob/main/.config/nushell/completion.nu
 $env.config.completions.external = {
     enable: true
     max_results: 100
@@ -29,7 +30,13 @@ $env.config.completions.external.completer = {|tokens: list<string>|
     if ($completions | is-empty) {
         let path = $tokens | last
 
-        ls $"($path)*" | each {|it|
+        let res = try {
+            ls $"($path)*"
+        } catch {
+            []
+        }
+
+        $res | each {|it|
             let choice = if ($path | str ends-with "/") {
                 $path | path join ($it.name | path basename)
             } else {

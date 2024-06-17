@@ -7,5 +7,6 @@ $env.config = ($env.config? | default {} | merge {
 # Make edits below
 
 source ~/dotfiles/nushell/.zoxide.nu
+
 source ($nu.default-config-dir | path join 'aliases.nu')
 source ($nu.default-config-dir | path join 'completion.nu')
