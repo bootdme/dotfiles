@@ -17,10 +17,6 @@
     ~/.config/nvim:
       glob: true
       path: nvim/*
-    # Fish
-    ~/.config/fish:
-      glob: true
-      path: fish/*
     # Kitty
     ~/.config/kitty: kitty/
     # Git
@@ -32,7 +28,7 @@
         ~/Library/Application Support/nushell/config.nu: nushell/config.nu
         ~/Library/Application Support/nushell/aliases.nu: nushell/aliases.nu
     - tap: [homebrew/services, rsteube/homebrew-tap]
-    - brew: [bitwarden, brave-browser, cmake, discord, font-hack-nerd-font, fish, go, gnupg, kitty, mullvad-browser, neovim, pinentry-mac, postgresql@16, postman, rsteube/tap/carapace, spotify, tor-browser, wget]
+    - brew: [bitwarden, brave-browser, cmake, discord, font-hack-nerd-font, go, gnupg, kitty, mullvad-browser, neovim, pinentry-mac, postgresql@16, postman, rsteube/tap/carapace, spotify, tor-browser, wget]
 
 - ifanylinux:
     - link:
