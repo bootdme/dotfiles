@@ -29,7 +29,6 @@
     - link:
         # Nu Shell
         ~/Library/Application Support/nushell/env.nu: nushell/env.nu
-        ~/Library/Application Support/nushell/completion.nu: nushell/completion.nu
         ~/Library/Application Support/nushell/config.nu: nushell/config.nu
         ~/Library/Application Support/nushell/aliases.nu: nushell/aliases.nu
     - tap: [homebrew/services, rsteube/homebrew-tap]
