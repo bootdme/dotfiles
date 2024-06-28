@@ -5,6 +5,11 @@ ui['folke/tokyonight.nvim'] = {
     name = 'tokyonight',
 }
 
+ui['ellisonleao/gruvbox.nvim'] = {
+    lazy = false,
+    name = 'gruvbox',
+}
+
 ui['nvim-treesitter/nvim-treesitter'] = {
     lazy = true,
     version = false,

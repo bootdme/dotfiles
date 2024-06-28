@@ -13,4 +13,4 @@ require('core.auto')
 require('core.sets')
 
 -- Enable 'tokyonight' colorscheme
-vim.api.nvim_command('colorscheme tokyonight-night')
+vim.api.nvim_command('colorscheme gruvbox')

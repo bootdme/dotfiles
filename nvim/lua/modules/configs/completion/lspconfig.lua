@@ -3,7 +3,7 @@ return function()
     local lsp = vim.lsp
 
     vim.diagnostic.config({
-        update_in_insert = false,
+        update_in_insert = true,
         float = {
             focusable = false,
             style = 'minimal',
