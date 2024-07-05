@@ -2,16 +2,7 @@
 return function()
     local lsp = vim.lsp
 
-    vim.diagnostic.config({
-        update_in_insert = true,
-        float = {
-            focusable = false,
-            style = 'minimal',
-            source = 'always',
-            header = '',
-            prefix = '',
-        },
-    })
+    vim.diagnostic.config({ update_in_insert = true })
 
     local on_attach = function()
         vim.keymap.set('n', 'K', vim.lsp.buf.hover)

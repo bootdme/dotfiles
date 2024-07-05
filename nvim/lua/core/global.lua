@@ -18,7 +18,6 @@ end
 global['ts'] = {
     'bash',
     'css',
-    'fish',
     'gitignore',
     'html',
     'javascript',
@@ -35,7 +34,6 @@ global['ts'] = {
 -- LSP variables
 global['lsp'] = {
     'lua_ls',
-    'rust_analyzer',
     'bashls',
 }
 
@@ -44,11 +42,11 @@ global['lsp'] = {
 global['mason_installs'] = {
     -- LSPs
     'lua-language-server',
-    'rust-analyzer',
     'bash-language-server',
 
     -- Formatters
     'stylua',
+    'shfmt',
 
     -- Linters
     'selene',

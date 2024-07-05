@@ -28,6 +28,8 @@ return function()
 
     local sources = {
         builtins.formatting.stylua,
+        builtins.formatting.shfmt,
+
         builtins.diagnostics.selene,
     }
 

@@ -22,8 +22,5 @@ autocmd('TextYankPost', {
     end,
 })
 
--- Reload vim config when necessary
-autocmd({ 'FocusGained', 'TermClose', 'TermLeave' }, { command = 'checktime' })
-
 -- Don't auto comment new line
 autocmd('FileType', { command = [[set formatoptions-=cro]] })

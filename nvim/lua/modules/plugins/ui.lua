@@ -12,7 +12,6 @@ ui['ellisonleao/gruvbox.nvim'] = {
 
 ui['nvim-treesitter/nvim-treesitter'] = {
     lazy = true,
-    version = false,
     build = function()
         if #vim.api.nvim_list_uis() ~= 0 then
             vim.api.nvim_command('TSUpdate')

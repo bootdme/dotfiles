@@ -30,13 +30,8 @@ return function()
             ['<C-k>'] = cmp.mapping.select_prev_item(),
             ['<C-j>'] = cmp.mapping.select_next_item(),
         }),
-        snippet = {
-            expand = function(args)
-                require('luasnip').lsp_expand(args.body)
-            end,
-        },
         sources = {
-            { name = 'nvim_lsp' },
+            { name = 'nvim_lsp', max_item_count = 350 },
             { name = 'path' },
         },
     })
