@@ -25,6 +25,7 @@ global['ts'] = {
     'lua',
     'markdown',
     'markdown_inline',
+    'nu',
     'regex',
     'rust',
     'sql',

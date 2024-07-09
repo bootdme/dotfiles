@@ -14,4 +14,3 @@ $env.config = ($env.config? | default {} | merge {
 source ~/dotfiles/nushell/.zoxide.nu
 
 source ($nu.default-config-dir | path join 'aliases.nu')
-

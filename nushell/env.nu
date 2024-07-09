@@ -45,7 +45,7 @@ $env.PATH = ($env.PATH | split row (char esep) | append '~/Library/Python/3.9/bi
 $env.PATH = ($env.PATH | split row (char esep) | append '~/.cargo/bin')
 
 # Mason
-$env.PATH = ($env.PATH | split row (char esep) | prepend '~/.local/share/nvim/mason/bin')
+$env.PATH = ($env.PATH | split row (char esep) | append '~/.local/share/nvim/mason/bin')
 
 # fnm
 if not (which fnm | is-empty) {
