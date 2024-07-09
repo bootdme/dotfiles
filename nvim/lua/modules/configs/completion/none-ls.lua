@@ -27,10 +27,12 @@ return function()
     end
 
     local sources = {
+        -- Lua
         builtins.formatting.stylua,
-        builtins.formatting.shfmt,
-
         builtins.diagnostics.selene,
+
+        -- Bash
+        builtins.formatting.shfmt,
     }
 
     null_ls.setup({

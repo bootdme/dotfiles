@@ -56,12 +56,6 @@ function lazy:load_lazy()
         },
         install = { missing = true },
         performance = {
-            cache = {
-                enabled = true,
-                path = vim.fn.stdpath('cache') .. '/lazy/cache',
-                disable_events = { 'UIEnter', 'BufReadPre' },
-                ttl = 3600 * 24 * 2,
-            },
             reset_packpath = true,
             rtp = {
                 reset = true,

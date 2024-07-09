@@ -4,18 +4,15 @@ local settings = {
             version = 'LuaJIT',
         },
         diagnostics = {
-            globals = { 'vim' },
-            disable = { 'different-requires', 'undefined-field' },
-        },
-        completion = {
             enable = true,
-            callSnippet = 'Both',
-            keyboardSnippet = 'Both',
+            globals = { 'vim', 'describe', 'it', 'before_each', 'after_each' },
+            disable = { 'different-requires', 'undefined-field' },
         },
         workspace = {
             library = {
                 [vim.fn.expand('$VIMRUNTIME/lua')] = true,
                 [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true,
+                [vim.fn.stdpath('config') .. '/lua'] = true,
             },
             maxPreload = 2000,
             preloadFileSize = 50000,

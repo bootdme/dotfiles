@@ -6,7 +6,6 @@ vim.api.nvim_set_keymap('x', ' ', '', { noremap = true })
 -- Load core files
 require('core.boot')
 require('core.clip')
-require('core.dirs')
 require('core.opts')
 require('core.lazy')
 require('core.auto')

@@ -2,7 +2,17 @@
 return function()
     local lsp = vim.lsp
 
-    vim.diagnostic.config({ update_in_insert = true })
+    vim.diagnostic.config({
+        signs = true,
+        underline = true,
+        update_in_insert = false,
+    })
+
+    lsp.handlers['textDocument/publishDiagnostics'] = lsp.with(lsp.diagnostic.on_publish_diagnostics, {
+        signs = true,
+        underline = true,
+        update_in_insert = false,
+    })
 
     local on_attach = function()
         vim.keymap.set('n', 'K', vim.lsp.buf.hover)
@@ -21,4 +31,6 @@ return function()
     for _, server in ipairs(require('core.global').lsp) do
         require('completion.lsp.' .. server).setup(on_attach, capabilities)
     end
+
+    vim.api.nvim_command([[LspStart]])
 end

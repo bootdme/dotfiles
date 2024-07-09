@@ -50,6 +50,7 @@ global['mason_installs'] = {
 
     -- Linters
     'selene',
+    'shellcheck',
 }
 
 global:load_variables()
