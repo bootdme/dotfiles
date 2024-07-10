@@ -10,6 +10,11 @@ ui['ellisonleao/gruvbox.nvim'] = {
     name = 'gruvbox',
 }
 
+ui['Mofiqul/vscode.nvim'] = {
+    lazy = true,
+    name = 'vscode',
+}
+
 ui['nvim-treesitter/nvim-treesitter'] = {
     lazy = true,
     build = function()
