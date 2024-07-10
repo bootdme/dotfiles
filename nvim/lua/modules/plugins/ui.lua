@@ -20,7 +20,7 @@ ui['nvim-treesitter/nvim-treesitter'] = {
     event = 'BufReadPre',
     config = require('ui.treesitter'),
     dependencies = {
-        -- { 'neovim/nvim-lspconfig' },
+        { 'neovim/nvim-lspconfig' },
         { 'nushell/tree-sitter-nu', ft = 'nu' },
     },
 }

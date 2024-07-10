@@ -34,6 +34,8 @@ $env.VISUAL = $env.EDITOR
 
 $env.PATH = ($env.PATH | uniq)
 
+$env.LESSHISTFILE = '/.cache/less/history'
+
 if ((sys host | get name) == "Linux") {
     $env.GPG_TTY = (tty)
 }
