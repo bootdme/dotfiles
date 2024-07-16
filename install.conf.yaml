@@ -28,8 +28,8 @@
         ~/Library/Application Support/nushell/config.nu: nushell/config.nu
         ~/Library/Application Support/nushell/aliases.nu: nushell/aliases.nu
     - tap: [homebrew/services, rsteube/homebrew-tap]
-    - brew: [bitwarden, brave-browser, cmake, discord, font-hack-nerd-font, go, gnupg, kitty, mullvad-browser, neovim, pinentry-mac, postgresql@16, postman, rsteube/tap/carapace, spotify, tor-browser, wget]
-    - cask: [visual-studio-code, wireshark]
+    - brew: [cmake, font-hack-nerd-font, go, gnupg, neovim, pinentry-mac, postgresql@16, rsteube/tap/carapace, wget]
+    - cask: [anki, bitwarden, brave-browser, discord, kitty, mullvad-browser, postman, spotify, tor-browser, visual-studio-code, wireshark]
 
 - ifanylinux:
     - link:
