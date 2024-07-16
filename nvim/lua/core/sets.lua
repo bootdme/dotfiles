@@ -34,7 +34,3 @@ set('n', 'Q', '<nop>', { desc = 'Never press' })
 set('n', '<leader>lp', '<cmd>Lazy profile<cr>', { desc = 'Lazy profile' })
 set('n', '<leader>lu', '<cmd>Lazy update<cr>', { desc = 'Lazy update' })
 set('n', '<leader>lh', '<cmd>Lazy home<cr>', { desc = 'Lazy home' })
-
--- m - markdown
-set('n', '<leader>mp', '<cmd>MarkdownPreviewToggle<cr>', { desc = 'Markdown Preview' })
-set('n', '<leader>ms', '<cmd>MarkdownPreviewStop<cr>', { desc = 'Markdown Stop' })
