@@ -51,6 +51,7 @@
 
 - cargo:
     - bat
+    - cargo-update
     - exa
     - fnm
     - nu
