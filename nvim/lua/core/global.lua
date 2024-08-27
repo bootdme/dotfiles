@@ -48,10 +48,6 @@ global['mason_installs'] = {
     -- Formatters
     'stylua',
     'shfmt',
-
-    -- Linters
-    'selene',
-    'shellcheck',
 }
 
 global:load_variables()

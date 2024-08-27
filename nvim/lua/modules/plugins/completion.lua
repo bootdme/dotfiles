@@ -19,7 +19,6 @@ completion['nvimtools/none-ls.nvim'] = {
     config = require('completion.none-ls'),
     dependencies = {
         { 'nvim-lua/plenary.nvim' },
-        { 'gbprod/none-ls-shellcheck.nvim' },
     },
 }
 

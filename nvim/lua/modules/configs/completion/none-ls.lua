@@ -27,11 +27,8 @@ return function()
     end
 
     local sources = {
-        -- Lua
+        -- Formatters
         builtins.formatting.stylua,
-        builtins.diagnostics.selene,
-
-        -- Bash
         builtins.formatting.shfmt,
     }
 
