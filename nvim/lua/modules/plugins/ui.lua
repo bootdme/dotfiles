@@ -1,10 +1,5 @@
 local ui = {}
 
-ui['folke/tokyonight.nvim'] = {
-    lazy = true,
-    name = 'tokyonight',
-}
-
 ui['ellisonleao/gruvbox.nvim'] = {
     lazy = true,
     name = 'gruvbox',
