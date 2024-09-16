@@ -22,13 +22,5 @@ autocmd('TextYankPost', {
     end,
 })
 
--- On save, restart LSP (temporary fix for showing errors)
-augroup('LspRestartOnSave', { clear = true })
-autocmd('BufWritePost', {
-    group = 'LspRestartOnSave',
-    pattern = '*',
-    command = 'LspRestart',
-})
-
 -- Don't auto comment new line
 autocmd('FileType', { command = [[set formatoptions-=cro]] })

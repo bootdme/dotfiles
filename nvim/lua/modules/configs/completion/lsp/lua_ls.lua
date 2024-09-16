@@ -10,9 +10,8 @@ local settings = {
         },
         workspace = {
             library = {
-                -- [vim.fn.expand('$VIMRUNTIME/lua')] = true,
                 [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true,
-                -- [vim.fn.stdpath('config') .. '/lua'] = true,
+                [vim.fn.stdpath('config') .. '/lua'] = true,
             },
             maxPreload = 2000,
             preloadFileSize = 50000,

@@ -24,9 +24,6 @@ set('n', 'L', '$', { desc = 'End of line' })
 set('x', 'J', ":m '>+1<CR>gv=gv", { desc = 'Move code down' })
 set('x', 'K', ":m '<-2<CR>gv=gv", { desc = 'Move code up' })
 
--- Keep cursor in-place if below line append to current line when moving
-set('n', 'J', 'mzJ`z', { desc = 'Keep cursor inplace' })
-
 -- Never press Q
 set('n', 'Q', '<nop>', { desc = 'Never press' })
 

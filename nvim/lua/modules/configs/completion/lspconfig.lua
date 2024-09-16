@@ -5,7 +5,7 @@ return function()
     vim.diagnostic.config({
         signs = true,
         underline = true,
-        update_in_insert = false,
+        update_in_insert = true,
     })
 
     lsp.handlers['textDocument/publishDiagnostics'] = lsp.with(lsp.diagnostic.on_publish_diagnostics, {

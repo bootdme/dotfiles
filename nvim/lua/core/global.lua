@@ -36,7 +36,6 @@ global['ts'] = {
 global['lsp'] = {
     'lua_ls',
     'bashls',
-    'html',
 }
 
 -- Mason tool installer
@@ -45,7 +44,6 @@ global['mason_installs'] = {
     -- LSPs
     'lua-language-server',
     'bash-language-server',
-    'html-lsp',
 
     -- Formatters
     'stylua',

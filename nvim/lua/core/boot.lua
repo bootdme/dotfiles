@@ -14,3 +14,13 @@ if not vim.loop.fs_stat(lazy_path) then
 end
 
 vim.opt.rtp:prepend(vim.env.LAZY or lazy_path)
+
+-- macOS clipboard
+if vim.loop.os_uname().sysname == 'Darwin' then
+    vim.g.clipboard = {
+        name = 'macOS-clipboard',
+        copy = { ['+'] = 'pbcopy', ['*'] = 'pbcopy' },
+        paste = { ['+'] = 'pbpaste', ['*'] = 'pbpaste' },
+        cache_enabled = true,
+    }
+end

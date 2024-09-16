@@ -49,16 +49,17 @@ $env.PATH = ($env.PATH | split row (char esep) | append '~/.cargo/bin')
 # Mason
 $env.PATH = ($env.PATH | split row (char esep) | append '~/.local/share/nvim/mason/bin')
 
-# fnm
-if not (which fnm | is-empty) {
-    ^fnm env --json | from json | load-env
-    $env.PATH = ($env.PATH | append [$"($env.FNM_MULTISHELL_PATH)/bin"])
-}
 
 # MacOS
 if ((sys host | get name) == "Darwin") {
 	$env.PATH = ($env.PATH | split row (char esep) | append '/opt/homebrew/sbin' | append '/opt/homebrew/bin')
     $env.PATH = ($env.PATH | split row (char esep) | append '/opt/homebrew/opt/postgresql@16/bin')
+
+    # fnm
+    if not (which fnm | is-empty) {
+        ^fnm env --json | from json | load-env
+        $env.PATH = ($env.PATH | append [$"($env.FNM_MULTISHELL_PATH)/bin"])
+    }
 }
 
 zoxide init nushell | save -f ~/dotfiles/nushell/.zoxide.nu
