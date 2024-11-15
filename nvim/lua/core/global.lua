@@ -38,7 +38,7 @@ global['lsp'] = {
     'bashls',
 }
 
--- Mason tool installer
+-- Mason tool variables
 -- https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim
 global['mason_installs'] = {
     -- LSPs

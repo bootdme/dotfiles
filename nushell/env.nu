@@ -49,11 +49,10 @@ $env.PATH = ($env.PATH | split row (char esep) | append '~/.cargo/bin')
 # Mason
 $env.PATH = ($env.PATH | split row (char esep) | append '~/.local/share/nvim/mason/bin')
 
-
 # MacOS
 if ((sys host | get name) == "Darwin") {
 	$env.PATH = ($env.PATH | split row (char esep) | append '/opt/homebrew/sbin' | append '/opt/homebrew/bin')
-    $env.PATH = ($env.PATH | split row (char esep) | append '/opt/homebrew/opt/postgresql@16/bin')
+    $env.PATH = ($env.PATH | split row (char esep) | append '/opt/homebrew/opt/postgresql@17/bin')
 
     # fnm
     if not (which fnm | is-empty) {

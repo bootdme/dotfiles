@@ -28,7 +28,7 @@
         ~/Library/Application Support/nushell/config.nu: nushell/config.nu
         ~/Library/Application Support/nushell/aliases.nu: nushell/aliases.nu
     - tap: [homebrew/services, rsteube/homebrew-tap]
-    - brew: [cmake, font-hack-nerd-font, go, gnupg, neovim, pinentry-mac, postgresql@16, rsteube/tap/carapace, wget]
+    - brew: [cmake, go, gnupg, neovim, pinentry-mac, postgresql@17, rsteube/tap/carapace, wget]
     - cask: [anki, bitwarden, brave-browser, discord, kitty, mullvad-browser, postman, spotify, tor-browser, visual-studio-code, wireshark]
 
 - ifanylinux:
@@ -54,9 +54,7 @@
         ]
 
 - cargo:
-    - bat
     - cargo-update
-    - exa
     - fnm
     - nu
     - zoxide

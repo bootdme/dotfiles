@@ -53,9 +53,6 @@ local sets = {
     undofile = true,
     history = 1000,
 
-    grepformat = '%f:%l:%c:%m',
-    grepprg = 'rg --hidden --vimgrep --smart-case --',
-
     termguicolors = true,
 
     clipboard = 'unnamedplus',
@@ -64,15 +61,8 @@ local sets = {
     signcolumn = 'yes',
     colorcolumn = '80',
 
-    shadafile = '',
-
-    shell = '/bin/bash',
-
     updatetime = 100,
     lazyredraw = true,
-
-    wildignore = '.git,.hg,.svn,*.pyc,*.o,*.out,*.jpg,*.jpeg,*.png,*.gif,*.zip,**/tmp/**,*.DS_Store,**/node_modules/**,**/bower_modules/**',
-    wildignorecase = true,
 
     wrap = false,
 }

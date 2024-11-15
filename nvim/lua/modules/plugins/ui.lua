@@ -1,10 +1,5 @@
 local ui = {}
 
-ui['ellisonleao/gruvbox.nvim'] = {
-    lazy = true,
-    name = 'gruvbox',
-}
-
 ui['nvim-treesitter/nvim-treesitter'] = {
     lazy = true,
     build = function()
@@ -16,8 +11,11 @@ ui['nvim-treesitter/nvim-treesitter'] = {
     config = require('ui.treesitter'),
     dependencies = {
         { 'neovim/nvim-lspconfig' },
-        { 'nushell/tree-sitter-nu', ft = 'nu' },
     },
+}
+
+ui['ellisonleao/gruvbox.nvim'] = {
+    lazy = true,
 }
 
 return ui

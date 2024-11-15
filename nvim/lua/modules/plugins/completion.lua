@@ -5,11 +5,11 @@ completion['neovim/nvim-lspconfig'] = {
     event = { 'CursorHold', 'CursorHoldI' },
     config = require('completion.lspconfig'),
     dependencies = {
-        { 'williamboman/mason.nvim' },
         {
             'WhoIsSethDaniel/mason-tool-installer.nvim',
             config = require('completion.mason-tool-installer'),
         },
+        { 'williamboman/mason.nvim' },
     },
 }
 
@@ -30,10 +30,6 @@ completion['hrsh7th/nvim-cmp'] = {
         { 'onsails/lspkind.nvim' },
         { 'hrsh7th/cmp-nvim-lsp' },
         { 'hrsh7th/cmp-path' },
-        {
-            'windwp/nvim-autopairs',
-            config = require('completion.autopairs'),
-        },
     },
 }
 
