@@ -43,6 +43,7 @@
         [
           { dnf: brave-browser },
           { dnf: cmake },
+          { dnf: code },
           { dnf: discord },
           { dnf: golang },
           { dnf: kitty },

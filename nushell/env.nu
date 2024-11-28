@@ -36,12 +36,10 @@ $env.PATH = ($env.PATH | uniq)
 
 $env.LESSHISTFILE = '/.cache/less/history'
 
-if ((sys host | get name) == "Linux") {
+if ((sys host | get name) == "Fedora Linux") {
     $env.GPG_TTY = (tty)
+    $env.PATH = ($env.PATH | split row (char esep) | append '~/.local/bin')
 }
-
-# Python
-$env.PATH = ($env.PATH | split row (char esep) | append '~/Library/Python/3.9/bin')
 
 # Cargo
 $env.PATH = ($env.PATH | split row (char esep) | append '~/.cargo/bin')
@@ -53,6 +51,9 @@ $env.PATH = ($env.PATH | split row (char esep) | append '~/.local/share/nvim/mas
 if ((sys host | get name) == "Darwin") {
 	$env.PATH = ($env.PATH | split row (char esep) | append '/opt/homebrew/sbin' | append '/opt/homebrew/bin')
     $env.PATH = ($env.PATH | split row (char esep) | append '/opt/homebrew/opt/postgresql@17/bin')
+
+    # Python
+    $env.PATH = ($env.PATH | split row (char esep) | append '~/Library/Python/3.9/bin')
 
     # fnm
     if not (which fnm | is-empty) {
