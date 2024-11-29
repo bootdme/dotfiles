@@ -26,6 +26,7 @@ global['ts'] = {
     'markdown',
     'markdown_inline',
     'nu',
+    'python',
     'regex',
     'rust',
     'sql',
@@ -36,6 +37,7 @@ global['ts'] = {
 global['lsp'] = {
     'lua_ls',
     'bashls',
+    'pylsp',
 }
 
 -- Mason tool variables
@@ -44,6 +46,7 @@ global['mason_installs'] = {
     -- LSPs
     'lua-language-server',
     'bash-language-server',
+    'python-lsp-server',
 
     -- Formatters
     'stylua',
