@@ -18,14 +18,15 @@ end
 global['ts'] = {
     'bash',
     'css',
+    'csv',
     'gitignore',
+    'gitcommit',
     'html',
     'javascript',
     'jsonc',
     'lua',
     'markdown',
     'markdown_inline',
-    'nu',
     'python',
     'regex',
     'rust',
@@ -49,6 +50,7 @@ global['mason_installs'] = {
     'python-lsp-server',
 
     -- Formatters
+    'blue',
     'stylua',
     'shfmt',
 }

@@ -18,6 +18,7 @@ completion['nvimtools/none-ls.nvim'] = {
     event = { 'CursorHold', 'CursorHoldI' },
     config = require('completion.none-ls'),
     dependencies = {
+        { 'nvimtools/none-ls-extras.nvim' },
         { 'nvim-lua/plenary.nvim' },
     },
 }

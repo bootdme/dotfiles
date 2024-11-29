@@ -28,6 +28,7 @@ return function()
 
     local sources = {
         -- Formatters
+        require('none-ls.formatting.blue'),
         builtins.formatting.stylua,
         builtins.formatting.shfmt,
     }

@@ -1,3 +1,4 @@
+-- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md#lua_ls
 local settings = {
     Lua = {
         runtime = {
@@ -29,9 +30,9 @@ local M = {}
 
 M.setup = function(on_attach, capabilities)
     require('lspconfig').lua_ls.setup({
+        settings = settings,
         on_attach = on_attach,
         capabilities = capabilities,
-        settings = settings,
     })
 end
 
