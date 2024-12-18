@@ -53,7 +53,8 @@ if ((sys host | get name) == "Darwin") {
     $env.PATH = ($env.PATH | split row (char esep) | append '/opt/homebrew/opt/postgresql@17/bin')
 
     # Python
-    $env.PATH = ($env.PATH | split row (char esep) | append '~/Library/Python/3.9/bin')
+    $env.PATH = ($env.PATH | split row (char esep) | append '/opt/homebrew/opt/python@3.13/libexec/bin')
+    $env.PATH = ($env.PATH | split row (char esep) | append '/Users/bootdme/Library/Python/3.9/bin')
 
     # fnm
     if not (which fnm | is-empty) {
