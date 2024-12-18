@@ -29,7 +29,7 @@
         ~/Library/Application Support/nushell/aliases.nu: nushell/aliases.nu
     - tap: [homebrew/services, rsteube/homebrew-tap]
     - brew: [cmake, go, gnupg, neovim, pinentry-mac, postgresql@17, rsteube/tap/carapace, wget]
-    - cask: [anki, bitwarden, brave-browser, discord, kitty, mullvad-browser, postman, spotify, tor-browser, visual-studio-code, wireshark]
+    - cask: [anki, appcleaner, bitwarden, brave-browser, discord, kitty, microsoft-outlook, mullvad-browser, postman, spotify, tor-browser, visual-studio-code, wireshark]
 
 - ifanylinux:
     - link:
