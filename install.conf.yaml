@@ -28,7 +28,7 @@
         ~/Library/Application Support/nushell/config.nu: nushell/config.nu
         ~/Library/Application Support/nushell/aliases.nu: nushell/aliases.nu
     - tap: [homebrew/services, rsteube/homebrew-tap]
-    - brew: [cmake, go, neovim, nu, postgresql@17, rsteube/tap/carapace, wget]
+    - brew: [cmake, go, neovim, postgresql@17, rsteube/tap/carapace, wget]
     - cask: [anki, appcleaner, bitwarden, brave-browser, discord, kitty, microsoft-outlook, mullvad-browser, postman, spotify, visual-studio-code, wireshark]
 
 - ifanylinux:
@@ -36,7 +36,7 @@
         # Nu Shell
         ~/.config/nushell/env.nu: nushell/env.nu
         ~/.config/nushell/config.nu: nushell/config.nu
-        ~/.config/nushell/aliases.nu: nushell/aliases.nu
+        ~/.config/aliases.nu: nushell/aliases.nu
 
 - omnipkg:
     - install:
@@ -58,3 +58,4 @@
     - cargo-update
     - fnm
     - zoxide
+    - nu
