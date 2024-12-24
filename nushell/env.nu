@@ -1,5 +1,5 @@
 def create_left_prompt [] {
-    let dir = match (do --ignore-shell-errors { $env.PWD | path relative-to $nu.home-path }) {
+    let dir = match (do -i { $env.PWD | path relative-to $nu.home-path }) {
         null => $env.PWD
         '' => '~'
         $relative_pwd => ([~ $relative_pwd] | path join)
@@ -34,6 +34,11 @@ $env.VISUAL = $env.EDITOR
 
 $env.PATH = ($env.PATH | uniq)
 
+if not (which fnm | is-empty) {
+    ^fnm env --json | from json | load-env
+    $env.PATH = ($env.PATH | append [$"($env.FNM_MULTISHELL_PATH)/bin"])
+}
+
 $env.LESSHISTFILE = '/.cache/less/history'
 
 if ((sys host | get name) == "Fedora Linux") {
@@ -43,6 +48,8 @@ if ((sys host | get name) == "Fedora Linux") {
 
 # Cargo
 $env.PATH = ($env.PATH | split row (char esep) | append '~/.cargo/bin')
+
+$env.PATH = ($env.PATH | split row (char esep) | append '/usr/bin')
 
 # Mason
 $env.PATH = ($env.PATH | split row (char esep) | append '~/.local/share/nvim/mason/bin')

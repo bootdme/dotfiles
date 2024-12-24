@@ -21,6 +21,10 @@
     ~/.config/kitty: kitty/
     # Git
     ~/.config/git/config.base: git/config.base
+    # Nu Shell
+    ~/.config/nushell/env.nu: nushell/env.nu
+    ~/.config/nushell/config.nu: nushell/config.nu
+    ~/.config/nushell/aliases.nu: nushell/aliases.nu
 - ifmacos:
     - link:
         # Nu Shell
@@ -31,27 +35,26 @@
     - brew: [cmake, go, neovim, postgresql@17, rsteube/tap/carapace, wget]
     - cask: [anki, appcleaner, bitwarden, brave-browser, discord, kitty, microsoft-outlook, mullvad-browser, postman, spotify, visual-studio-code, wireshark]
 
-- ifanylinux:
+- ifarch:
     - link:
         # Nu Shell
         ~/.config/nushell/env.nu: nushell/env.nu
         ~/.config/nushell/config.nu: nushell/config.nu
-        ~/.config/aliases.nu: nushell/aliases.nu
+        ~/.config/nushell/aliases.nu: nushell/aliases.nu
 
 - omnipkg:
     - install:
         [
-          { dnf: brave-browser },
-          { dnf: cmake },
-          { dnf: code },
-          { dnf: discord },
-          { dnf: golang },
-          { dnf: kitty },
-          { dnf: mullvad-browser },
-          { dnf: neovim },
-          { dnf: openssl-devel },
-          { dnf: postgresql },
-          { dnf: wireshark },
+          { pac: brave-bin },
+          { pac: cmake },
+          { pac: discord-screenaudio },
+          { pac: go },
+          { pac: kitty-git },
+          { pac: mullvad-browser-bin },
+          { pac: neovim },
+          { pac: openssl },
+          { pac: postgresql },
+          { pac: wireshark-qt },
         ]
 
 - cargo:
