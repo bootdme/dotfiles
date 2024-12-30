@@ -32,14 +32,14 @@ $env.ENV_CONVERSIONS = {
 $env.EDITOR = 'nvim -f'
 $env.VISUAL = $env.EDITOR
 
+$env.LESSHISTFILE = '/.cache/less/history'
+
 $env.PATH = ($env.PATH | uniq)
 
 if not (which fnm | is-empty) {
     ^fnm env --json | from json | load-env
     $env.PATH = ($env.PATH | append [$"($env.FNM_MULTISHELL_PATH)/bin"])
 }
-
-$env.LESSHISTFILE = '/.cache/less/history'
 
 if ((sys host | get name) == "Fedora Linux") {
     $env.GPG_TTY = (tty)
@@ -48,8 +48,6 @@ if ((sys host | get name) == "Fedora Linux") {
 
 # Cargo
 $env.PATH = ($env.PATH | split row (char esep) | append '~/.cargo/bin')
-
-$env.PATH = ($env.PATH | split row (char esep) | append '/usr/bin')
 
 # Mason
 $env.PATH = ($env.PATH | split row (char esep) | append '~/.local/share/nvim/mason/bin')
@@ -62,12 +60,6 @@ if ((sys host | get name) == "Darwin") {
     # Python
     $env.PATH = ($env.PATH | split row (char esep) | append '/opt/homebrew/opt/python@3.13/libexec/bin')
     $env.PATH = ($env.PATH | split row (char esep) | append '/Users/bootdme/Library/Python/3.9/bin')
-
-    # fnm
-    if not (which fnm | is-empty) {
-        ^fnm env --json | from json | load-env
-        $env.PATH = ($env.PATH | append [$"($env.FNM_MULTISHELL_PATH)/bin"])
-    }
 }
 
 zoxide init nushell | save -f ~/dotfiles/nushell/.zoxide.nu
