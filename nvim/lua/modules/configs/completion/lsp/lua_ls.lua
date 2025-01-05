@@ -6,7 +6,7 @@ local settings = {
         },
         diagnostics = {
             enable = true,
-            globals = { 'vim', 'describe', 'it', 'before_each', 'after_each' },
+            globals = { 'vim' },
             disable = { 'different-requires', 'undefined-field' },
         },
         workspace = {
@@ -14,8 +14,8 @@ local settings = {
                 vim.fn.expand('$VIMRUNTIME/lua'),
                 vim.fn.expand('$VIMRUNTIME/lua/vim/lsp'),
             },
-            maxPreload = 2000,
-            preloadFileSize = 50000,
+            maxPreload = 100000,
+            preloadFileSize = 10000,
         },
         hint = { enable = true, setType = true },
         format = { enable = false },

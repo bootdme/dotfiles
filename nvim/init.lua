@@ -10,5 +10,5 @@ require('core.lazy')
 require('core.auto')
 require('core.sets')
 
--- Enable 'tokyonight' colorscheme
+-- Enable colorscheme
 vim.api.nvim_command('colorscheme gruvbox')

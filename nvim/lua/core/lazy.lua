@@ -56,9 +56,26 @@ function lazy:load_lazy()
         },
         install = { missing = true },
         performance = {
+            cache = {
+                enabled = true,
+                disable_events = { 'UIEnter', 'BufReadPre' },
+                ttl = 3600 * 24 * 2,
+            },
             reset_packpath = true,
             rtp = {
                 reset = true,
+                disabled_plugins = {
+                    'spellfile',
+                    'matchit',
+                    'matchparen',
+                    'tohtml',
+                    'gzip',
+                    'tarPlugin',
+                    'tutor',
+                    'zipPlugin',
+                    'rplugin',
+                    'netrwPlugin',
+                },
             },
         },
     }

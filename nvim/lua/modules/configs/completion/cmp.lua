@@ -26,7 +26,7 @@ return function()
             max_view_entries = 60,
         },
         mapping = cmp.mapping.preset.insert({
-            ['<CR>'] = cmp.mapping.confirm({ select = false }),
+            ['<CR>'] = cmp.mapping.confirm({ select = true }),
             ['<C-k>'] = cmp.mapping.select_prev_item(),
             ['<C-j>'] = cmp.mapping.select_next_item(),
         }),

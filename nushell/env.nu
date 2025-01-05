@@ -52,6 +52,8 @@ do --env {
         | into record
     load-env $ssh_agent_env
     $ssh_agent_env | save --force $ssh_agent_file
+
+    ssh-add ~/.ssh/id_ed25519_github_personal
 }
 
 $env.EDITOR = 'nvim -f'
@@ -66,19 +68,19 @@ if not (which fnm | is-empty) {
     $env.PATH = ($env.PATH | append [$"($env.FNM_MULTISHELL_PATH)/bin"])
 }
 
-if ((sys host | get name) == "Fedora Linux") {
+if ((sys host | get name) == "CachyOS Linux") {
     $env.GPG_TTY = (tty)
     $env.PATH = ($env.PATH | split row (char esep) | append '~/.local/bin')
 }
-
-# Cargo
-$env.PATH = ($env.PATH | split row (char esep) | append '~/.cargo/bin')
 
 # Mason
 $env.PATH = ($env.PATH | split row (char esep) | append '~/.local/share/nvim/mason/bin')
 
 # MacOS
 if ((sys host | get name) == "Darwin") {
+    # Cargo
+    $env.PATH = ($env.PATH | split row (char esep) | append '~/.cargo/bin')
+
 	$env.PATH = ($env.PATH | split row (char esep) | append '/opt/homebrew/sbin' | append '/opt/homebrew/bin')
     $env.PATH = ($env.PATH | split row (char esep) | append '/opt/homebrew/opt/postgresql@17/bin')
 

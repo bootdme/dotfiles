@@ -7,9 +7,9 @@ return function()
     })
 
     local on_attach = function(_, bufnr)
-        vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, {})
-
+        vim.keymap.set('n', '<leader>vca', vim.lsp.buf.code_action, {})
         vim.keymap.set('n', '<leader>vrr', vim.lsp.buf.references, {})
+        vim.keymap.set('n', '<leader>vrn', vim.lsp.buf.rename, {})
 
         vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
 
